@@ -86,7 +86,10 @@ CmdletsToExport = 'Get-AzPeering',
 			'Get-AzPeeringLocation',
 			'Get-AzLegacyPeering',
 			'Set-AzPeerAsn',
-			'Remove-AzPeerAsn'
+			'Remove-AzPeerAsn',
+			'New-TfsClientFromSecondarySubscription',
+			'Get-TfsWorkItem',
+			'Set-TfsWorkItem'
 
 # Variables to export from this module
 # VariablesToExport = @()

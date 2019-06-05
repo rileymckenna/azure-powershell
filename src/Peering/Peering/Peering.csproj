@@ -13,6 +13,8 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="Microsoft.Azure.Management.Peering" Version="0.9.0-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="2.0.0-preview" />
+    <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="16.143.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,5 +30,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Common\FacilityLocationMap.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 </Project>

@@ -77,6 +77,16 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
             this.Init(address, prefixLength, true);
         }
 
+        public bool Overlap(RoutePrefix prefix)
+        {
+            if (this.EndOfPrefixBigInt < prefix.StartOfPrefixBigInt || this.StartOfPrefixBigInt > prefix.EndOfPrefixBigInt)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Gets start IPAddress
         /// </summary>
