@@ -10,7 +10,7 @@ namespace TeamFoundationServerPowershell
 {
     [Cmdlet(VerbsCommon.Get, "TfsWorkItemDescriptionProperties")]
     [OutputType(typeof(KeyValuePair<PSPeerAsn, PSPeering>))]
-    public class ConvertDescription : TeamFoundationBase
+    public class TfsWorkItemDescriptionProperties : TeamFoundationBase
     {
         private WorkItem workItem;
 
