@@ -18,6 +18,7 @@ using System.Management.Automation;
 using System.Text;
 using Microsoft.VisualStudio.Services.WebApi.Patch;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
+using System.Security.Cryptography;
 
 namespace TeamFoundationServerPowershell
 {
@@ -88,12 +89,12 @@ namespace TeamFoundationServerPowershell
         {
             List<EdgeLocation> exchangeFacilities = JsonConvert.DeserializeObject<List<EdgeLocation>>(File.ReadAllText(@".\Common\FacilityLocationMap.json"));
             RoutePrefix v4 = null;
-            if (ipv4 != string.Empty || ipv4 != null)
+            if (!ipv4.Equals(string.Empty, StringComparison.InvariantCultureIgnoreCase) && ipv4 != null)
             {
                 v4 = new RoutePrefix(System.Net.IPAddress.Parse(ipv4.Trim()), 32);
             }
             RoutePrefix v6 = null;
-            if (ipv6 != string.Empty || ipv6 != null)
+            if (!ipv6.Equals(string.Empty, StringComparison.InvariantCultureIgnoreCase) && ipv6 != null)
             {
                 v6 = new RoutePrefix(System.Net.IPAddress.Parse(ipv6.Trim()), 128);
             }
@@ -309,6 +310,24 @@ string descriptionFieldContents)
             }
 
             return result.Fields["System.State"].ToString();
+        }
+
+        public string UpdateDescriptionForWorkItem(int workItemId, string description)
+        {
+            var document = new JsonPatchDocument
+                               {
+                                   new JsonPatchOperation
+                                       {
+                                           Operation = Microsoft.VisualStudio.Services.WebApi.Patch.Operation.Replace,
+                                           Path = "/fields/System.Description",
+                                           Value = description
+                                       }
+                               };
+
+            var result = this.workItemTrackingHttpClient.UpdateWorkItemAsync(document, ProjectName, workItemId).Result;
+            this.WriteVerbose(string.Format("Updated Description for Ticket {0} {1}", workItemId, description));
+
+            return result.Fields["System.Description"].ToString();
         }
 
         public string UpdateWorkItemStateToResolved(

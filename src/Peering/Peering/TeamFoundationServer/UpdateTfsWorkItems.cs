@@ -1,16 +1,11 @@
 ﻿using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
-using Microsoft.VisualStudio.Services.Graph;
-using Microsoft.VisualStudio.Services.WebApi.Patch.Json;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
-using System.Text;
-using Microsoft.VisualStudio.Services.WebApi.Patch;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
-using TeamFoundationServerPowershell.Model.Data;
 using TeamFoundationServerPowershell.Model;
 
 namespace TeamFoundationServerPowershell

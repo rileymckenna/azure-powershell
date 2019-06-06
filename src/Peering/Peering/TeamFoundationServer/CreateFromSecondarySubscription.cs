@@ -7,6 +7,7 @@ using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -37,16 +38,22 @@ namespace TeamFoundationServerPowershell
         // This method gets called once for each cmdlet in the pipeline when the pipeline starts executing
         protected override void BeginProcessing()
         {
-            WriteVerbose("Begin!");
+            WriteVerbose($"Starting on new ticket {this.WorkItemNumber}");
             SetWorkItemClient();
             try
             {
                 this.workItem = this.workItemTrackingHttpClient.GetWorkItemAsync(ProjectName, this.WorkItemNumber ?? 0).Result;
                 this.PeerAsnAndPeering = this.ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(this.workItem.Fields["System.Description"].ToString());
                 this.locationMetadata = TeamFoundationBase.ResolvePeeringFacility(this.PeerAsnAndPeering.Value.PeeringLocation, this.PeerAsnAndPeering.Value.Exchange.Connections.FirstOrDefault().BgpSession.PeerSessionIPv4Address, this.PeerAsnAndPeering.Value.Exchange.Connections.FirstOrDefault().BgpSession.PeerSessionIPv6Address);
-            }catch (Exception ex)
+                if (this.PeerAsnAndPeering.Key == null || this.PeerAsnAndPeering.Value == null)
+                {
+                    this.WriteWarning($"Description context is not auto-parsable on ticket {this.WorkItemNumber} Link: {this.workItem.Url}");
+                    throw new Exception($"Description context is not auto-parsable on ticket {this.WorkItemNumber} Link: {this.workItem.Url}");
+                }
+            } catch (Exception ex)
             {
-                throw ex; 
+                this.WriteWarning($"Ticket:{this.WorkItemNumber}. {ex.Message}.");
+                throw;
             }
         }
 
@@ -61,7 +68,7 @@ namespace TeamFoundationServerPowershell
                 // Create RG
                 this.WriteVerbose($"Resource Group {this.locationMetadata.PeeringLocation} does not exist, creating a new RG");
                 var rg = new ResourceGroup {
-                    Location = this.locationMetadata.AzRegion,
+                    Location = "centralus", // this.locationMetadata.AzRegion,
                     Name = this.locationMetadata.PeeringLocationWithOutSpace
                 };
                 var resourceGroup = this.ResourceManagementClient.ResourceGroups.CreateOrUpdateWithHttpMessagesAsync(this.locationMetadata.PeeringLocationWithOutSpace, rg).GetAwaiter().GetResult();
@@ -135,7 +142,8 @@ namespace TeamFoundationServerPowershell
 
                         this.WriteVerbose($"No existing peering, creating new {peeringName} with Asn {this.PeerAsnAndPeering.Key.PeerAsnProperty} at location {this.locationMetadata.PeeringLocation}");
                         var peer = this.PeerAsnAndPeering.Value;
-                        peer.Location = this.locationMetadata.AzRegion;
+                        peer.Location = "centralus"; // this.locationMetadata.AzRegion;
+                        peer.PeeringLocation = this.locationMetadata.PeeringLocation;
                         peer.Exchange.PeerAsn = new PSSubResource { Id = asn.Id };
                         peer.Sku = new PSPeeringSku(Constants.BasicExchangeFree);
                         peer.Tags = new Dictionary<string, string>();
@@ -147,25 +155,46 @@ namespace TeamFoundationServerPowershell
             catch (Microsoft.Azure.Management.Peering.Models.ErrorResponseException ex)
             {
                 var error = GetErrorCodeAndMessageFromArmOrErm(ex);
-               this.WriteWarning($"{string.Format(Resources.Error_CloudError, error.Code, error.Message)} for Ticket:{this.workItem.Id} Link:{this.workItem.Url}");
+               this.WriteWarning($"Ticket:{this.WorkItemNumber}. {string.Format(Resources.Error_CloudError, error.Code, error.Message)} Link:{this.workItem.Url}");
             }
         }
 
         // This method will be called once at the end of pipeline execution; if no input is received, this method is not called
         protected override void EndProcessing()
         {
-            WriteVerbose("End!");
+            WriteVerbose($"Verifying all resources were created properly for {this.WorkItemNumber}");
             try
             {
-                var sierra = new PeeringViewModel((PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name)), this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(this.locationMetadata.PeeringLocationWithOutSpace, this.name)), this.locationMetadata);
-                var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request";
-                this.WriteVerbose(this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, str));
-                this.WriteObject(sierra);
+                if (this.locationMetadata != null && this.locationMetadata.PeeringLocation != null && !this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
+                {
+                    var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(this.locationMetadata.PeeringLocationWithOutSpace, this.name));
+                    var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
+                    var sierra = new PeeringViewModel(peerAsn, peering, this.locationMetadata);
+                    var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
+                        $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {this.locationMetadata.PeeringLocationWithOutSpace} -Name {this.name}";
+                    this.WriteVerbose(this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, str));
+                    this.WriteObject(sierra);
+                }
+                else if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
+                {
+                    var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(this.locationMetadata.PeeringLocationWithOutSpace, this.name));
+                    var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
+                    var sierra = new PeeringViewModel(peerAsn, peering, this.locationMetadata);
+                    var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
+                        $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {this.locationMetadata.PeeringLocationWithOutSpace} -Name {this.name}";
+                    this.WriteVerbose(str);
+                    this.WriteObject(sierra);
+                }
+                else
+                {
+                    this.WriteVerbose($"Ticket {this.WorkItemNumber} did not process properly");
+                }
+                WriteVerbose($"Ticket: {this.WorkItemNumber} now complete.");
             }
             catch (Microsoft.Azure.Management.Peering.Models.ErrorResponseException ex)
             {
                 var error = GetErrorCodeAndMessageFromArmOrErm(ex);
-                this.WriteWarning($"{string.Format(Resources.Error_CloudError, error.Code, error.Message)} for Ticket:{this.workItem.Id} Link:{this.workItem.Links}");
+                this.WriteWarning($"Ticket:{this.WorkItemNumber}. {string.Format(Resources.Error_CloudError, error.Code, error.Message)} Link:{this.workItem.Url}");
             }
         }
     }
