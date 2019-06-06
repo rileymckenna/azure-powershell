@@ -10,15 +10,11 @@ using Microsoft.VisualStudio.Services.WebApi.Patch.Json;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net;
 using TeamFoundationServerPowershell.Model;
-using System.Linq;
-using System.Management.Automation;
-using System.Text;
 using Microsoft.VisualStudio.Services.WebApi.Patch;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
-using System.Security.Cryptography;
+using Microsoft.Azure.Commands.Peering.Common;
 
 namespace TeamFoundationServerPowershell
 {
@@ -65,10 +61,6 @@ namespace TeamFoundationServerPowershell
             var vssConnection = new VssConnection(this.projectCollectionUri, vssCredential);
 
             this.workItemTrackingHttpClient = vssConnection.GetClient<WorkItemTrackingHttpClient>();
-
-            // Load Peering Facilities
-            // var pp = @"..\..\..\src\ExternalDatabase\FacilityLocationMap.json";
-            // this.exchangeFacilities = JsonConvert.DeserializeObject<List<PeeringLocation>>(File.ReadAllText(pp));
         }
 
         protected override void BeginProcessing()
@@ -87,7 +79,8 @@ namespace TeamFoundationServerPowershell
 
         public static LocationMetadata ResolvePeeringFacility(string exchangeFacilityName, string ipv4, string ipv6)
         {
-            List<EdgeLocation> exchangeFacilities = JsonConvert.DeserializeObject<List<EdgeLocation>>(File.ReadAllText(@".\Common\FacilityLocationMap.json"));
+            var json = StaticFile.GetFacilityLocationMap().ToString();
+            List<EdgeLocation> exchangeFacilities = JsonConvert.DeserializeObject<List<EdgeLocation>>(json);
             RoutePrefix v4 = null;
             if (!ipv4.Equals(string.Empty, StringComparison.InvariantCultureIgnoreCase) && ipv4 != null)
             {
@@ -227,6 +220,11 @@ string descriptionFieldContents)
                     bgpSession.PeerSessionIPv4Address = s.Split(':')[1];
                 }
 
+                if (s.Contains(("MD5").ToUpperInvariant()))
+                {
+                    bgpSession.Md5AuthenticationKey = s.Split(':')[1];
+                }
+
                 if (s.Contains(("IPv6").ToUpperInvariant()) && !s.Contains(("old").ToUpperInvariant()))
                 {
                     if (s.Contains(("new").ToUpperInvariant()))
@@ -287,11 +285,11 @@ string descriptionFieldContents)
             return new KeyValuePair<PSPeerAsn, PSPeering>(peerAsn, peeringConfiguration);
         }
 
-        public string UpdateQuickNotesForWorkItem(WorkItem workItem, int workItemId, string completionDate)
+        public string UpdateQuickNotesForWorkItem(WorkItem workItem, int workItemId, string notes)
         {
             var item = workItem;
             var s = item.Fields["gnsedge.quick_notes"].ToString();
-            s += completionDate;
+            s += notes;
             var document = new JsonPatchDocument
                                {
                                    new JsonPatchOperation
@@ -303,10 +301,10 @@ string descriptionFieldContents)
                                };
 
             var result = this.workItemTrackingHttpClient.UpdateWorkItemAsync(document, ProjectName, workItemId).Result;
-            this.WriteVerbose(string.Format("Updated Ticket {0} {1}", workItemId, completionDate));
+            this.WriteVerbose(string.Format("Updated Ticket {0} {1}", workItemId, notes));
             if (result.Fields["System.State"].ToString() == "Resolved")
             {
-                this.WriteVerbose(string.Format("Resolved Ticket {0} {1}", workItemId, completionDate));
+                this.WriteVerbose(string.Format("Resolved Ticket {0} {1}", workItemId, notes));
             }
 
             return result.Fields["System.State"].ToString();

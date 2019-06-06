@@ -7,14 +7,9 @@ using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Management.Automation;
-using System.Net.Http;
 using System.Threading;
-using System.Transactions;
 using TeamFoundationServerPowershell.Model;
 using TeamFoundationServerPowershell.Model.Data;
 
@@ -68,7 +63,7 @@ namespace TeamFoundationServerPowershell
                 // Create RG
                 this.WriteVerbose($"Resource Group {this.locationMetadata.PeeringLocation} does not exist, creating a new RG");
                 var rg = new ResourceGroup {
-                    Location = "centralus", // this.locationMetadata.AzRegion,
+                    Location =  this.locationMetadata.AzRegion,
                     Name = this.locationMetadata.PeeringLocationWithOutSpace
                 };
                 var resourceGroup = this.ResourceManagementClient.ResourceGroups.CreateOrUpdateWithHttpMessagesAsync(this.locationMetadata.PeeringLocationWithOutSpace, rg).GetAwaiter().GetResult();
@@ -142,7 +137,7 @@ namespace TeamFoundationServerPowershell
 
                         this.WriteVerbose($"No existing peering, creating new {peeringName} with Asn {this.PeerAsnAndPeering.Key.PeerAsnProperty} at location {this.locationMetadata.PeeringLocation}");
                         var peer = this.PeerAsnAndPeering.Value;
-                        peer.Location = "centralus"; // this.locationMetadata.AzRegion;
+                        peer.Location = this.locationMetadata.AzRegion;
                         peer.PeeringLocation = this.locationMetadata.PeeringLocation;
                         peer.Exchange.PeerAsn = new PSSubResource { Id = asn.Id };
                         peer.Sku = new PSPeeringSku(Constants.BasicExchangeFree);

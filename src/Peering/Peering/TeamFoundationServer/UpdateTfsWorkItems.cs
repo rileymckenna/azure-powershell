@@ -2,15 +2,15 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 using TeamFoundationServerPowershell.Model;
+using Microsoft.Azure.Commands.Peering.Common;
 
 namespace TeamFoundationServerPowershell
 {
-    [Cmdlet(VerbsCommon.Set, "TfsWorkItem")]
+    [Cmdlet(VerbsCommon.Set, "TfsWorkItem", SupportsShouldProcess = true)]
     [OutputType(typeof(KeyValuePair<PSPeerAsn, PSPeering>))]
     public class UpdateTfsWorkItems : TeamFoundationBase
     {
@@ -18,11 +18,11 @@ namespace TeamFoundationServerPowershell
         [Parameter(
             Mandatory = true,
             Position = 0, ValueFromPipeline = true)]
+        [ValidateNotNullOrEmpty]
         public PSExchangePeeringModelView InputObject { get; set; }
 
         [Parameter(
-            Mandatory = false,
-            Position = 1)]
+            Mandatory = false)]
         public int? WorkItemId { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -40,7 +40,7 @@ namespace TeamFoundationServerPowershell
             WriteVerbose("Logging into VSS");
             SetWorkItemClient();
             WriteVerbose("Getting WorkItem");
-            if(this.WorkItemId == null)
+            if (this.WorkItemId == null)
             {
                 this.WorkItemId = int.Parse(this.InputObject.Tags.Values.FirstOrDefault());
                 WriteVerbose($"WorkItemId: {this.WorkItemId}");
@@ -55,15 +55,30 @@ namespace TeamFoundationServerPowershell
             {
                 if (Resolve)
                 {
-                    var connection = this.InputObject.Connections.FirstOrDefault();
-                    var changeRecordTime = DateTime.Now.ToString();
-                    var node = this.GetFacilityInformation(connection, this.InputObject.PeeringLocation);
-                    var side = node.Split('-')[0].ToUpperInvariant().Contains("96") ? "- Other" : node.Split('-')[0].ToUpperInvariant();
-                    var state = this.UpdateWorkItemStateToResolved(
-                        (int)this.workItem.Id, side, side, node, node, changeRecordTime);
-                    var str = $"\n{DateTime.Now} -> PeeringAutomation:Resolved -> completed request" +
-                        $"\n{DateTime.Now} -> PeeringAutomation:ConnectionState -> {connection.ConnectionState}";
-                    this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, str);
+                    if (this.InputObject != null)
+                    {
+                        var peering = this.ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(this.workItem.Fields["System.Description"].ToString());
+                        if (this.VerifyTFSDataAndPeeringAreTheSame(peering, this.InputObject))
+                        {
+                            var connection = this.InputObject.Connections.FirstOrDefault();
+                            var changeRecordTime = DateTime.Now.ToString();
+                            var node = this.GetFacilityInformation(connection, this.InputObject.PeeringLocation);
+                            var side = node.Split('-')[0].ToUpperInvariant().Contains("96") ? "- Other" : node.Split('-')[0].ToUpperInvariant();
+                            var state = this.UpdateWorkItemStateToResolved(
+                                (int)this.workItem.Id, side, side, node, node, changeRecordTime);
+                            var str = $"\n{DateTime.Now} -> PeeringAutomation:Resolved -> completed request" +
+                                $"\n{DateTime.Now} -> PeeringAutomation:ConnectionState -> {connection.ConnectionState}";
+                            this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, str);
+                        }
+                        else
+                        {
+                            throw new Exception("Mismatch data in the TFS Description and Peering Object Recieved. Check the Ticket and peering object.");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Use the Get-AzPeering -ResourceGroup <resourceGroupName> -Name <name> | Set-TfsWorkItem -Resolve ");
+                    }
                 }
                 if (InProgress)
                 {
@@ -81,20 +96,95 @@ namespace TeamFoundationServerPowershell
             }
         }
 
-        private string GetFacilityInformation(PSExchangeConnection connection, string peeringLocation)
+        private bool VerifyTFSDataAndPeeringAreTheSame(KeyValuePair<PSPeerAsn, PSPeering> keyValue, PSExchangePeeringModelView inputObject)
         {
-            var exchangeFacilities = JsonConvert.DeserializeObject<List<EdgeLocation>>(File.ReadAllText(@".\Common\FacilityLocationMap.json"));
-            foreach (var location in exchangeFacilities)
+            var peering = keyValue.Value;
+            int matchCount = 0;
+            int peeringIpCount = 0;
+            if (inputObject.PeerAsn.Id.Contains($"AS{keyValue.Key.PeerAsnProperty}") && inputObject.PeeringLocation.Equals(peering.PeeringLocation, StringComparison.CurrentCultureIgnoreCase))
             {
-                if (location.LocationName.Equals(peeringLocation, StringComparison.InvariantCultureIgnoreCase))
+                if (peering.Exchange.Connections.Any())
                 {
-                    if (location.PublicPeeringFacilityMap.ContainsKey((uint)connection.PeeringDBFacilityId))
+                    foreach (var descConnection in peering.Exchange.Connections)
                     {
-                        return location.PublicPeeringFacilityMap[(uint)connection.PeeringDBFacilityId].Devices.FirstOrDefault().Key;
+                        peeringIpCount++;
+                        foreach (var inputConnection in inputObject.Connections)
+                        {
+                            if (inputConnection.PeeringDBFacilityId == descConnection.PeeringDBFacilityId)
+                            {
+                                if (inputConnection.BgpSession.PeerSessionIPv4Address != null && descConnection.BgpSession.PeerSessionIPv4Address.Any())
+                                {
+                                    if (inputConnection.ConnectionState == "Active")
+                                    {
+                                        if (inputConnection.BgpSession.PeerSessionIPv4Address == descConnection.BgpSession.PeerSessionIPv4Address && inputConnection.BgpSession.SessionStateV4 == "Established")
+                                        {
+                                            matchCount++;
+                                        }
+                                    }
+                                }
+                                if (inputConnection.BgpSession.PeerSessionIPv6Address != null && descConnection.BgpSession.PeerSessionIPv6Address.Any())
+                                {
+                                    if (inputConnection.ConnectionState == "Active")
+                                    {
+                                        if (inputConnection.BgpSession.PeerSessionIPv6Address == descConnection.BgpSession.PeerSessionIPv6Address && inputConnection.BgpSession.SessionStateV6 == "Established")
+                                        {
+                                            matchCount++;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
+                if (matchCount > 0 && matchCount >= peeringIpCount)
+                {
+                    return true;
+                }
             }
-            throw new Exception($"{peeringLocation} can not find the proper facility in the map.");
+            return false;
+        }
+
+        private string GetFacilityInformation(PSExchangeConnection connection, string peeringLocation)
+        {
+            var exchangeFacilities = JsonConvert.DeserializeObject<List<EdgePeeringFacility>>(StaticFile.GetDeviceMap());
+            try
+            {
+                foreach (var location in exchangeFacilities)
+                {
+                    if (location.Name.Equals(peeringLocation, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        foreach (var publicPeeringFacility in location.Properties.Exchange.PeeringFacilities)
+                        {
+                            if (publicPeeringFacility.PeeringDBFacilityId.Equals((int)connection.PeeringDBFacilityId))
+                            {
+                                foreach (var device in publicPeeringFacility.IpAddressToDeviceMap)
+                                {
+                                    try
+                                    {
+                                        if (device.Key.Equals(connection.BgpSession.MicrosoftSessionIPv4Address, StringComparison.InvariantCultureIgnoreCase))
+                                        {
+                                            return device.Value;
+                                        }
+                                        if (device.Key.Equals(connection.BgpSession.MicrosoftSessionIPv6Address, StringComparison.InvariantCultureIgnoreCase))
+                                        {
+                                            return device.Value;
+                                        }
+                                    }
+                                    catch
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // This method will be called once at the end of pipeline execution; if no input is received, this method is not called

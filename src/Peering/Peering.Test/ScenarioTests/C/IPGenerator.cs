@@ -7,7 +7,6 @@ namespace Microsoft.Azure.Commands.Peering.Test.ScenarioTests
     using System.Security.Cryptography;
     using System.Text;
 
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
     public class IPGenerator
     {
         public Random random = new Random();

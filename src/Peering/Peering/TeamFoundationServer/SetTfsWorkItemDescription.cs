@@ -85,6 +85,11 @@ namespace TeamFoundationServerPowershell
             HelpMessage = Constants.HelpMaxAdvertisedIPv6)]
         public int? MaxPrefixesAdvertisedIPv6 { get; set; }
 
+        [Parameter(
+        Mandatory = false,
+        HelpMessage = Constants.MD5AuthenticationKeyHelp)]
+        public string Md5Authenication { get; set; }
+
         // This method gets called once for each cmdlet in the pipeline when the pipeline starts executing
         protected override void BeginProcessing()
         {
@@ -148,7 +153,7 @@ namespace TeamFoundationServerPowershell
                             v6 = ipAddresses[i];
                         }
                     }
-                    exchanges += $"Exchange Name:{keyValue.Key.FacilityName}<br>IPv4:{v4}<br>IPv6:{v6}<br>";
+                    exchanges += $"Exchange Name:{keyValue.Key.FacilityName}<br>IPv4:{v4}<br>IPv6:{v6}<br>MD5:{this.Md5Authenication}<br>";
                 }
                 this.description = $"<body contenteditable='true'>Please find the following Peering Request information:<br><br>AS number:{this.PeerAsn}<br>Peer name:{this.PeerName}<br>PeeringDB Record:http://as{this.PeerAsn}.peeringdb.com/<br>Peering/NOC Email:{string.Join(",", this.Email)}<br>Peering/NOC phone:{string.Join(",", this.Phone)}<br>Max prefixes for IPv4:{this.MaxPrefixesAdvertisedIPv4 ?? 20000}<br>Max prefixes for IPv6:{this.MaxPrefixesAdvertisedIPv6 ?? 2000}<br><br>Exchange information:<br>{exchanges}</body>";
                 this.WriteVerbose(this.description);
@@ -162,7 +167,7 @@ namespace TeamFoundationServerPowershell
         // This method will be called once at the end of pipeline execution; if no input is received, this method is not called
         protected override void EndProcessing()
         {
-           // WriteVerbose(this.UpdateDescriptionForWorkItem(this.WorkItemId ?? 0, this.description));
+           WriteVerbose(this.UpdateDescriptionForWorkItem(this.WorkItemId ?? 0, this.description));
         }
     }
 }

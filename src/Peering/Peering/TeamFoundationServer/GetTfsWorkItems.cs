@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Management.Automation;
-using TeamFoundationServerPowershell.Model.Data;
 
 namespace TeamFoundationServerPowershell
 {
