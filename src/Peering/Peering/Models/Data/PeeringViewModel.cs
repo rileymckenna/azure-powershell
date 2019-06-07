@@ -20,11 +20,11 @@ namespace TeamFoundationServerPowershell.Model.Data
 
         public List<PSExchangeConnection> Connections {get; set;}
 
-        public LocationMetadata LocationMetadata { get; set; }
+        public Stack<LocationMetadata> LocationMetadata { get; set; }
 
-        public PeeringViewModel(PSPeerAsn peerAsn, PSPeering peering, LocationMetadata locationMetadata)
+        public PeeringViewModel(PSPeerAsn peerAsn, PSPeering peering)
         {
-            this.LocationMetadata = locationMetadata;
+            this.LocationMetadata = new Stack<LocationMetadata>();
             this.AsnNumber = (int)peerAsn.PeerAsnProperty;
             this.PeerName = peerAsn.PeerName;
             this.Emails = new List<string>();
@@ -45,7 +45,8 @@ namespace TeamFoundationServerPowershell.Model.Data
             {
                 this.Connections.Add(connection);
                 this.PeeringFacilityId.Add(connection.PeeringDBFacilityId);
-                this.ExchangeName.Add(TeamFoundationBase.ResolvePeeringFacility(peering.PeeringLocation, connection.BgpSession.PeerSessionIPv4Address, connection.BgpSession.PeerSessionIPv6Address).FacilityName);
+                this.LocationMetadata.Push(TeamFoundationBase.ResolvePeeringFacility(peering.PeeringLocation, connection.BgpSession.PeerSessionIPv4Address, connection.BgpSession.PeerSessionIPv6Address));
+                this.ExchangeName.Add(this.LocationMetadata.Peek().FacilityName);
             }
         }
     }

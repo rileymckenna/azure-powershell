@@ -11149,6 +11149,64 @@ namespace Microsoft.Azure.Commands.Peering.Common
       }
     },
     'PublicPeeringFacilityMap': {}
+  },
+{
+    'LocationName': 'Building40',
+    'AzureRegion': 'centralus',
+    'PrivatePeeringFacilityMap': {
+      '99999': {
+        'CodeList': [
+          'blg40'
+        ],
+        'Country': 'US',
+        'Address': '1 Microsoft Way',
+        'Latitude': 28.550072,
+        'Longitude': 77.235537,
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/99999',
+        'Devices': {}
+      }
+    },
+    'PublicPeeringFacilityMap': {
+      '99999': {
+        'CodeList': [
+          'blg40'
+        ],
+        'Country': 'US',
+        'Name': 'Building 40 Peering',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/99999',
+        'Ipv4PrefixList': [
+          '10.0.0.0/22'
+        ],
+        'Ipv6PrefixList': [
+          '2001:b40b:b40b:b40b:1:/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '10.0.0.13'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:b40b:b40b:b40b:1:13'
+        ],
+        'Bandwidth': 10000,
+        'Devices': {
+          'blg40-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel10': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [],
+                'SessionIpv6PrefixList': [],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {}
+          }
+        }
+      }
+    }
   }
 ]";
         }

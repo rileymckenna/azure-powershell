@@ -47,8 +47,7 @@ namespace TeamFoundationServerPowershell
         /// <summary>
         /// Gets or sets the phone.
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = Constants.PhoneHelp)]
-        [ValidateNotNullOrEmpty]
+        [Parameter(Mandatory = false, HelpMessage = Constants.PhoneHelp)]
         public string[] Phone { get; set; }
 
         /// <summary>
@@ -66,7 +65,6 @@ namespace TeamFoundationServerPowershell
         [Parameter(
             Mandatory = false,
             HelpMessage = Constants.HelpPeerSessionIPv6Prefix)]
-        [ValidateNotNullOrEmpty]
         public string[] PeerSessionIPv6Address { get; set; }
 
         /// <summary>
@@ -103,18 +101,22 @@ namespace TeamFoundationServerPowershell
         {
             try
             {
+                if(this.PeerSessionIPv6Address == null)
+                {
+                    this.PeerSessionIPv6Address = new string[] {} ;
+                }
                 var connectionDictionary = new Dictionary<LocationMetadata, string>();
-                if (this.PeerSessionIPv4Address.Length == this.PeerSessionIPv6Address.Length)
+                if (this.PeerSessionIPv4Address.Length == this.PeerSessionIPv6Address?.Length)
                 {
                     for (int i = 0; i < this.PeerSessionIPv4Address.Length; i++)
                     {
                         var ipv4 = this.PeerSessionIPv4Address[i];
-                        var ipv6 = this.PeerSessionIPv6Address[i];
+                        var ipv6 = this.PeerSessionIPv6Address[i] ?? string.Empty;
                         var facility = TeamFoundationBase.ResolvePeeringFacility(null, ipv4, ipv6);
                         connectionDictionary.Add(facility, string.Join(",", ipv4, ipv6));
                     }
                 }
-                if (this.PeerSessionIPv4Address.Length > this.PeerSessionIPv6Address.Length)
+                if (this.PeerSessionIPv4Address.Length > this.PeerSessionIPv6Address?.Length)
                 {
                     LocationMetadata facility = null;
                     for (int i = 0; i < this.PeerSessionIPv4Address.Length; i++)
@@ -123,7 +125,7 @@ namespace TeamFoundationServerPowershell
                         string ipv6 = null;
                         try
                         {
-                            ipv6 = this.PeerSessionIPv6Address[i];
+                            ipv6 = this.PeerSessionIPv6Address[i] ?? string.Empty;
                             facility = TeamFoundationBase.ResolvePeeringFacility(null, ipv4, ipv6);
                         }
                         catch

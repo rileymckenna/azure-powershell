@@ -15,6 +15,18 @@ namespace TeamFoundationServerPowershell
             ValueFromPipelineByPropertyName = true)]
         public int? WorkItemId { get; set; }
 
+        [Parameter(Mandatory = false)]
+        public SwitchParameter UntouchedTickets { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public SwitchParameter FailedTickets { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public SwitchParameter CreatedUsingPeeringAutomation { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
+
         // This method gets called once for each cmdlet in the pipeline when the pipeline starts executing
         protected override void BeginProcessing()
         {
@@ -53,9 +65,26 @@ namespace TeamFoundationServerPowershell
 
         private List<WorkItem> GetAllTickets()
         {
+            string queryString = string.Empty;
+            if (!this.All)
+            {
+                if (this.UntouchedTickets && !this.FailedTickets && !this.CreatedUsingPeeringAutomation)
+                {
+                    queryString = @"AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation:Failed' AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation:InProgress'";
+                }
+                if (this.FailedTickets && !this.UntouchedTickets && !this.CreatedUsingPeeringAutomation)
+                {
+                    queryString = @"AND [gnsedge.quick_notes] CONTAINS WORDS 'PeeringAutomation:Failed'";
+                }
+                if(!this.FailedTickets && !this.UntouchedTickets && this.CreatedUsingPeeringAutomation)
+                {
+                    queryString = @"AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation:Failed' AND [gnsedge.quick_notes] CONTAINS WORDS 'PeeringAutomation:InProgress'";
+                }
+            }
+
             var wiql = new Wiql();
             wiql.Query =
-                @"SELECT [System.Id],[System.WorkItemType],[System.Title],[System.AssignedTo],[System.State],[System.Tags] FROM WorkItems WHERE [System.TeamProject] = @project AND [gnsedge.Team] = 'Edge SRE DRI' AND [gnsedge.SubState] <> 'Blocked' AND [System.Title] CONTAINS 'PeerChange' AND [System.State] = 'Active' AND [System.Description] NOT CONTAINS WORDS 'backup' AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation' ORDER BY [System.Id] DESC";
+                $"SELECT [System.Id],[System.WorkItemType],[System.Title],[System.AssignedTo],[System.State],[System.Tags] FROM WorkItems WHERE [System.TeamProject] = @project AND [gnsedge.Team] = 'Edge SRE DRI' AND [gnsedge.SubState] <> 'Blocked' AND [System.Title] CONTAINS 'PeerChange' AND [System.State] = 'Active' AND [System.Description] NOT CONTAINS WORDS 'backup' {queryString} ORDER BY [System.Id] DESC";
             var workItemReferences =
             this.workItemTrackingHttpClient.QueryByWiqlAsync(wiql, ProjectName).Result.WorkItems;
             var workItemList = new List<WorkItem>();

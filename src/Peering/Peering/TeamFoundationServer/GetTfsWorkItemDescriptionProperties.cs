@@ -1,4 +1,5 @@
 ﻿using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
+using Microsoft.TeamFoundation.Work.WebApi;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,10 @@ namespace TeamFoundationServerPowershell
             try
             {
                 var keyValue = this.ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(this.workItem.Fields["System.Description"].ToString());
-                var locationMetaData = TeamFoundationBase.ResolvePeeringFacility(keyValue.Value.PeeringLocation, keyValue.Value.Exchange.Connections.FirstOrDefault().BgpSession.PeerSessionIPv4Address, keyValue.Value.Exchange.Connections.FirstOrDefault().BgpSession.PeerSessionIPv6Address);
-                this.WriteObject(new PeeringViewModel(keyValue.Key, keyValue.Value, locationMetaData));
+                foreach (var peering in keyValue.Value)
+                {
+                    this.WriteObject(new PeeringViewModel(keyValue.Key, peering));
+                }
             }
             catch(Exception ex)
             {

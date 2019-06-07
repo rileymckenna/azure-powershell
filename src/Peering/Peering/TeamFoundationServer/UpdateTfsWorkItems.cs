@@ -96,49 +96,52 @@ namespace TeamFoundationServerPowershell
             }
         }
 
-        private bool VerifyTFSDataAndPeeringAreTheSame(KeyValuePair<PSPeerAsn, PSPeering> keyValue, PSExchangePeeringModelView inputObject)
+        private bool VerifyTFSDataAndPeeringAreTheSame(KeyValuePair<PSPeerAsn, List<PSPeering>> keyValue, PSExchangePeeringModelView inputObject)
         {
-            var peering = keyValue.Value;
+            var peerings = keyValue.Value;
             int matchCount = 0;
             int peeringIpCount = 0;
-            if (inputObject.PeerAsn.Id.Contains($"AS{keyValue.Key.PeerAsnProperty}") && inputObject.PeeringLocation.Equals(peering.PeeringLocation, StringComparison.CurrentCultureIgnoreCase))
+            foreach (var peering in peerings)
             {
-                if (peering.Exchange.Connections.Any())
+                if (inputObject.PeerAsn.Id.Contains($"AS{keyValue.Key.PeerAsnProperty}") && inputObject.PeeringLocation.Equals(peering.PeeringLocation, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    foreach (var descConnection in peering.Exchange.Connections)
+                    if (peering.Exchange.Connections.Any())
                     {
-                        peeringIpCount++;
-                        foreach (var inputConnection in inputObject.Connections)
+                        foreach (var descConnection in peering.Exchange.Connections)
                         {
-                            if (inputConnection.PeeringDBFacilityId == descConnection.PeeringDBFacilityId)
+                            peeringIpCount++;
+                            foreach (var inputConnection in inputObject.Connections)
                             {
-                                if (inputConnection.BgpSession.PeerSessionIPv4Address != null && descConnection.BgpSession.PeerSessionIPv4Address.Any())
+                                if (inputConnection.PeeringDBFacilityId == descConnection.PeeringDBFacilityId)
                                 {
-                                    if (inputConnection.ConnectionState == "Active")
+                                    if (inputConnection.BgpSession.PeerSessionIPv4Address != null && descConnection.BgpSession.PeerSessionIPv4Address.Any())
                                     {
-                                        if (inputConnection.BgpSession.PeerSessionIPv4Address == descConnection.BgpSession.PeerSessionIPv4Address && inputConnection.BgpSession.SessionStateV4 == "Established")
+                                        if (inputConnection.ConnectionState == "Active")
                                         {
-                                            matchCount++;
+                                            if (inputConnection.BgpSession.PeerSessionIPv4Address == descConnection.BgpSession.PeerSessionIPv4Address && inputConnection.BgpSession.SessionStateV4 == "Established")
+                                            {
+                                                matchCount++;
+                                            }
                                         }
                                     }
-                                }
-                                if (inputConnection.BgpSession.PeerSessionIPv6Address != null && descConnection.BgpSession.PeerSessionIPv6Address.Any())
-                                {
-                                    if (inputConnection.ConnectionState == "Active")
+                                    if (inputConnection.BgpSession.PeerSessionIPv6Address != null && descConnection.BgpSession.PeerSessionIPv6Address.Any())
                                     {
-                                        if (inputConnection.BgpSession.PeerSessionIPv6Address == descConnection.BgpSession.PeerSessionIPv6Address && inputConnection.BgpSession.SessionStateV6 == "Established")
+                                        if (inputConnection.ConnectionState == "Active")
                                         {
-                                            matchCount++;
+                                            if (inputConnection.BgpSession.PeerSessionIPv6Address == descConnection.BgpSession.PeerSessionIPv6Address && inputConnection.BgpSession.SessionStateV6 == "Established")
+                                            {
+                                                matchCount++;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                if (matchCount > 0 && matchCount >= peeringIpCount)
-                {
-                    return true;
+                    if (matchCount > 0 && matchCount >= peeringIpCount)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;

@@ -15,6 +15,8 @@ using TeamFoundationServerPowershell.Model;
 using Microsoft.VisualStudio.Services.WebApi.Patch;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 using Microsoft.Azure.Commands.Peering.Common;
+using Microsoft.Azure.Management.Peering.Models;
+using Operation = Microsoft.VisualStudio.Services.WebApi.Patch.Operation;
 
 namespace TeamFoundationServerPowershell
 {
@@ -79,15 +81,17 @@ namespace TeamFoundationServerPowershell
 
         public static LocationMetadata ResolvePeeringFacility(string exchangeFacilityName, string ipv4, string ipv6)
         {
+            ipv6 = ipv6 ?? string.Empty;
+            ipv4 = ipv4 ?? string.Empty;
             var json = StaticFile.GetFacilityLocationMap().ToString();
             List<EdgeLocation> exchangeFacilities = JsonConvert.DeserializeObject<List<EdgeLocation>>(json);
             RoutePrefix v4 = null;
-            if (!ipv4.Equals(string.Empty, StringComparison.InvariantCultureIgnoreCase) && ipv4 != null)
+            if (!ipv4.Equals(string.Empty, StringComparison.InvariantCultureIgnoreCase) && ipv4 != string.Empty)
             {
                 v4 = new RoutePrefix(System.Net.IPAddress.Parse(ipv4.Trim()), 32);
             }
             RoutePrefix v6 = null;
-            if (!ipv6.Equals(string.Empty, StringComparison.InvariantCultureIgnoreCase) && ipv6 != null)
+            if (!ipv6.Equals(string.Empty, StringComparison.InvariantCultureIgnoreCase) && ipv6 != string.Empty)
             {
                 v6 = new RoutePrefix(System.Net.IPAddress.Parse(ipv6.Trim()), 128);
             }
@@ -129,9 +133,10 @@ namespace TeamFoundationServerPowershell
             throw new Exception($"Peering Facility {exchangeFacilityName} not found in PeeringDb using ipv4 {ipv4} and ipv6 {ipv6}");
         }
 
-        public KeyValuePair<PSPeerAsn, PSPeering> ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(
+        public KeyValuePair<PSPeerAsn, List<PSPeering>> ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(
 string descriptionFieldContents)
         {
+            List<PSPeering> listPeering = new List<PSPeering>();
             PSPeerAsn peerAsn = new PSPeerAsn();
             var peeringConfiguration = new PSPeering
             {
@@ -212,6 +217,7 @@ string descriptionFieldContents)
             }
 
             connectionStrings.Reverse();
+            LocationMetadata prevLocation = null; 
             foreach (string subStr in connectionStrings)
             {
                 var s = subStr.ToUpperInvariant();
@@ -236,41 +242,48 @@ string descriptionFieldContents)
                         bgpSession.PeerSessionIPv6Address = s.Substring(5);
                     }
                 }
-
-                if (s.Contains("--"))
-                {
-                    var peeringLocation = TeamFoundationBase.ResolvePeeringFacility(s.Replace("-", string.Empty).Trim(), bgpSession.PeerSessionIPv4Address, bgpSession.PeerSessionIPv6Address);
-                    peeringConfiguration.PeeringLocation = peeringLocation.PeeringLocation;
-                    peeringConfiguration.Exchange.Connections.Add(
-                        new PSExchangeConnection
-                        {
-                            BgpSession = bgpSession,
-                            PeeringDBFacilityId = peeringLocation.FacilityId
-                        });
-                    bgpSession = new PSBgpSession
-                    {
-                        MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4,
-                        MaxPrefixesAdvertisedV6 = bgpSession.MaxPrefixesAdvertisedV6
-                    };
-                }
-
                 if (s.Contains(("Exchange Name").ToUpperInvariant()))
                 {
                     try
                     {
                         var peeringLocation = TeamFoundationBase.ResolvePeeringFacility(s.Split(':')[1].Trim(), bgpSession.PeerSessionIPv4Address, bgpSession.PeerSessionIPv6Address);
-                        peeringConfiguration.PeeringLocation = peeringLocation.PeeringLocation;
-                        peeringConfiguration.Exchange.Connections.Add(
-                            new PSExchangeConnection
-                            {
-                                BgpSession = bgpSession,
-                                PeeringDBFacilityId = peeringLocation.FacilityId
-                            });
-                        bgpSession = new PSBgpSession
+                        if (peeringLocation.PeeringLocation.Equals(prevLocation?.PeeringLocation))
                         {
-                            MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4,
-                            MaxPrefixesAdvertisedV6 = bgpSession.MaxPrefixesAdvertisedV6
-                        };
+                            prevLocation = peeringLocation;
+                            listPeering.Find(x => x.PeeringLocation == peeringLocation.PeeringLocation).Exchange.Connections.Add(
+                                new PSExchangeConnection
+                                {
+                                    BgpSession = bgpSession,
+                                    PeeringDBFacilityId = peeringLocation.FacilityId
+                                });
+                            bgpSession = new PSBgpSession
+                            {
+                                MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4 ?? 20000,
+                                MaxPrefixesAdvertisedV6 = bgpSession.MaxPrefixesAdvertisedV6 ?? 2000
+                            };
+                        }
+                        else
+                        {
+                            prevLocation = peeringLocation;
+                            peeringConfiguration.Exchange.Connections = new List<PSExchangeConnection>();
+                            peeringConfiguration.Exchange.Connections.Add(new PSExchangeConnection
+                            {
+                                PeeringDBFacilityId = peeringLocation.FacilityId,
+                                BgpSession = new PSBgpSession
+                                {
+                                    MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4 ?? 20000,
+                                    MaxPrefixesAdvertisedV6 = bgpSession.MaxPrefixesAdvertisedV6 ?? 2000,
+                                    PeerSessionIPv4Address = bgpSession.PeerSessionIPv4Address,
+                                    PeerSessionIPv6Address = bgpSession.PeerSessionIPv6Address
+                                }
+                            });
+                            var xPeering = new PSPeering(new PSPeeringSku(Constants.BasicExchangeFree), Constants.Exchange, peeringLocation.AzRegion, peeringLocation.PeeringLocationWithOutSpace, exchange: new PSPeeringPropertiesExchange
+                            {
+                                PeerAsn = new PSSubResource(peerAsn.Name),
+                                Connections = peeringConfiguration.Exchange.Connections
+                            }, peeringLocation: peeringLocation.PeeringLocation);
+                            listPeering.Add(xPeering);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -279,10 +292,7 @@ string descriptionFieldContents)
                     }
                 }
             }
-
-            peeringConfiguration.Kind = Constants.Exchange;
-            peeringConfiguration.Sku = new PSPeeringSku(Constants.BasicExchangeFree);
-            return new KeyValuePair<PSPeerAsn, PSPeering>(peerAsn, peeringConfiguration);
+            return new KeyValuePair<PSPeerAsn, List<PSPeering>>(peerAsn, listPeering);
         }
 
         public string UpdateQuickNotesForWorkItem(WorkItem workItem, int workItemId, string notes)
