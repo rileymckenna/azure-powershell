@@ -22,9 +22,12 @@ namespace TeamFoundationServerPowershell.Model.Data
 
         public Stack<LocationMetadata> LocationMetadata { get; set; }
 
-        public PeeringViewModel(PSPeerAsn peerAsn, PSPeering peering)
+        public int WorkItemId { get; set; }
+
+        public PeeringViewModel(PSPeerAsn peerAsn, PSPeering peering, int workItem)
         {
             this.LocationMetadata = new Stack<LocationMetadata>();
+            this.WorkItemId = workItem;
             this.AsnNumber = (int)peerAsn.PeerAsnProperty;
             this.PeerName = peerAsn.PeerName;
             this.Emails = new List<string>();

@@ -36,7 +36,7 @@ namespace TeamFoundationServerPowershell
                 var keyValue = this.ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(this.workItem.Fields["System.Description"].ToString());
                 foreach (var peering in keyValue.Value)
                 {
-                    this.WriteObject(new PeeringViewModel(keyValue.Key, peering));
+                    this.WriteObject(new PeeringViewModel(keyValue.Key, peering, this.workItem.Id.Value));
                 }
             }
             catch(Exception ex)

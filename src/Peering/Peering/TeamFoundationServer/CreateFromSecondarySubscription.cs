@@ -139,7 +139,7 @@ namespace TeamFoundationServerPowershell
                             newPeering.Exchange.Connections.Add(PeeringResourceManagerProfile.Mapper.Map<ExchangeConnection>(connection));
                         }
                         newPeering.Tags = new Dictionary<string, string>();
-                        newPeering.Tags["tfs"] = this.WorkItemNumber.ToString();
+                        newPeering.Tags[$"tfs_{this.workItem.Id}"] = "Active";
                         newPeeringStack.Push(this.ToPeeringPs(this.PeeringManagementClient.Peerings.CreateOrUpdate(resourceGroup.Body.Name, peeringName, newPeering)));
                         this.WriteObject(newPeeringStack.Peek());
                     }
@@ -157,7 +157,7 @@ namespace TeamFoundationServerPowershell
                                     existingPeering.Exchange.Connections.Add(PeeringResourceManagerProfile.Mapper.Map<ExchangeConnection>(connection));
                                 }
                                 existingPeering.Tags = new Dictionary<string, string>();
-                                existingPeering.Tags["tfs"] = this.workItem.Id.ToString();
+                                existingPeering.Tags[$"tfs_{this.workItem.Id}"] = "Active";
                                 // TODO Dogfood
                                 if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
                                 {
@@ -173,7 +173,7 @@ namespace TeamFoundationServerPowershell
                             this.WriteVerbose($"No existing peering, creating new {peeringName} with Asn {this.PeerAsnAndPeering.Key.PeerAsnProperty} at location {descriptionPeering.PeeringLocation}");
                             var peer = descriptionPeering;
                             peer.Tags = new Dictionary<string, string>();
-                            peer.Tags["tfs"] = this.WorkItemNumber.ToString();
+                            peer.Tags[$"tfs_{this.workItem.Id}"] = "Active";
                             peer.Exchange.PeerAsn.Id = asn.Id;
                             // TODO: Dogfood only
                             if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
@@ -214,7 +214,7 @@ namespace TeamFoundationServerPowershell
                         {
                             var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
                             var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
-                            var sierra = new PeeringViewModel(peerAsn, peering);
+                            var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
                             var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
                                 $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
                             this.WriteVerbose(this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, str));
@@ -224,7 +224,7 @@ namespace TeamFoundationServerPowershell
                         {
                             var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
                             var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
-                            var sierra = new PeeringViewModel(peerAsn, peering);
+                            var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
                             var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
                                 $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
                             this.WriteVerbose(str);
