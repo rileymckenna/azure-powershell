@@ -120,6 +120,9 @@
   <data name="ContinueMessage" xml:space="preserve">
     <value>You are about to remove an {0} Resource. Are you sure?</value>
   </data>
+  <data name="ContinueNewMessage" xml:space="preserve">
+    <value>You are about to {0} {1}. Are you sure?</value>
+  </data>
   <data name="Create_NewConnectionObject" xml:space="preserve">
     <value>Create a new PSPeering{0}ConnectionObject by using the New-AzPeering{0}ConnectionObject cmdlet.</value>
   </data>

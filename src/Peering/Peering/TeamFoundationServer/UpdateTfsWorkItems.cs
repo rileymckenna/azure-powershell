@@ -68,7 +68,7 @@ namespace TeamFoundationServerPowershell
                                 (int)this.workItem.Id, side, side, node, node, changeRecordTime);
                             var str = $"\n{DateTime.Now} -> PeeringAutomation:Resolved -> completed request" +
                                 $"\n{DateTime.Now} -> PeeringAutomation:ConnectionState -> {connection.ConnectionState}";
-                            this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, str);
+                            this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, str);
                         }
                         else
                         {
@@ -83,11 +83,11 @@ namespace TeamFoundationServerPowershell
                 if (InProgress)
                 {
                     var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request";
-                    this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, str);
+                    this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, str);
                 }
                 if (QuickNotes != null)
                 {
-                    this.UpdateQuickNotesForWorkItem(this.workItem, (int)this.workItem.Id, QuickNotes);
+                    this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, QuickNotes);
                 }
             }
             catch (Exception ex)

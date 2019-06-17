@@ -295,9 +295,9 @@ string descriptionFieldContents)
             return new KeyValuePair<PSPeerAsn, List<PSPeering>>(peerAsn, listPeering);
         }
 
-        public string UpdateQuickNotesForWorkItem(WorkItem workItem, int workItemId, string notes)
+        public string UpdateQuickNotesForWorkItem(int workItemId, string notes)
         {
-            var item = workItem;
+            var item = this.workItemTrackingHttpClient.GetWorkItemAsync(ProjectName, workItemId).Result;
             var s = item.Fields["gnsedge.quick_notes"].ToString();
             s += notes;
             var document = new JsonPatchDocument

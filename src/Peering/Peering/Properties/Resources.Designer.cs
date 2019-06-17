@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Commands.Peering.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -66,6 +66,15 @@ namespace Microsoft.Azure.Commands.Peering.Properties {
         internal static string ContinueMessage {
             get {
                 return ResourceManager.GetString("ContinueMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are about to {0} {1}. Are you sure?.
+        /// </summary>
+        internal static string ContinueNewMessage {
+            get {
+                return ResourceManager.GetString("ContinueNewMessage", resourceCulture);
             }
         }
         
