@@ -172,42 +172,42 @@ string descriptionFieldContents)
             var connectionStrings = new List<string>();
             for (int i = 0; i < strArr.Length; i++)
             {
-                var subString = strArr[i].ToUpperInvariant();
-                if (subString.Contains("AS") && subString.Contains("NUMBER"))
+                var subString = strArr[i].ToLowerInvariant();
+                if (subString.Contains("as") && subString.Contains("number"))
                 {
                     var asn = int.Parse(strArr[i].Split(':')[1]);
                     peerAsn = new PSPeerAsn(name: $"AS{asn}") { PeerContactInfo = new PSContactInfo { Emails = new List<string>(), Phone = new List<string>() } };
                     peerAsn.PeerAsnProperty = asn;
                 }
 
-                if (subString.Contains("PEER") & subString.Contains("NAME"))
+                if (subString.Contains("peer") & subString.Contains("name"))
                 {
                     peerAsn.PeerName = strArr[i].Split(':')[1];
                 }
 
-                if (subString.Contains("EMAIL"))
+                if (subString.Contains("email"))
                 {
                     var emails = strArr[i].Split(':')[1].Split(',');
                     Array.ForEach<string>(emails, x => peerAsn.PeerContactInfo.Emails.Add(x));
                 }
 
-                if (subString.Contains("PHONE"))
+                if (subString.Contains("phone"))
                 {
                     var phones = strArr[i].Split(':')[1].Split(',');
                     Array.ForEach<string>(phones, x => peerAsn.PeerContactInfo.Phone.Add(x));
                 }
 
-                if (subString.Contains(("Max prefixes for IPv4").ToUpperInvariant()))
+                if (subString.Contains(("Max prefixes for IPv4").ToLowerInvariant()))
                 {
                     bgpSession.MaxPrefixesAdvertisedV4 = int.Parse(subString.Split(':')[1]) > 20000 ? 20000 : int.Parse(subString.Split(':')[1]);
                 }
 
-                if (subString.Contains(("Max prefixes for IPv6").ToUpperInvariant()))
+                if (subString.Contains(("Max prefixes for IPv6").ToLowerInvariant()))
                 {
                     bgpSession.MaxPrefixesAdvertisedV6 = int.Parse(subString.Split(':')[1]) > 2000 ? 2000 : int.Parse(subString.Split(':')[1]);
                 }
 
-                if (!subString.Contains(("exchange information").ToUpperInvariant())) continue;
+                if (!subString.Contains(("exchange information"))) continue;
                 for (int j = i; j < strArr.Length; j++)
                 {
                     connectionStrings.Add(strArr[j]);
@@ -217,32 +217,28 @@ string descriptionFieldContents)
             }
 
             connectionStrings.Reverse();
-            LocationMetadata prevLocation = null; 
+            LocationMetadata prevLocation = null;
             foreach (string subStr in connectionStrings)
             {
-                var s = subStr.ToUpperInvariant();
-                if (s.Contains(("IPv4").ToUpperInvariant()) && !s.Contains(("old").ToUpperInvariant()))
+                var s = subStr.ToLowerInvariant();
+                if (s.Contains(("IPv4").ToLowerInvariant()) && !s.Contains(("old").ToLowerInvariant()))
                 {
                     bgpSession.PeerSessionIPv4Address = s.Split(':')[1];
+                    continue;
                 }
 
-                if (s.Contains(("MD5").ToUpperInvariant()))
+                if (s.Contains(("MD5").ToLowerInvariant()))
                 {
-                    bgpSession.Md5AuthenticationKey = s.Split(':')[1];
+                    bgpSession.Md5AuthenticationKey = subStr.Split(':')[1];
+                    continue;
                 }
 
-                if (s.Contains(("IPv6").ToUpperInvariant()) && !s.Contains(("old").ToUpperInvariant()))
+                if (s.Contains(("IPv6").ToLowerInvariant()) && !s.Contains(("old").ToLowerInvariant()))
                 {
-                    if (s.Contains(("new").ToUpperInvariant()))
-                    {
-                        bgpSession.PeerSessionIPv6Address = s.Substring(9).Trim();
-                    }
-                    else
-                    {
-                        bgpSession.PeerSessionIPv6Address = s.Substring(5);
-                    }
+                    bgpSession.PeerSessionIPv6Address = s.Substring(5);
+                    continue;
                 }
-                if (s.Contains(("Exchange Name").ToUpperInvariant()))
+                if (s.Contains(("Exchange Name").ToLowerInvariant()))
                 {
                     try
                     {
@@ -274,7 +270,8 @@ string descriptionFieldContents)
                                     MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4 ?? 20000,
                                     MaxPrefixesAdvertisedV6 = bgpSession.MaxPrefixesAdvertisedV6 ?? 2000,
                                     PeerSessionIPv4Address = bgpSession.PeerSessionIPv4Address,
-                                    PeerSessionIPv6Address = bgpSession.PeerSessionIPv6Address
+                                    PeerSessionIPv6Address = bgpSession.PeerSessionIPv6Address,
+                                    Md5AuthenticationKey = bgpSession.Md5AuthenticationKey
                                 }
                             });
                             var xPeering = new PSPeering(new PSPeeringSku(Constants.BasicExchangeFree), Constants.Exchange, peeringLocation.AzRegion, peeringLocation.PeeringLocationWithOutSpace, exchange: new PSPeeringPropertiesExchange
@@ -288,7 +285,7 @@ string descriptionFieldContents)
                     catch (Exception ex)
                     {
                         this.WriteVerbose(ex.Message);
-                        continue;
+                        throw new Exception(ex.Message);
                     }
                 }
             }

@@ -298,7 +298,7 @@ namespace TeamFoundationServerPowershell
                 catch (Microsoft.Azure.Management.Peering.Models.ErrorResponseException ex)
                 {
                     var error = GetErrorCodeAndMessageFromArmOrErm(ex);
-                    var errorMessage = $"Ticket:{this.WorkItemNumber}. {string.Format(Resources.Error_CloudError, error.Code, error.Message)} Link:{this.workItem.Url}";
+                    var errorMessage = $"Ticket:{this.WorkItemNumber}. {string.Format(Resources.Error_CloudError, error.Code, error.Message)} on {peeringName}";
                     this.errorPeeringStack.Push(errorMessage);
                     this.WriteWarning(errorMessage);
                 }
@@ -413,7 +413,7 @@ namespace TeamFoundationServerPowershell
             catch (Microsoft.Azure.Management.Peering.Models.ErrorResponseException ex)
             {
                 var error = GetErrorCodeAndMessageFromArmOrErm(ex);
-                this.WriteWarning($"Ticket:{this.WorkItemNumber}. {string.Format(Resources.Error_CloudError, error.Code, error.Message)} Link:{this.workItem.Url}");
+                this.WriteWarning($"Ticket:{this.WorkItemNumber}. {string.Format(Resources.Error_CloudError, error.Code, error.Message)}");
             }
         }
     }
