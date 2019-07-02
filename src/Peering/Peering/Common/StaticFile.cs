@@ -7,7 +7,6 @@ namespace Microsoft.Azure.Commands.Peering.Common
 {
     public static class StaticFile
     {
-
         public static string GetDeviceMap()
         {
             return @"[
@@ -3085,9 +3084,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'LocationName': 'Ashburn',
     'AzureRegion': 'East US',
     'PrivatePeeringFacilityMap': {
-      '1': {
-        'CodeList': [
-          'ash'
+                '1': {
+                    'CodeList': [
+                      'ash'
         ],
         'Country': 'US',
         'Address': '21715 Filigree Ct',
@@ -3095,7 +3094,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -77.459023,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1',
-        'Devices': {}
+        'Devices': {
+          'ash-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ash-96cbe-1b'
+            ]
+    },
+          'ash-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ash-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -3114,10 +3132,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:0:2::/64'
         ],
         'MicrosoftSessionIpv4AddressList': [
-          '206.126.236.17'
+          '206.126.236.17',
+          '206.126.236.148'
         ],
         'MicrosoftSessionIpv6AddressList': [
-          '2001:504:0:2::8075:1'
+          '2001:504:0:2::8075:1',
+          '2001:504:0:2::8075:2'
         ],
         'Bandwidth': 100000,
         'Devices': {
@@ -3127,13 +3147,39 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel9': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.126.236.17/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:2::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ash-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel70': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '206.126.236.148/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:2::8075:2/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3165,13 +3211,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel8': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.170.12/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2606:a980:0:3::c/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -3191,7 +3243,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -122.160775,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/5',
-        'Devices': {}
+        'Devices': {
+          'pao-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'pao-96cbe-1b'
+            ]
+          },
+          'pao-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'pao-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -3223,13 +3294,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.176.152/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:d::98/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -3249,7 +3326,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -121.782967,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/6',
-        'Devices': {}
+        'Devices': {
+          'sjc-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'sjc-96cbe-1b'
+            ]
+          },
+          'sjc-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'sjc-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -3281,13 +3377,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.223.116.17/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:1::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3319,13 +3421,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel7': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.41.106.72/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:3d:1:0:a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -3345,7 +3453,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -87.618342,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/7',
-        'Devices': {}
+        'Devices': {
+          'chg-96e-1': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'chg-96e-2'
+            ]
+          },
+          'chg-96e-2': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'chg-96e-1'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -3381,13 +3508,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel11': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '208.115.136.27/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:4::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'chg-96e-1': {
             'DeviceType': 'None',
@@ -3395,13 +3528,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel65': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '208.115.137.61/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:4::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3433,13 +3572,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel13': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.108.115.47/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:38:1:0:a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -3451,7 +3596,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'PrivatePeeringFacilityMap': {
       '8': {
         'CodeList': [
-          'lax03'
+          'lax03',
+          'LAX'
         ],
         'Country': 'US',
         'Address': '600 W 7th St',
@@ -3459,7 +3605,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -118.25745,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/8',
-        'Devices': {}
+        'Devices': {
+          'lax-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'lax-96cbe-1b'
+            ]
+          },
+          'lax-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'lax-96cbe-1a'
+            ]
+          }
+        }
       },
       '19': {
         'CodeList': [
@@ -3503,13 +3668,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.223.123.17/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:3::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3541,13 +3712,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel25': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.172.12/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2606:a980:0:5::c/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3579,13 +3756,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.72.210.143/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:13::210:143/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -3605,7 +3788,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -84.39153,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/11',
-        'Devices': {}
+        'Devices': {
+          'ata-96e-1': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ata-96e-2'
+            ]
+          },
+          'ata-96e-2': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ata-96e-1'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -3639,13 +3841,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel62': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.182.102/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:10::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'ata-96e-2': {
             'DeviceType': 'None',
@@ -3653,13 +3861,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.182.33/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:10::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3691,13 +3905,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.132.117/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:132::117/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -3717,7 +3937,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -80.193157,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/15',
-        'Devices': {}
+        'Devices': {
+          'mia-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mia-96cbe-1b'
+            ]
+          },
+          'mia-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mia-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -3751,13 +3990,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.124.188/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:124::188/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'mia-96cbe-1b': {
             'DeviceType': 'None',
@@ -3765,13 +4010,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.124.189/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:124::189/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3803,13 +4054,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel6': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.41.108.25/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:40:108::1:25/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -3853,7 +4110,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -0.010775,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/40',
-        'Devices': {}
+        'Devices': {
+          'lts-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'lts-96cbe-1b'
+            ]
+          },
+          'lts-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'lts-96cbe-1a'
+            ]
+          }
+        }
       },
       '832': {
         'CodeList': [
@@ -3897,13 +4173,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel6': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.66.224.140/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:4::1f8b:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3935,13 +4217,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.66.236.140/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:4:1::1f8b:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -3973,13 +4261,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '5.57.81.17/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:17::1f8b:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4021,7 +4315,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4073,13 +4369,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.118.18/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:f::12/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4111,13 +4413,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.160.199/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:1::a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4151,13 +4459,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel15': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.82.104.133/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:36::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4189,13 +4503,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.126.115.23/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:17:115::23/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4207,7 +4527,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'PrivatePeeringFacilityMap': {
       '53': {
         'CodeList': [
-          'pra'
+          'pra',
+          'PAR02'
         ],
         'Country': 'FR',
         'Address': '137 Boulevard Voltaire',
@@ -4215,7 +4536,52 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 2.383369,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/53',
-        'Devices': {}
+        'Devices': {
+          'par02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'par02-96cbe-1b',
+              'pra-96cbe-1a',
+              'pra-96cbe-1b'
+            ]
+          },
+          'par02-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'par02-96cbe-1a',
+              'pra-96cbe-1a',
+              'pra-96cbe-1b'
+            ]
+          },
+          'pra-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'par02-96cbe-1a',
+              'par02-96cbe-1b',
+              'pra-96cbe-1b'
+            ]
+          },
+          'pra-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'par02-96cbe-1a',
+              'par02-96cbe-1b',
+              'pra-96cbe-1a'
+            ]
+          }
+        }
       },
       '714': {
         'CodeList': [
@@ -4262,13 +4628,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10.4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '37.49.237.119/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:54::1:119/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'pra-96cbe-1b': {
             'DeviceType': 'None',
@@ -4276,13 +4648,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel11.4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '37.49.236.5/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:54::5/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4314,13 +4692,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.42.145.28/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:43::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4340,7 +4724,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 8.73463,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/58',
-        'Devices': {}
+        'Devices': {
+          'fra-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'fra-96cbe-1b'
+            ]
+          },
+          'fra-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'fra-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -4374,13 +4777,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel67.10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.81.194.52/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'fra-96cbe-1b': {
             'DeviceType': 'None',
@@ -4388,13 +4797,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel9': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.81.195.11/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8::1f8b:0:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4426,13 +4841,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '62.69.146.70/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:8:20:0:1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4464,13 +4885,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel66': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.239.118.163/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:13::a500:8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4490,7 +4917,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 4.828711,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/63',
-        'Devices': {}
+        'Devices': {
+          'ams-96c-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ams-96c-1b'
+            ]
+          },
+          'ams-96c-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ams-96c-1a'
+            ]
+          }
+        }
       },
       '64': {
         'CodeList': [
@@ -4514,7 +4960,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 4.944979,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1236',
-        'Devices': {}
+        'Devices': {
+          'amb-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'amb-96cbe-1b'
+            ]
+          },
+          'amb-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'amb-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -4546,13 +5011,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel67.7': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.239.117.16/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:13::a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4587,13 +5058,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel8': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.249.209.21/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:1::a500:8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'ams-96c-1b': {
             'DeviceType': 'None',
@@ -4601,13 +5078,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel9': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.249.209.20/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:1::a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4639,13 +5122,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel70': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.112.37/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:83::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4665,7 +5154,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 16.410613,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/67',
-        'Devices': {}
+        'Devices': {
+          'vie-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'vie-96cbe-1b'
+            ]
+          },
+          'vie-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'vie-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -4697,13 +5205,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel20': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.203.0.165/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:30:0:2:1:0:8075/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4723,7 +5237,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 4.476941,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/68',
-        'Devices': {}
+        'Devices': {
+          'bru30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'bru30-96cbe-1b'
+            ]
+          },
+          'bru30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'bru30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -4755,13 +5288,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '194.53.172.34/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:26::a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4781,7 +5320,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -96.81955,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/69',
-        'Devices': {}
+        'Devices': {
+          'dal-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'dal-96cbe-1b'
+            ]
+          },
+          'dal-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'dal-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -4794,7 +5352,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/3',
         'Ipv4PrefixList': [
-          '206.223.118.0/24'
+          '206.223.118.0/23'
         ],
         'Ipv6PrefixList': [
           '2001:504:0:5::/64'
@@ -4815,13 +5373,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel35': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.223.118.17/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:5::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'dal-96cbe-1b': {
             'DeviceType': 'None',
@@ -4829,13 +5393,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel68': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.223.118.65/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:5::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4867,13 +5437,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.174.12/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2606:a980:0:7::c/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4907,13 +5483,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel13': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.130.39/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:130::39/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'dal-96cbe-1b': {
             'DeviceType': 'None',
@@ -4921,13 +5503,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel14': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.130.40/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:130::40/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -4959,13 +5547,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel71': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.202.15/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:61::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -4985,7 +5579,38 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -122.338883,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/71',
-        'Devices': {}
+        'Devices': {
+          'wst-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'wst-96cbe-1b',
+              'wst-96cbe-1c'
+            ]
+          },
+          'wst-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'wst-96cbe-1a',
+              'wst-96cbe-1c'
+            ]
+          },
+          'wst-96cbe-1c': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'wst-96cbe-1a',
+              'wst-96cbe-1b'
+            ]
+          }
+        }
       },
       '99999': {
         'CodeList': [
@@ -4997,12 +5622,20 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -122.338883,
         'LocationType': 'Test',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/99999',
-        'MicrosoftSessionIpv6AddressList': [],
-        'Bandwidth': 10000,
         'Devices': {
           'co1-96c-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'co1-96c-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5042,11 +5675,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-9/3/2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '10.12.97.129/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5078,13 +5715,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.134.152/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:12::15/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5118,13 +5761,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.81.80.30/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:16::1f8b/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'wst-96cbe-1b': {
             'DeviceType': 'None',
@@ -5132,13 +5781,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.81.80.68/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:16::68:0:1f8b/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5170,13 +5825,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel8': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.171.13/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2606:a980:0:4::d/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5229,46 +5890,72 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'et-7/0/2.706': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '207.231.240.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:b:10::7/128'
+                ],
                 'PeerInfoMap': {}
               },
               'et-7/0/2.707': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '207.231.242.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:b:11::7/128'
+                ],
                 'PeerInfoMap': {}
               },
               'et-7/0/2.776': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '207.231.241.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:b:80::7/128'
+                ],
                 'PeerInfoMap': {}
               },
               'et-7/0/2.777': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '207.231.243.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:b:81::7/128'
+                ],
                 'PeerInfoMap': {}
               },
               'et-7/0/2.778': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '207.231.245.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:b:88::7/128'
+                ],
                 'PeerInfoMap': {}
               },
               'et-7/0/2.779': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '207.231.248.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:b:89::7/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5288,7 +5975,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -2.236869,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/76',
-        'Devices': {}
+        'Devices': {
+          'man30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'man30-96cbe-1b'
+            ]
+          },
+          'man30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'man30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -5322,13 +6028,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.66.244.82/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:4:2::1f8b:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'man30-96cbe-1b': {
             'DeviceType': 'None',
@@ -5336,13 +6048,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel64': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.66.244.116/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:4:2::1f8b:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5374,13 +6092,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel63': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.101.31/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:bc::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5432,13 +6156,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel62': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '194.42.48.50/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:c:8235:194:42:48:50/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5470,13 +6200,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '91.206.52.152/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:24::98/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5515,10 +6251,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:2a::/64'
         ],
         'MicrosoftSessionIpv4AddressList': [
-          '193.242.98.152'
+          '193.242.98.152',
+          '193.242.98.149'
         ],
         'MicrosoftSessionIpv6AddressList': [
-          '2001:7f8:2a:0:2:1:0:8075'
+          '2001:7f8:2a:0:2:1:0:8075',
+          '2001:7f8:2a:0:2:2:0:8075'
         ],
         'Bandwidth': 10000,
         'Devices': {
@@ -5528,13 +6266,39 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel15': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.242.98.152/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:2a:0:2:1:0:8075/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'bcn30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel60': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '193.242.98.149/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:2a:0:2:2:0:8075/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5554,7 +6318,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -9.12364,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/126',
-        'Devices': {}
+        'Devices': {
+          'lis01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'lis01-96cbe-1b'
+            ]
+          },
+          'lis01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'lis01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -5586,13 +6369,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.136.250.60/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:a:1::6/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5612,7 +6401,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -3.621211,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/130',
-        'Devices': {}
+        'Devices': {
+          'mad30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mad30-96cbe-1b'
+            ]
+          },
+          'mad30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mad30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -5644,13 +6452,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel20': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.149.1.29/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:f::70/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5682,13 +6496,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.79.175.184/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:f:1::70/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5720,13 +6540,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel25': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.68.16/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:a0::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5746,11 +6572,31 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 151.188147,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/131',
-        'Devices': {}
+        'Devices': {
+          'syd-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'syd-96cbe-1b'
+            ]
+          },
+          'syd-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'syd-96cbe-1a'
+            ]
+          }
+        }
       },
       '1660': {
         'CodeList': [
-          'syd'
+          'syd',
+          'SYD03'
         ],
         'Country': 'AU',
         'Address': '4 Eden Park Drive',
@@ -5758,7 +6604,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 151.131515,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1660',
-        'Devices': {}
+        'Devices': {
+          'syd03-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'syd03-96cbe-1b'
+            ]
+          },
+          'syd03-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'syd03-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -5790,13 +6655,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3.599': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '45.127.172.36/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:6::1:2076:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5828,13 +6699,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.26.68.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:dea:0:10::7/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5843,7 +6720,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'syd'
         ],
         'Country': 'AU',
-        'Name': 'New South Wales Internet Exchange',
+        'Name': 'IX Australia NSW',
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/716',
         'Ipv4PrefixList': [
@@ -5866,13 +6743,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.52.4/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:11:4:0:2f2c:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -5904,13 +6787,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.2.162/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:b::162/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -5922,7 +6811,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'PrivatePeeringFacilityMap': {
       '142': {
         'CodeList': [
-          'tya'
+          'tya',
+          'tyo02'
         ],
         'Country': 'JP',
         'Address': 'Otemachi Building',
@@ -5930,7 +6820,44 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 139.765453,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/142',
-        'Devices': {}
+        'Devices': {
+          'tya-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'tya-96cbe-1b'
+            ]
+          },
+          'tya-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'tya-96cbe-1a'
+            ]
+          },
+          'ier01.tyo02': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.tyo02'
+            ]
+          },
+          'ier02.tyo02': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.tyo02'
+            ]
+          }
+        }
       },
       '599': {
         'CodeList': [
@@ -5942,7 +6869,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 139.779481,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/599',
-        'Devices': {}
+        'Devices': {
+          'tyb-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'tyb-96cbe-1b'
+            ]
+          },
+          'tyb-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'tyb-96cbe-1a'
+            ]
+          }
+        }
       },
       '1893': {
         'CodeList': [
@@ -5986,13 +6932,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5.599': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '203.190.230.24/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:5::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6027,13 +6979,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '210.171.224.116/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:8::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'tyb-96cbe-1a': {
             'DeviceType': 'None',
@@ -6041,19 +6999,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '210.171.224.110/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:8::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
       '126': {
         'CodeList': [
-          'tyb'
+          'tyb',
+          'tyo02'
         ],
         'Country': 'JP',
         'Name': 'BBIX Tokyo',
@@ -6066,10 +7031,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:c::/64'
         ],
         'MicrosoftSessionIpv4AddressList': [
-          '218.100.6.76'
+          '218.100.6.76',
+          '218.100.7.63'
         ],
         'MicrosoftSessionIpv6AddressList': [
-          '2001:de8:c::8075:1'
+          '2001:de8:c::8075:1',
+          '2001:de8:c::8075:2'
         ],
         'Bandwidth': 100000,
         'Devices': {
@@ -6079,19 +7046,46 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.6.76/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:c::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier02.tyo02': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel60': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '218.100.7.63/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:c::8075:2/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
       '95': {
         'CodeList': [
-          'tya'
+          'tya',
+          'tyb'
         ],
         'Country': 'JP',
         'Name': 'JPNAP Tokyo',
@@ -6111,19 +7105,25 @@ namespace Microsoft.Azure.Commands.Peering.Common
         ],
         'Bandwidth': 10000,
         'Devices': {
-          'tya-96cbe-1b': {
+          'tyb-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel7': {
+              'PortChannel61': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '210.173.176.16/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:7:1::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -6177,13 +7177,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '192.145.251.47/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:8::13/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'sla-96cbe-1b': {
             'DeviceType': 'None',
@@ -6191,13 +7197,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel63': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '192.145.251.48/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:8::14/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -6249,13 +7261,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel20': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '192.38.7.76/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:1f::8075:76:0/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6291,21 +7309,31 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5.410': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '212.237.192.181/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:d:202::181/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               },
               'PortChannel5.420': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '212.237.193.181/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:d:203::181/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6337,13 +7365,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel62.7': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.239.118.172/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:13::a500:8075:4/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -6407,21 +7441,31 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel12.15': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '194.68.123.181/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:d:ff::181/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               },
               'PortChannel12.16': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.245.240.181/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:d:fc::181/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'sto-96cbe-1b': {
             'DeviceType': 'None',
@@ -6429,21 +7473,31 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3.15': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '194.68.128.181/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:d:fe::181/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               },
               'PortChannel3.16': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.69.119.181/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:d:fb::181/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6475,13 +7529,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel8': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '192.121.80.59/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:3e:0:a500:0:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6513,13 +7573,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel64': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.107.34/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:c1::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -6555,7 +7621,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
       },
       '1065': {
         'CodeList': [
-          'db3'
+          'db3',
+          'DUB30'
         ],
         'Country': 'IE',
         'Address': 'Unit 2, North West Business Park',
@@ -6563,7 +7630,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -6.347409,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1065',
-        'Devices': {}
+        'Devices': {
+          'dub30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'dub30-96cbe-1b'
+            ]
+          },
+          'dub30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'dub30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -6595,13 +7681,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel15': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.6.36.28/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:18::28/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6633,13 +7725,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.109.26/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:c3::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -6703,7 +7801,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel8.10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '200.192.108.42/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -6712,12 +7812,16 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv6PrefixList': [
+                  '2001:12f8:0:11::42/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6751,13 +7855,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.122.60/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:122::3c/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'gru-96cbe-1b': {
             'DeviceType': 'None',
@@ -6765,13 +7875,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.122.57/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:122::39/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6805,7 +7921,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1.3543': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '187.16.218.139/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -6814,12 +7932,16 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv6PrefixList': [
+                  '2001:12f8::218:139/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'sao03-96cbe-1b': {
             'DeviceType': 'None',
@@ -6827,7 +7949,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel13.3564': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '187.16.218.144/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -6836,12 +7960,16 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv6PrefixList': [
+                  '2001:12f8::218:144/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -6861,11 +7989,31 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 114.119317,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/170',
-        'Devices': {}
+        'Devices': {
+          'hkb-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hkb-96cbe-1b'
+            ]
+          },
+          'hkb-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hkb-96cbe-1a'
+            ]
+          }
+        }
       },
       '225': {
         'CodeList': [
-          'hkg'
+          'hkg',
+          'HKG30'
         ],
         'Country': 'HK',
         'Address': '399 Chai Wan Road',
@@ -6873,7 +8021,44 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 114.246512,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/225',
-        'Devices': {}
+        'Devices': {
+          'hkg-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hkg-96cbe-1b'
+            ]
+          },
+          'hkg-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hkg-96cbe-1a'
+            ]
+          },
+          'ier01.hkg30': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.hkg30'
+            ]
+          },
+          'ier02.hkg30': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.hkg30'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -6907,13 +8092,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel9.599': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '36.255.56.4/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:7::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6945,13 +8136,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.247.139.28/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:df0:296::a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -6985,13 +8182,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel62': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '123.255.90.222/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:0:1::ca28:a0de/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'hkb-96cbe-1b': {
             'DeviceType': 'None',
@@ -6999,13 +8202,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel64': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '123.255.91.120/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:0:1::ca28:a178/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7037,13 +8246,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.203.158.102/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2403:c780:b800:bb00::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7063,7 +8278,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 14.482978,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/214',
-        'Devices': {}
+        'Devices': {
+          'prg01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'prg01-96cbe-1b'
+            ]
+          },
+          'prg01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'prg01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -7096,11 +8330,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'et-1/1/0.10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '91.210.16.115/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:14::6b:1/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7132,13 +8372,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '91.213.211.214/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:7f::214/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7170,7 +8416,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 5.338242,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1879',
-        'Devices': {}
+        'Devices': {
+          'mrs01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mrs01-96cbe-1b'
+            ]
+          },
+          'mrs01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mrs01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -7202,13 +8467,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel6': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '37.49.232.14/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:54:5::14/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7240,13 +8511,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel15': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.47.13/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:36::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7311,24 +8588,36 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-2/1/2:0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.141.141/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:d::8069:1/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'ier02.sg1': {
             'DeviceType': 'None',
             'PortChannels': {},
             'Ports': {
-              'et-0/0/26:3': {
+              'et-0/0/61:3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.141.141/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:d::8069:1/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7360,13 +8649,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel62': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.16.102.23/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:12:100::23/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'sg1-96cbe-1a': {
             'DeviceType': 'None',
@@ -7374,13 +8669,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.16.102.23/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:12:100::23/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7414,13 +8715,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10.599': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '27.111.228.57/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:4::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'sge-96cbe-1b': {
             'DeviceType': 'None',
@@ -7428,13 +8735,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel61': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '27.111.229.172/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:4::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7466,13 +8779,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel12': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.41.12.23/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:ded::17/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7504,13 +8823,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.231.152.101/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:df5:b800:bb00::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7564,7 +8889,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel62.10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.188.137.21/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -7573,12 +8900,16 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:35::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'bud01-96cbe-1b': {
             'DeviceType': 'None',
@@ -7586,7 +8917,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel63.10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.188.137.51/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -7595,12 +8928,16 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:35::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7652,13 +8989,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.208.208.137/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:20:101::208:137/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7690,13 +9033,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '178.18.225.38/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2a03:5f80:4::225:38/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7716,7 +9065,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -104.995636,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/389',
-        'Devices': {}
+        'Devices': {
+          'den02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'den02-96cbe-1b'
+            ]
+          },
+          'den02-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'den02-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -7752,13 +9120,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel12': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.51.46.72/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2605:6c00:303:303::72/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'den02-96cbe-1b': {
             'DeviceType': 'None',
@@ -7766,13 +9140,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.51.46.100/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2605:6c00:303:303::100/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7792,7 +9172,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 26.117669,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/439',
-        'Devices': {}
+        'Devices': {
+          'buh01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'buh01-96cbe-1b'
+            ]
+          },
+          'buh01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'buh01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -7830,21 +9229,31 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel7': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '86.104.125.130/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:64:225::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               },
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.97.248.76/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2a02:d10:80::32/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'buh01-96cbe-1b': {
             'DeviceType': 'None',
@@ -7852,13 +9261,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel61': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.97.248.52/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2a02:d10:80::13/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -7891,11 +9306,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-0/0/0:2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '217.156.113.88/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:49::88/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7949,13 +9370,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel9': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '203.163.222.15/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2406:d400:1:133:203:163:222:15/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'tpe31-96cbe-1b': {
             'DeviceType': 'None',
@@ -7963,13 +9390,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '203.163.222.85/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2406:d400:1:133:203:163:222:85/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -7989,7 +9422,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 101.70634,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/460',
-        'Devices': {}
+        'Devices': {
+          'kul30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'kul30-96cbe-1b'
+            ]
+          },
+          'kul30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'kul30-96cbe-1a'
+            ]
+          }
+        }
       },
       '1279': {
         'CodeList': [
@@ -8035,13 +9487,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3.200': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.44.214/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:10::a9/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'kul30-96cbe-1b': {
             'DeviceType': 'None',
@@ -8049,13 +9507,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.44.154/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:10::54/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8075,7 +9539,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 13.237136,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/478',
-        'Devices': {}
+        'Devices': {
+          'ber30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ber30-96cbe-1b'
+            ]
+          },
+          'ber30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ber30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -8109,13 +9592,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.178.185.84/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:19:1::1f8b:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'ber30-96cbe-1b': {
             'DeviceType': 'None',
@@ -8123,13 +9612,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.178.185.104/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:19:1::1f8b:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8161,13 +9656,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '194.9.117.84/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:8:5:0:1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8187,7 +9688,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 21.004906,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/509',
-        'Devices': {}
+        'Devices': {
+          'waw01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'waw01-96cbe-1b'
+            ]
+          },
+          'waw01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'waw01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -8221,13 +9741,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel6': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.182.218.146/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:42::a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'waw01-96cbe-1b': {
             'DeviceType': 'None',
@@ -8235,13 +9761,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel6': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.182.218.167/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:42::a500:8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8273,13 +9805,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '195.149.232.50/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:27::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8343,13 +9881,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel61': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '45.120.251.137/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:df2:1900:3::137/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8369,7 +9913,44 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 72.831549999999993,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/554',
-        'Devices': {}
+        'Devices': {
+          'bom02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'bom02-96cbe-1b'
+            ]
+          },
+          'bom02-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'bom02-96cbe-1a'
+            ]
+          },
+          'ier01.bom02': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.bom02'
+            ]
+          },
+          'ier02.bom02': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.bom02'
+            ]
+          }
+        }
       },
       '2046': {
         'CodeList': [
@@ -8413,13 +9994,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel61': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '223.31.200.19/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:e48:44:100b:0:a500:8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8451,13 +10038,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel68': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.77.108.128/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:df2:1900:2::128/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8477,7 +10070,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 115.855519,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/568',
-        'Devices': {}
+        'Devices': {
+          'per01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': []
+          }
+        }
       },
       '1940': {
         'CodeList': [
@@ -8521,13 +10122,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel8': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '202.12.243.11/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:dea:0:50::b/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8536,7 +10143,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'per01'
         ],
         'Country': 'AU',
-        'Name': 'West Australian Internet Exchange (WAIX)',
+        'Name': 'IX Australia WA',
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/21',
         'Ipv4PrefixList': [
@@ -8559,13 +10166,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.212.95/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:11::2f2c:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8617,51 +10230,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel13': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.108.236.10/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:24:1::1f8b:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
-          }
-        }
-      },
-      '333': {
-        'CodeList': [
-          'bos01'
-        ],
-        'Country': 'US',
-        'Name': 'CoreSite - Any2 Boston',
-        'LocationType': 'Production',
-        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/333',
-        'Ipv4PrefixList': [
-          '206.51.42.0/24'
-        ],
-        'Ipv6PrefixList': [
-          '2001:504:13:7::/64'
-        ],
-        'MicrosoftSessionIpv4AddressList': [
-          '206.51.42.10'
-        ],
-        'MicrosoftSessionIpv6AddressList': [
-          '2001:504:13:7::10'
-        ],
-        'Bandwidth': 10000,
-        'Devices': {
-          'bos01-96e-1': {
-            'DeviceType': 'None',
-            'PortChannels': {
-              'PortChannel2': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              }
-            },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8693,13 +10274,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.143.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:47::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8748,11 +10335,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-0/2/3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.30.58/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8784,13 +10375,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel7': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.169.198.74/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:58::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8822,13 +10419,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.218.0.150/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:67c:29f0::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -8860,13 +10463,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel64': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '91.212.235.6/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:9f::6/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8886,7 +10495,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -115.210194,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/770',
-        'Devices': {}
+        'Devices': {
+          'las01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'las01-96cbe-1b'
+            ]
+          },
+          'las01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'las01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -8918,13 +10546,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.205.6/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2606:a980:0:9::6/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -8944,7 +10578,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -79.384228,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/775',
-        'Devices': {}
+        'Devices': {
+          'yto01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'yto01-96cbe-1b'
+            ]
+          },
+          'yto01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'yto01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -8978,13 +10631,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.108.34.160/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:1a::34:160/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'yto01-96cbe-1b': {
             'DeviceType': 'None',
@@ -8992,13 +10651,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel64': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.108.35.109/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:1a::35:109/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9030,13 +10695,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.53.203.7/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2606:a980:0:8::7/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9090,13 +10761,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '196.60.8.133/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:6d0::133/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'jnb02-96cbe-1b': {
             'DeviceType': 'None',
@@ -9104,13 +10781,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '196.60.9.133/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:6d0::9:133/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9130,7 +10813,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 135.491091,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1157',
-        'Devices': {}
+        'Devices': {
+          'osa02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'osa02-96cbe-1b'
+            ]
+          },
+          'osa02-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'osa02-96cbe-1a'
+            ]
+          }
+        }
       },
       '2072': {
         'CodeList': [
@@ -9174,13 +10876,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel6': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.246.232.116/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:8:6::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9204,32 +10912,29 @@ namespace Microsoft.Azure.Commands.Peering.Common
         ],
         'MicrosoftSessionIpv6AddressList': [
           '2001:7fa:7:2::8075:1',
-          '2001:7fa:7:2::8075:2',
-          '2001:7fa:7:2::8076:1'
+          '2001:7fa:7:2::8075:2'
         ],
         'Bandwidth': 10000,
         'Devices': {
           'osa30-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel5': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
               'PortChannel62': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '210.173.178.16/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:7:2::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'osa30-96cbe-1b': {
             'DeviceType': 'None',
@@ -9237,40 +10942,41 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel63': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
-              'PortChannel64': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '210.173.178.26/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:7:2::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
       '786': {
         'CodeList': [
-          'osa30'
+          'osa30',
+          'tyo02'
         ],
         'Country': 'JP',
         'Name': 'BBIX Osaka',
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/786',
         'Ipv4PrefixList': [
-          '218.100.9.0/24'
+          '218.100.9.0/24',
+          '218.100.7.0/24'
         ],
         'Ipv6PrefixList': [
           '2001:de8:c:2::/64'
         ],
         'MicrosoftSessionIpv4AddressList': [
-          '218.100.9.28'
+          '218.100.9.28',
+          '218.100.7.63'
         ],
         'MicrosoftSessionIpv6AddressList': [
           '2001:de8:c:2::8075:1'
@@ -9283,13 +10989,37 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel3': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.9.28/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:c:2::8075:1/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier02.tyo02': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel60': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '218.100.7.63/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9309,7 +11039,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 18.465223,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1225',
-        'Devices': {}
+        'Devices': {
+          'cpt02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'cpt02-96cbe-1b'
+            ]
+          },
+          'cpt02-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'cpt02-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -9340,30 +11089,42 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'cpt02-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel60': {
+              'PortChannel61': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '196.10.140.47/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:6d1::47/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'cpt02-96cbe-1b': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel60': {
+              'PortChannel61': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '196.10.140.147/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:6d1::147/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9383,7 +11144,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -123.111935,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1330',
-        'Devices': {}
+        'Devices': {
+          'yvr01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'yvr01-96cbe-1b'
+            ]
+          },
+          'yvr01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'yvr01-96cbe-1a'
+            ]
+          }
+        }
       },
       '1881': {
         'CodeList': [
@@ -9428,11 +11208,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-7/1/2:1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.41.104.41/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:39::41/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9452,7 +11238,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 144.931061,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1339',
-        'Devices': {}
+        'Devices': {
+          'mel01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mel01-96cbe-1b'
+            ]
+          },
+          'mel01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mel01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -9483,11 +11288,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-8/0/1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.13.80/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9519,13 +11328,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel6': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.26.71.35/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:dea:0:30::23/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9557,13 +11372,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel16': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '183.177.61.5/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:de8:6:1::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9572,7 +11393,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'mel01'
         ],
         'Country': 'AU',
-        'Name': 'Victorian Internet Exchange',
+        'Name': 'IX Australia VIC',
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/513',
         'Ipv4PrefixList': [
@@ -9595,13 +11416,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.78.51/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:11:1:0:2f2c:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9621,7 +11448,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 153.029645,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1340',
-        'Devices': {}
+        'Devices': {
+          'bne01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'bne01-96cbe-1b'
+            ]
+          },
+          'bne01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'bne01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -9652,11 +11498,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-0/0/0:1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.0.73/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9688,13 +11538,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '103.26.70.20/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:dea:0:20::14/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9703,7 +11559,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'bne01'
         ],
         'Country': 'AU',
-        'Name': 'Queensland Internet Exchange',
+        'Name': 'IX Australia QLD',
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/576',
         'Ipv4PrefixList': [
@@ -9726,13 +11582,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '218.100.76.49/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:11:2:0:2f2c:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9744,7 +11606,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'PrivatePeeringFacilityMap': {
       '1353': {
         'CodeList': [
-          'akl01'
+          'akl01',
+          'AKL30'
         ],
         'Country': 'NZ',
         'Address': '7A Parkhead Place',
@@ -9752,7 +11615,33 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 174.696364,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1353',
-        'Devices': {}
+        'Devices': {
+          'akl01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': []
+          },
+          'ier01.akl30': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.akl30'
+            ]
+          },
+          'ier02.akl30': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.akl30'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -9784,13 +11673,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '192.203.154.162/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:4:c0cb::9aa2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9822,13 +11717,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '43.243.21.23/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:11:6:0:1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9860,13 +11761,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '43.243.22.38/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:dea:0:40::26/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -9899,11 +11806,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-0/1/0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '202.7.0.220/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7fa:3:ca07::dc/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9923,7 +11836,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 15.943893,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1368',
-        'Devices': {}
+        'Devices': {
+          'zag30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'zag30-96cbe-1b'
+            ]
+          },
+          'zag30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'zag30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -9955,13 +11887,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.87.110/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:28::25:0/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -9993,7 +11931,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -43.272742,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1899',
-        'Devices': {}
+        'Devices': {
+          'rio02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': []
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10028,7 +11974,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5.10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '45.6.52.73/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -10037,12 +11985,16 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv6PrefixList': [
+                  '2001:12f8:0:2::73/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'rio03-96cbe-1a': {
             'DeviceType': 'None',
@@ -10050,7 +12002,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5.10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '45.6.52.72/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -10059,12 +12013,16 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv6PrefixList': [
+                  '2001:12f8:0:2::72/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10084,7 +12042,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 24.970015,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1457',
-        'Devices': {}
+        'Devices': {
+          'hel02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': []
+          }
+        }
       },
       '1459': {
         'CodeList': [
@@ -10096,7 +12062,15 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 24.985015,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1459',
-        'Devices': {}
+        'Devices': {
+          'hel03-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': []
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10129,13 +12103,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.110.224.62/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:7:b::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -10168,13 +12148,63 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '193.110.226.62/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:7:a::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
+      },
+      '1464': {
+        'CodeList': [
+          'hel02'
+        ],
+        'Country': 'FI',
+        'Name': 'Equinix Helsinki',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/1464',
+        'Ipv4PrefixList': [
+          '185.1.86.0/24'
+        ],
+        'Ipv6PrefixList': [
+          '2001:7f8:af::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '185.1.86.27'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:7f8:af::8075:1'
+        ],
+        'Bandwidth': 10000,
+        'Devices': {
+          'hel02-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel61': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '185.1.86.27/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:af::8075:1/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10194,7 +12224,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -95.556656,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1476',
-        'Devices': {}
+        'Devices': {
+          'hou01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hou01-96cbe-1b'
+            ]
+          },
+          'hou01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hou01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10228,13 +12277,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.96.35/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:96::35/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'hou01-96cbe-1b': {
             'DeviceType': 'None',
@@ -10242,13 +12297,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.96.36/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:478:96::36/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10287,7 +12348,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -111.882056,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1488',
-        'Devices': {}
+        'Devices': {
+          'phx01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'phx01-96cbe-1b'
+            ]
+          },
+          'phx01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'phx01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10316,13 +12396,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.98.35/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'phx01-96cbe-1b': {
             'DeviceType': 'None',
@@ -10330,13 +12414,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.32.98.36/32'
+                ],
                 'SessionIpv6PrefixList': [],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -10369,11 +12457,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-2/1/2': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.41.105.44/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:3b::44/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10402,17 +12496,36 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'LocationName': 'Santiago',
     'AzureRegion': 'Brazil South',
     'PrivatePeeringFacilityMap': {
-      '1779': {
+      '2093': {
         'CodeList': [
-          'scl30'
+          'SCL30'
         ],
         'Country': 'CL',
         'Address': 'Santa Marta de Huechuraba 6951',
-        'Latitude': -33.35869,
-        'Longitude': -70.67602,
+        'Latitude': -33.357991,
+        'Longitude': -70.67626,
         'LocationType': 'Production',
-        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1779',
-        'Devices': {}
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2093',
+        'Devices': {
+          'scl30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'scl30-96cbe-1b'
+            ]
+          },
+          'scl30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'scl30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10446,13 +12559,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '200.23.206.210/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2801:14:9000::8075:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'scl30-96cbe-1b': {
             'DeviceType': 'None',
@@ -10460,13 +12579,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '200.23.206.211/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2801:14:9000::8075:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10486,7 +12611,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -73.570471,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1944',
-        'Devices': {}
+        'Devices': {
+          'ymq01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ymq01-96cbe-1b'
+            ]
+          },
+          'ymq01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ymq01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10518,13 +12662,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '198.179.18.16/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:2d::18:16/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10578,13 +12728,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel7': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '176.126.38.18/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:6e::18/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'ath01-96cbe-1b': {
             'DeviceType': 'None',
@@ -10592,13 +12748,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel4': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '176.126.38.28/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:6e::28/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10618,7 +12780,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': 9.103571,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1974',
-        'Devices': {}
+        'Devices': {
+          'mil30-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mil30-96cbe-1b'
+            ]
+          },
+          'mil30-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'mil30-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10653,11 +12834,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'et-7/1/0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '217.29.66.212/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:b:100:1d1:a5d0:8075:212/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'mil30-96cbe-1b': {
             'DeviceType': 'None',
@@ -10666,11 +12853,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'et-7/1/0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '217.29.66.112/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:b:100:1d1:a5d0:8075:112/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       },
@@ -10702,13 +12895,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '194.116.96.88/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:23:ffff::88/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10760,13 +12959,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel10': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '45.120.248.13/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:df2:1900:1::13/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10786,7 +12991,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -157.917855,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2526',
-        'Devices': {}
+        'Devices': {
+          'hnl01-96cbe-1a': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hnl01-96cbe-1b'
+            ]
+          },
+          'hnl01-96cbe-1b': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'hnl01-96cbe-1a'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {
@@ -10819,11 +13043,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'xe-9/1/0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '206.197.210.37/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2606:7c80:3375:50::37/128'
+                ],
                 'PeerInfoMap': {}
               }
-            }
+            },
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10910,7 +13140,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -10951,13 +13183,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.8.32/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:73::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           },
           'ier02.dxb30': {
             'DeviceType': 'None',
@@ -10965,13 +13203,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.8.22/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:73::1f8b:0:2/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -11010,13 +13254,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel67.100': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '185.1.58.94/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:9e::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -11055,13 +13305,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel67.101': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.81.202.100/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:44::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -11100,13 +13356,19 @@ namespace Microsoft.Azure.Commands.Peering.Common
               'PortChannel67.102': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
+                'SessionIpv4PrefixList': [
+                  '80.81.203.105/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:3d::1f8b:0:1/128'
+                ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
               }
             },
-            'Ports': {}
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -11137,7 +13399,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'PrivatePeeringFacilityMap': {
       '668': {
         'CodeList': [
-          'ash'
+          'ash',
+          'BL31'
         ],
         'Country': 'US',
         'Address': '12100 Sunrise Valley Drive',
@@ -11145,68 +13408,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Longitude': -77.364541,
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/668',
-        'Devices': {}
+        'Devices': {
+          'ier01.bl31': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.bl31'
+            ]
+          },
+          'ier02.bl31': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.bl31'
+            ]
+          }
+        }
       }
     },
     'PublicPeeringFacilityMap': {}
   },
-{
-    'LocationName': 'Building40',
-    'AzureRegion': 'centralus',
+  {
+    'LocationName': 'Santa Clara',
+    'AzureRegion': 'West US',
     'PrivatePeeringFacilityMap': {
-      '99999': {
+      '3344': {
         'CodeList': [
-          'blg40'
+          'BY30'
         ],
         'Country': 'US',
-        'Address': '1 Microsoft Way',
-        'Latitude': 28.550072,
-        'Longitude': 77.235537,
+        'Address': '3020 Coronado Drive',
+        'Latitude': 37.3761,
+        'Longitude': -121.973055,
         'LocationType': 'Production',
-        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/99999',
-        'Devices': {}
-      }
-    },
-    'PublicPeeringFacilityMap': {
-      '99999': {
-        'CodeList': [
-          'blg40'
-        ],
-        'Country': 'US',
-        'Name': 'Building 40 Peering',
-        'LocationType': 'Production',
-        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/99999',
-        'Ipv4PrefixList': [
-          '10.0.0.0/22'
-        ],
-        'Ipv6PrefixList': [
-          '2001:b40b:b40b:b40b:1:/64'
-        ],
-        'MicrosoftSessionIpv4AddressList': [
-          '10.0.0.13'
-        ],
-        'MicrosoftSessionIpv6AddressList': [
-          '2001:b40b:b40b:b40b:1:13'
-        ],
-        'Bandwidth': 10000,
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/3344',
         'Devices': {
-          'blg40-96cbe-1b': {
+          'ier01.by30': {
             'DeviceType': 'None',
-            'PortChannels': {
-              'PortChannel10': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              }
-            },
-            'Ports': {}
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.by30'
+            ]
+          },
+          'ier02.by30': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.by30'
+            ]
           }
         }
       }
-    }
+    },
+    'PublicPeeringFacilityMap': {}
   }
 ]";
         }

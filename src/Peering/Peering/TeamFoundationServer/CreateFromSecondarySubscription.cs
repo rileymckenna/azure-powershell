@@ -354,8 +354,6 @@ namespace TeamFoundationServerPowershell
             WriteVerbose($"Verifying all resources were created properly for {this.WorkItemNumber}");
             try
             {
-                if (errorPeeringStack.Count == 0)
-                {
                     foreach (var stackPeering in this.newPeeringStack)
                     {
                         AzureOperationResponse<ResourceGroup> resourceGroup = null;
@@ -392,8 +390,7 @@ namespace TeamFoundationServerPowershell
                             WriteVerbose($"Ticket: {this.WorkItemNumber} now complete.");
                         }
                     }
-                }
-                else
+                if (errorPeeringStack.Count != 0)
                 {
                     foreach (var error in this.errorPeeringStack)
                     {
