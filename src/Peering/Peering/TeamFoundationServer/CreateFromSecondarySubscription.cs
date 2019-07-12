@@ -365,7 +365,7 @@ namespace TeamFoundationServerPowershell
                             var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
                             var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
                             var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
-                            var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
+                            var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request; Devices have been configured - ProvisioningCompleted" +
                                 $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
                             this.WriteVerbose(this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, str));
                             Thread.Sleep(3000);
