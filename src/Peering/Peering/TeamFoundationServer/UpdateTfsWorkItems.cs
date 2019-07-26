@@ -62,7 +62,9 @@ namespace TeamFoundationServerPowershell
                         {
                             var connection = this.InputObject.Connections.FirstOrDefault();
                             var changeRecordTime = DateTime.Now.ToString();
-                            var node = this.GetFacilityInformation(connection, this.InputObject.PeeringLocation);
+                            // DEPRICATED this.GetFacilityInformation(connection, this.InputObject.PeeringLocation);
+                            //TODO: fix the node.
+                            var node = "string";
                             var side = node.Split('-')[0].ToUpperInvariant().Contains("96") ? "- Other" : node.Split('-')[0].ToUpperInvariant();
                             var state = this.UpdateWorkItemStateToResolved(
                                 (int)this.workItem.Id, side, side, node, node, changeRecordTime);
