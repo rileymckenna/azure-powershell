@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.dll-Help.xml
 Module Name: Az.Storage
 ms.assetid: 54585346-04E2-4FB4-B5FD-833A85C46ACB
@@ -179,7 +179,7 @@ If this cmdlet does not receive a successful response before the interval elapse
 ```yaml
 Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
-Aliases:
+Aliases: ClientTimeoutPerRequestInSeconds
 
 Required: False
 Position: Named
@@ -394,7 +394,7 @@ If the specified interval elapses before the service processes the request, the 
 ```yaml
 Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
-Aliases:
+Aliases: ServerTimeoutPerRequestInSeconds
 
 Required: False
 Position: Named
@@ -449,7 +449,7 @@ Accept wildcard characters: False
 ```
 
 ### -SrcFile
-Specifes a **CloudFile** object from Azure Storage Client library.
+Specifies a **CloudFile** object from Azure Storage Client library.
 You can create it or use Get-AzStorageFile cmdlet.
 
 ```yaml

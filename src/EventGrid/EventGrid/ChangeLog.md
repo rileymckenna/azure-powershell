@@ -18,6 +18,12 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Fixed miscellaneous typos across module
+
+## Version 1.2.1
+* Fix typo in `New-AzEventGridSubscription` documentation
+
+## Version 1.2.0
 * Updated to use the 2019-06-01 API version.
 * New cmdlets:
     - New-AzureRmEventGridDomain

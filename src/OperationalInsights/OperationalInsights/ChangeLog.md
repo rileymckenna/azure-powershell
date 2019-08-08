@@ -18,6 +18,16 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Fixed miscellaneous typos across module
+
+## Version 1.3.2
+* Updated default version for saved searches to be 1. 
+* Fixed custom log null regex handling
+
+## Version 1.3.1
+* Fixed CustomLog datasource model returned in Get-AzOperationalInsightsDataSource
+
+## Version 1.3.0
 * Enable **pergb2018** pricing tier in `New-AzureRmOperationalInsightsWorkspace` command
 
 ## Version 1.2.0

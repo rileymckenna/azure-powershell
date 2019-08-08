@@ -142,6 +142,15 @@ namespace Microsoft.Azure.Commands.Peering.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connection Identifier cannot be null..
+        /// </summary>
+        internal static string Error_ConnectionIdentifierNull {
+            get {
+                return ResourceManager.GetString("Error_ConnectionIdentifierNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to complete the request. Check your syntax for errors..
         /// </summary>
         internal static string Error_GenericSyntax {

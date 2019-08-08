@@ -18,10 +18,33 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Fixed miscellaneous typos across module
+
+## Version 0.2.3
+- Bug fixes and help message improvements
+
+## Version 0.2.2
+- Add change note support during publishing of a blueprint
+- Update Blueprint SDK version
+- Bug fixes
+
+## Version 0.2.1
+* Bug fixes and improvements
+
+## Version 0.2.0
+* Added new cmdlets:
+    - New-AzBlueprint
+    - Set-AzBlueprint
+    - Publish-AzBlueprint
+    - New-AzBlueprintArtifact
+    - Set-AzBlueprintArtifact
+    - Get-AzBlueprintArtifact
+    - Export-AzBlueprintWithArtifact
+    - Import-AzBlueprintWithArtifact'
 
 ## Version 0.1.1
 * Update Remove- cmdlet to not require SubscriptionId parameter
-* Update cmdlet examples 
+* Update cmdlet examples
 * Update Blueprint .NET SDK version
 * Support secure strings as assignment parameters
 * Support WhoIsBlueprint

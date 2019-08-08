@@ -18,6 +18,22 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Add support for new api version 2019-05-10 for Microsoft.Resource
+    - Add support for `copy.count = 0` for variables, resources and properties
+    - Resources with `condition = false` or `copy.count = 0` will be deleted in complete mode
+* Fixed miscellaneous typos across module
+
+## Version 1.6.1
+- Remove missing cmdlet referenced in `New-AzResourceGroupDeployment` documentation
+- Updated policy cmdlets to use new api version 2019-01-01
+
+## Version 1.6.0
+- Fix help text for Get-AzPolicyState -Top parameter
+- Add client-side paging support for Get-AzPolicyAlias
+- Add new parameters for Set-AzPolicyAssignment, -PolicyParameters and -PolicyParametersObject
+- Handful of doc and example updates for Policy cmdlets
+
+## Version 1.5.0
 * Support for additional Template Export options
     - Add `-SkipResourceNameParameterization` parameter to Export-AzResourceGroup
     - Add `-SkipAllParameterization` parameter to Export-AzResourceGroup

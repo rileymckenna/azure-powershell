@@ -18,6 +18,18 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Fixed miscellaneous typos across module
+
+## Version 0.1.1
+* Add new cmdlets:
+    - `Set-AzNetAppFilesAccount`
+    - `Update-AzNetAppFilesAccount`
+* Account:
+    * Active Directory `PSNetAppFilesActiveDirectory` added to account methods `New-AnfAccount`, `Set-AnfAccount` and `Update-AnfAccount`
+* Volume:
+    * Export Policy `PSNetAppFilesVolumeExportPolicy` added to volume methods `New-AnfVolume` and `Update-AnfVolume`
+* Snapshot:
+    * FileSystemId is now optional during snapshot creation `New-AnfSnapshot`
 
 ## Version 0.1.0
 * Preview of `Az.NetAppFiles` module
