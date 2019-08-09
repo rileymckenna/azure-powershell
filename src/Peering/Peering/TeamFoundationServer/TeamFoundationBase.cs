@@ -249,6 +249,7 @@ string descriptionFieldContents)
                             listPeering.Find(x => x.PeeringLocation == peeringLocation.PeeringLocation).Exchange.Connections.Add(
                                 new PSExchangeConnection
                                 {
+                                    ConnectionIdentifier = Guid.NewGuid().ToString(),
                                     BgpSession = bgpSession,
                                     PeeringDBFacilityId = peeringLocation.FacilityId
                                 });
@@ -265,6 +266,7 @@ string descriptionFieldContents)
                             peeringConfiguration.Exchange.Connections.Add(new PSExchangeConnection
                             {
                                 PeeringDBFacilityId = peeringLocation.FacilityId,
+                                ConnectionIdentifier = Guid.NewGuid().ToString(),
                                 BgpSession = new PSBgpSession
                                 {
                                     MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4 ?? 20000,
