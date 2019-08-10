@@ -13,15 +13,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors />
+    <NoWarn>1701;1702; 1605</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="Microsoft.Azure.Management.Peering" Version="0.10.0-preview" />
-    <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="16.143.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2">
-      <NoWarn>NU1605</NoWarn>
-    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="1.9.1-preview" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
