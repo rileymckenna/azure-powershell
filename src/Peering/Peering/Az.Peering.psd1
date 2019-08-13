@@ -91,7 +91,8 @@ CmdletsToExport = 'Get-AzPeering',
 			'Get-TfsWorkItem',
 			'Set-TfsWorkItem', 
 			'Set-TfsWorkItemDescription',
-			'Get-TfsWorkItemDescriptionProperties'
+			'Get-TfsWorkItemDescriptionProperties',
+			'Set-TfsClientWorkItemTags'
 
 # Variables to export from this module
 # VariablesToExport = @()
