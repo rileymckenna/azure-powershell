@@ -154,6 +154,11 @@ string descriptionFieldContents)
                     .Replace("\n", string.Empty).Replace(@"</strong>", string.Empty).Replace(@"&nbsp;", string.Empty)
                     .Split(new[] { "</p>" }, StringSplitOptions.RemoveEmptyEntries);
             }
+            else if (html.ToString().Contains(@"<div>") && html.ToString().Contains(@"<br>"))
+            {
+                strArr = html.ToString().Replace(@"<div>", string.Empty).Replace(@"<br>", string.Empty).Replace("\n", string.Empty)
+    .Split(new[] { "</div>" }, StringSplitOptions.RemoveEmptyEntries);
+            }
             else if (html.ToString().Contains(@"<br>"))
             {
                 strArr = html.ToString().Replace(@"<p>", string.Empty).Replace(@"</p>", string.Empty)
@@ -182,18 +187,18 @@ string descriptionFieldContents)
 
                 if (subString.Contains("peer") & subString.Contains("name"))
                 {
-                    peerAsn.PeerName = strArr[i].Split(':')[1];
+                    peerAsn.PeerName = strArr[i].Split(':')[1].Trim();
                 }
 
                 if (subString.Contains("email"))
                 {
-                    var emails = strArr[i].Split(':')[1].Split(',');
+                    var emails = strArr[i].Split(':')[1].Trim().Split(',');
                     Array.ForEach<string>(emails, x => peerAsn.PeerContactInfo.Emails.Add(x));
                 }
 
                 if (subString.Contains("phone"))
                 {
-                    var phones = strArr[i].Split(':')[1].Split(',');
+                    var phones = strArr[i].Split(':')[1].Trim().Split(',');
                     Array.ForEach<string>(phones, x => peerAsn.PeerContactInfo.Phone.Add(x));
                 }
 
@@ -223,19 +228,19 @@ string descriptionFieldContents)
                 var s = subStr.ToLowerInvariant();
                 if (s.Contains(("IPv4").ToLowerInvariant()) && !s.Contains(("old").ToLowerInvariant()))
                 {
-                    bgpSession.PeerSessionIPv4Address = s.Split(':')[1];
+                    bgpSession.PeerSessionIPv4Address = s.Split(':')[1].Trim();
                     continue;
                 }
 
                 if (s.Contains(("MD5").ToLowerInvariant()))
                 {
-                    bgpSession.Md5AuthenticationKey = subStr.Split(':')[1];
+                    bgpSession.Md5AuthenticationKey = subStr.Split(':')[1].Trim();
                     continue;
                 }
 
                 if (s.Contains(("IPv6").ToLowerInvariant()) && !s.Contains(("old").ToLowerInvariant()))
                 {
-                    bgpSession.PeerSessionIPv6Address = s.Substring(5);
+                    bgpSession.PeerSessionIPv6Address = s.Substring(5).Trim();
                     continue;
                 }
                 if (s.Contains(("Exchange Name").ToLowerInvariant()))

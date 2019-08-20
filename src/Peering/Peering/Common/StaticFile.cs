@@ -3077,6 +3077,11 @@ namespace Microsoft.Azure.Commands.Peering.Common
 ]";
         }
 
+        /// <summary>
+        /// Gets the faility location map 
+        /// You MUST replace 'Address': 'Carrer de l'Acer 30-32' with 'Address': 'Carrer de l`Acer 30-32', the ' mark conflicts.
+        /// </summary>
+        /// <returns></returns>
         public static string GetFacilityLocationMap()
         {
             return @"[
@@ -3227,7 +3232,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Palo Alto',
@@ -3328,7 +3335,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'San Jose',
@@ -3473,7 +3482,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Chicago',
@@ -3622,7 +3633,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '7': {
+        'CodeList': [
+          'chg'
+        ],
+        'Country': 'US',
+        'Address': '350 E Cermak Rd',
+        'Latitude': 41.85365,
+        'Longitude': -87.618342,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/7',
+        'Devices': {
+          'ter01.chg': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.chg',
+              'ter03.chg',
+              'ter04.chg'
+            ]
+          },
+          'ter02.chg': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.chg',
+              'ter03.chg',
+              'ter04.chg'
+            ]
+          },
+          'ter03.chg': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.chg',
+              'ter02.chg',
+              'ter04.chg'
+            ]
+          },
+          'ter04.chg': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.chg',
+              'ter02.chg',
+              'ter03.chg'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Los Angeles',
@@ -3824,7 +3895,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Atlanta',
@@ -3973,7 +4046,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Miami',
@@ -4122,7 +4197,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'London',
@@ -4392,7 +4469,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '832': {
+        'CodeList': [
+          'lon04'
+        ],
+        'Country': 'GB',
+        'Address': '8 Buckingham Avenue',
+        'Latitude': 51.522463,
+        'Longitude': -0.62905,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/832',
+        'Devices': {
+          'ter01.lon04': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.lon04',
+              'ter03.lon04',
+              'ter04.lon04'
+            ]
+          },
+          'ter02.lon04': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.lon04',
+              'ter03.lon04',
+              'ter04.lon04'
+            ]
+          },
+          'ter03.lon04': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.lon04',
+              'ter02.lon04',
+              'ter04.lon04'
+            ]
+          },
+          'ter04.lon04': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.lon04',
+              'ter02.lon04',
+              'ter03.lon04'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'New York',
@@ -4607,7 +4744,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Paris',
@@ -4788,7 +4927,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Frankfurt',
@@ -4981,7 +5122,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '133': {
+        'CodeList': [
+          'fra31'
+        ],
+        'Country': 'DE',
+        'Address': 'Taubenstrasse 7-9',
+        'Latitude': 50.116391,
+        'Longitude': 8.678206,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/133',
+        'Devices': {
+          'ter01.fra31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.fra31',
+              'ter03.fra31',
+              'ter04.fra31'
+            ]
+          },
+          'ter02.fra31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.fra31',
+              'ter03.fra31',
+              'ter04.fra31'
+            ]
+          },
+          'ter03.fra31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.fra31',
+              'ter02.fra31',
+              'ter04.fra31'
+            ]
+          },
+          'ter04.fra31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.fra31',
+              'ter02.fra31',
+              'ter03.fra31'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Amsterdam',
@@ -5237,7 +5438,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '104': {
+        'CodeList': [
+          'ams31'
+        ],
+        'Country': 'NL',
+        'Address': 'Science Park 121',
+        'Latitude': 52.356671,
+        'Longitude': 4.952501,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/104',
+        'Devices': {
+          'ter01.ams31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.ams31',
+              'ter03.ams31',
+              'ter04.ams31'
+            ]
+          },
+          'ter02.ams31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.ams31',
+              'ter03.ams31',
+              'ter04.ams31'
+            ]
+          },
+          'ter03.ams31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.ams31',
+              'ter02.ams31',
+              'ter04.ams31'
+            ]
+          },
+          'ter04.ams31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.ams31',
+              'ter02.ams31',
+              'ter03.ams31'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Vienna',
@@ -5320,7 +5581,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Brussels',
@@ -5403,7 +5666,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Dallas',
@@ -5662,7 +5927,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Seattle',
@@ -6053,7 +6320,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Manchester',
@@ -6202,7 +6471,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Zurich',
@@ -6329,7 +6600,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Barcelona',
@@ -6434,7 +6707,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Lisbon',
@@ -6566,7 +6841,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'lis01'
         ],
         'Country': 'PT',
-        'Name': 'Equinix Internet Exchange Lisbon',
+        'Name': 'Equinix Lisbon',
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/2131',
         'Ipv4PrefixList': [
@@ -6605,7 +6880,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Madrid',
@@ -6669,7 +6946,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'mad30-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel20': {
+              'PortChannel67': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
@@ -6713,7 +6990,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'mad30-96cbe-1b': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel10': {
+              'PortChannel64': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
@@ -6776,7 +7053,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Sydney',
@@ -7022,7 +7301,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '131': {
+        'CodeList': [
+          'syd'
+        ],
+        'Country': 'AU',
+        'Address': 'Unit B 639 Gardeners Road',
+        'Latitude': -33.921391,
+        'Longitude': 151.188147,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/131',
+        'Devices': {
+          'ter01.syd': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.syd',
+              'ter03.syd',
+              'ter04.syd'
+            ]
+          },
+          'ter02.syd': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.syd',
+              'ter03.syd',
+              'ter04.syd'
+            ]
+          },
+          'ter03.syd': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.syd',
+              'ter02.syd',
+              'ter04.syd'
+            ]
+          },
+          'ter04.syd': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.syd',
+              'ter02.syd',
+              'ter03.syd'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Tokyo',
@@ -7345,7 +7684,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '1893': {
+        'CodeList': [
+          'tyo02'
+        ],
+        'Country': 'JP',
+        'Address': 'Otemachi Finance City',
+        'Latitude': 35.688288,
+        'Longitude': 139.765927,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1893',
+        'Devices': {
+          'ter01.tyo02': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.tyo02',
+              'ter03.tyo02',
+              'ter04.tyo02'
+            ]
+          },
+          'ter02.tyo02': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.tyo02',
+              'ter03.tyo02',
+              'ter04.tyo02'
+            ]
+          },
+          'ter03.tyo02': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.tyo02',
+              'ter02.tyo02',
+              'ter04.tyo02'
+            ]
+          },
+          'ter04.tyo02': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.tyo02',
+              'ter02.tyo02',
+              'ter03.tyo02'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Seoul',
@@ -7450,7 +7849,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Copenhagen',
@@ -7637,7 +8038,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Stockholm',
@@ -7864,7 +8267,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Dublin',
@@ -7985,12 +8390,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'MicrosoftSessionIpv6AddressList': [
           '2001:7f8:18::28'
         ],
-        'Bandwidth': 10000,
+        'Bandwidth': 100000,
         'Devices': {
           'dub30-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel15': {
+              'PortChannel60': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
@@ -8052,8 +8457,112 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'PairDevices': []
           }
         }
+      },
+      '387': {
+        'CodeList': [
+          'dba'
+        ],
+        'Country': 'IE',
+        'Name': 'INEX LAN2',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/387',
+        'Ipv4PrefixList': [
+          '194.88.240.0/25'
+        ],
+        'Ipv6PrefixList': [
+          '2001:7f8:18:12::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '194.88.240.77'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:7f8:18:12::77'
+        ],
+        'Bandwidth': 100000,
+        'Devices': {
+          'ier01.dba': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel65': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '194.88.240.77/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:18:12::77/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '164': {
+        'CodeList': [
+          'dba'
+        ],
+        'Country': 'IE',
+        'Address': 'Unit 4027, Kingswood Road',
+        'Latitude': 53.296306,
+        'Longitude': -6.41897,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/164',
+        'Devices': {
+          'ter01.dba': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.dba',
+              'ter03.dba',
+              'ter04.dba'
+            ]
+          },
+          'ter02.dba': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.dba',
+              'ter03.dba',
+              'ter04.dba'
+            ]
+          },
+          'ter03.dba': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.dba',
+              'ter02.dba',
+              'ter04.dba'
+            ]
+          },
+          'ter04.dba': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.dba',
+              'ter02.dba',
+              'ter03.dba'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Sao Paulo',
@@ -8354,7 +8863,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Hong Kong',
@@ -8643,7 +9154,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Prague',
@@ -8769,7 +9282,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Marseille',
@@ -8777,7 +9292,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'PrivatePeeringFacilityMap': {
       '226': {
         'CodeList': [
-          'mrs02'
+          'mrs02',
+          'mrs20'
         ],
         'Country': 'FR',
         'Address': '40 avenue Roger Salengro',
@@ -8908,7 +9424,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '226': {
+        'CodeList': [
+          'mrs20'
+        ],
+        'Country': 'FR',
+        'Address': '40 avenue Roger Salengro',
+        'Latitude': 43.310381,
+        'Longitude': 5.373342,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/226',
+        'Devices': {
+          'ter01.mrs20': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.mrs20',
+              'ter03.mrs20',
+              'ter04.mrs20'
+            ]
+          },
+          'ter02.mrs20': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.mrs20',
+              'ter03.mrs20',
+              'ter04.mrs20'
+            ]
+          },
+          'ter03.mrs20': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.mrs20',
+              'ter02.mrs20',
+              'ter04.mrs20'
+            ]
+          },
+          'ter04.mrs20': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.mrs20',
+              'ter02.mrs20',
+              'ter03.mrs20'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Singapore',
@@ -9220,7 +9796,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {
+      '388': {
+        'CodeList': [
+          'sg1'
+        ],
+        'Country': 'SG',
+        'Address': ' 2 TAI SENG AVENUE',
+        'Latitude': 1.336441,
+        'Longitude': 103.893491,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/388',
+        'Devices': {
+          'ter01.sg1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.sg1',
+              'ter03.sg1',
+              'ter04.sg1'
+            ]
+          },
+          'ter02.sg1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.sg1',
+              'ter03.sg1',
+              'ter04.sg1'
+            ]
+          },
+          'ter03.sg1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.sg1',
+              'ter02.sg1',
+              'ter04.sg1'
+            ]
+          },
+          'ter04.sg1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.sg1',
+              'ter02.sg1',
+              'ter03.sg1'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Budapest',
@@ -9341,7 +9977,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Moscow',
@@ -9457,7 +10095,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Denver',
@@ -9583,7 +10223,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Bucharest',
@@ -9747,7 +10389,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Taipei',
@@ -9852,7 +10496,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Kuala Lumpur',
@@ -9969,7 +10615,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Berlin',
@@ -10118,7 +10766,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Warsaw',
@@ -10267,7 +10917,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Chennai',
@@ -10417,7 +11069,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Mumbai',
@@ -10616,7 +11270,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'bom02'
         ],
         'Country': 'IN',
-        'Name': 'Mumbai Internet Exchange',
+        'Name': 'Mumbai IX',
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/2131',
         'Ipv4PrefixList': [
@@ -10655,7 +11309,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Perth',
@@ -10820,7 +11476,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Boston',
@@ -10937,7 +11595,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Sofia',
@@ -11145,7 +11805,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Las Vegas',
@@ -11228,7 +11890,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Toronto',
@@ -11377,7 +12041,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Johannesburg',
@@ -11482,7 +12148,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Osaka',
@@ -11708,7 +12376,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Cape Town',
@@ -11813,7 +12483,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Vancouver',
@@ -11926,7 +12598,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Melbourne',
@@ -12138,7 +12812,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Brisbane',
@@ -12306,7 +12982,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Auckland',
@@ -12528,7 +13206,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Zagreb',
@@ -12611,7 +13291,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Rio de Janeiro',
@@ -12742,7 +13424,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Helsinki',
@@ -12922,7 +13606,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Houston',
@@ -13027,7 +13713,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'San Antonio',
@@ -13046,7 +13734,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'Devices': {}
       }
     },
-    'PublicPeeringFacilityMap': {}
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Phoenix',
@@ -13185,7 +13875,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Mexico',
@@ -13223,7 +13915,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {}
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Santiago',
@@ -13328,7 +14022,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Montreal',
@@ -13411,7 +14107,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Athens',
@@ -13516,7 +14214,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Milan',
@@ -13663,7 +14363,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'New Delhi',
@@ -13746,7 +14448,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Honolulu',
@@ -13828,7 +14532,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Manila',
@@ -13866,7 +14572,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {}
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Hyderabad',
@@ -13949,7 +14657,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Fujairah',
@@ -14000,7 +14710,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Dubai',
@@ -14073,7 +14785,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Dusseldorf',
@@ -14146,7 +14860,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Munich',
@@ -14219,7 +14935,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Hamburg',
@@ -14292,7 +15010,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
           }
         }
       }
-    }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Newark',
@@ -14330,7 +15050,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {}
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Reston',
@@ -14368,7 +15090,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {}
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '668': {
+        'CodeList': [
+          'bl31'
+        ],
+        'Country': 'US',
+        'Address': '12100 Sunrise Valley Drive',
+        'Latitude': 38.950631,
+        'Longitude': -77.364541,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/668',
+        'Devices': {
+          'ter01.bl31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.bl31',
+              'ter03.bl31',
+              'ter04.bl31'
+            ]
+          },
+          'ter02.bl31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.bl31',
+              'ter03.bl31',
+              'ter04.bl31'
+            ]
+          },
+          'ter03.bl31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.bl31',
+              'ter02.bl31',
+              'ter04.bl31'
+            ]
+          },
+          'ter04.bl31': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.bl31',
+              'ter02.bl31',
+              'ter03.bl31'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Santa Clara',
@@ -14406,7 +15188,67 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {}
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '3344': {
+        'CodeList': [
+          'by30'
+        ],
+        'Country': 'US',
+        'Address': '3020 Coronado Drive',
+        'Latitude': 37.3761,
+        'Longitude': -121.973055,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/3344',
+        'Devices': {
+          'ter01.by30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.by30',
+              'ter03.by30',
+              'ter04.by30'
+            ]
+          },
+          'ter02.by30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.by30',
+              'ter03.by30',
+              'ter04.by30'
+            ]
+          },
+          'ter03.by30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.by30',
+              'ter02.by30',
+              'ter04.by30'
+            ]
+          },
+          'ter04.by30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.by30',
+              'ter02.by30',
+              'ter03.by30'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Hillsboro',
@@ -14444,7 +15286,313 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {}
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Geneva',
+    'AzureRegion': 'France Central',
+    'PrivatePeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '826': {
+        'CodeList': [
+          'gva30'
+        ],
+        'Country': 'CH',
+        'Address': 'Route du Bois-des-Fréres 46',
+        'Latitude': 46.207429,
+        'Longitude': 6.097904,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/826',
+        'Devices': {
+          'ter01.gva30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.gva30',
+              'ter03.gva30',
+              'ter04.gva30'
+            ]
+          },
+          'ter02.gva30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.gva30',
+              'ter03.gva30',
+              'ter04.gva30'
+            ]
+          },
+          'ter03.gva30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.gva30',
+              'ter02.gva30',
+              'ter04.gva30'
+            ]
+          },
+          'ter04.gva30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.gva30',
+              'ter02.gva30',
+              'ter03.gva30'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Ikeja',
+    'AzureRegion': 'France Central',
+    'PrivatePeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '4411': {
+        'CodeList': [
+          'los30'
+        ],
+        'Country': 'NG',
+        'Address': 'Oregun, Ikeja',
+        'Latitude': 6.600233,
+        'Longitude': 3.371841,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/4411',
+        'Devices': {
+          'ter01.los30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.los30',
+              'ter03.los30',
+              'ter04.los30'
+            ]
+          },
+          'ter02.los30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.los30',
+              'ter03.los30',
+              'ter04.los30'
+            ]
+          },
+          'ter03.los30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.los30',
+              'ter02.los30',
+              'ter04.los30'
+            ]
+          },
+          'ter04.los30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.los30',
+              'ter02.los30',
+              'ter03.los30'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Nairobi',
+    'AzureRegion': 'France Central',
+    'PrivatePeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '1964': {
+        'CodeList': [
+          'nbo30'
+        ],
+        'Country': 'KE',
+        'Address': 'Sameer Business Park',
+        'Latitude': -1.329875,
+        'Longitude': 36.867515,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1964',
+        'Devices': {
+          'ter01.nbo30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.nbo30',
+              'ter03.nbo30',
+              'ter04.nbo30'
+            ]
+          },
+          'ter02.nbo30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.nbo30',
+              'ter03.nbo30',
+              'ter04.nbo30'
+            ]
+          },
+          'ter03.nbo30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.nbo30',
+              'ter02.nbo30',
+              'ter04.nbo30'
+            ]
+          },
+          'ter04.nbo30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.nbo30',
+              'ter02.nbo30',
+              'ter03.nbo30'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Oslo',
+    'AzureRegion': 'UK West',
+    'PrivatePeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '345': {
+        'CodeList': [
+          'osl30'
+        ],
+        'Country': 'NO',
+        'Address': 'Ulvenveien 89b',
+        'Latitude': 59.924726,
+        'Longitude': 10.810183,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/345',
+        'Devices': {
+          'ter01.osl30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.osl30',
+              'ter03.osl30',
+              'ter04.osl30'
+            ]
+          },
+          'ter02.osl30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.osl30',
+              'ter03.osl30',
+              'ter04.osl30'
+            ]
+          },
+          'ter03.osl30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.osl30',
+              'ter02.osl30',
+              'ter04.osl30'
+            ]
+          },
+          'ter04.osl30': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.osl30',
+              'ter02.osl30',
+              'ter03.osl30'
+            ]
+          }
+        }
+      }
+    },
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Bogota',
+    'AzureRegion': 'East US',
+    'PrivatePeeringFacilityMap': {
+      '1354': {
+        'CodeList': [
+          'bog30'
+        ],
+        'Country': 'CO',
+        'Address': 'Carrera 106 No. 15A-25',
+        'Latitude': 4.672072,
+        'Longitude': -74.15577,
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1354',
+        'Devices': {
+          'ier01.bog30': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.bog30'
+            ]
+          },
+          'ier02.bog30': {
+            'DeviceType': 'None',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.bog30'
+            ]
+          }
+        }
+      }
+    },
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
   }
 ]";
         }
