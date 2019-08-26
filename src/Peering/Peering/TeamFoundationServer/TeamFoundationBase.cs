@@ -133,6 +133,24 @@ namespace TeamFoundationServerPowershell
             throw new Exception($"Peering Facility {exchangeFacilityName} not found in PeeringDb using ipv4 {ipv4} and ipv6 {ipv6}");
         }
 
+        public static LocationMetadata ResolveDirectPeeringFacility(string deviceName)
+        {
+            var json = StaticFile.GetFacilityLocationMap().ToString();
+            List<EdgeLocation> directPeeringfacilities = JsonConvert.DeserializeObject<List<EdgeLocation>>(json);
+            foreach (var facility in directPeeringfacilities)
+            {
+                foreach (var keyValuePair in facility.PrivatePeeringFacilityMap)
+                {
+                    if (keyValuePair.Value.Devices.ContainsKey(deviceName))
+                    {
+                        return new LocationMetadata((int)keyValuePair.Key, deviceName, facility.LocationName, facility.AzureRegion, keyValuePair.Value.LocationType);
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public KeyValuePair<PSPeerAsn, List<PSPeering>> ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(
 string descriptionFieldContents)
         {
@@ -299,12 +317,199 @@ string descriptionFieldContents)
             return new KeyValuePair<PSPeerAsn, List<PSPeering>>(peerAsn, listPeering);
         }
 
+        public KeyValuePair<PSPeerAsn, List<PSPeering>> ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformationDirect(
+string descriptionFieldContents)
+        {
+            List<PSPeering> listPeering = new List<PSPeering>();
+            PSPeerAsn peerAsn = new PSPeerAsn();
+            var peeringConfiguration = new PSPeering
+            {
+                Direct = new PSPeeringPropertiesDirect
+                {
+                    Connections = new List<PSDirectConnection>()
+                }
+
+            };
+            var html = descriptionFieldContents;
+            string[] strArr;
+            if (html.ToString().Contains(@"&nbsp;"))
+            {
+                strArr = html.ToString().Replace(@"<p>", string.Empty).Replace(@"<strong>", string.Empty)
+                    .Replace("\n", string.Empty).Replace(@"</strong>", string.Empty).Replace(@"&nbsp;", string.Empty)
+                    .Split(new[] { "</p>" }, StringSplitOptions.RemoveEmptyEntries);
+            }
+            else if (html.ToString().Contains(@"<div>") && html.ToString().Contains(@"<br>"))
+            {
+                strArr = html.ToString().Replace(@"<div>", string.Empty).Replace(@"<br>", string.Empty).Replace("\n", string.Empty)
+    .Split(new[] { "</div>" }, StringSplitOptions.RemoveEmptyEntries);
+            }
+            else if (html.ToString().Contains(@"<br>"))
+            {
+                strArr = html.ToString().Replace(@"<p>", string.Empty).Replace(@"</p>", string.Empty)
+                    .Replace(@"<strong>", string.Empty).Replace(@"</strong>", string.Empty).Replace("\n", string.Empty)
+                    .Split(new[] { "<br>" }, StringSplitOptions.RemoveEmptyEntries);
+            }
+            else
+            {
+                strArr = html.ToString().Replace(@"<p>", string.Empty).Replace(@"<strong>", string.Empty)
+                    .Replace(@"</strong>", string.Empty).Replace("\n", string.Empty).Split(
+                        new[] { @"</p>" },
+                        StringSplitOptions.RemoveEmptyEntries);
+            }
+
+            var bgpSession = new PSBgpSession();
+            var connectionStrings = new List<string>();
+            for (int i = 0; i < strArr.Length; i++)
+            {
+                var subString = strArr[i].ToLowerInvariant();
+                if (subString.Contains("as") && subString.Contains("number"))
+                {
+                    var asn = int.Parse(strArr[i].Split(':')[1]);
+                    peerAsn = new PSPeerAsn(name: $"AS{asn}") { PeerContactInfo = new PSContactInfo { Emails = new List<string>(), Phone = new List<string>() } };
+                    peerAsn.PeerAsnProperty = asn;
+                }
+
+                if (subString.Contains("peer") & subString.Contains("name"))
+                {
+                    peerAsn.PeerName = strArr[i].Split(':')[1].Trim();
+                }
+
+                if (subString.Contains("email"))
+                {
+                    var emails = strArr[i].Split(':')[1].Trim().Split(',');
+                    Array.ForEach<string>(emails, x => peerAsn.PeerContactInfo.Emails.Add(x));
+                }
+
+                if (subString.Contains("phone"))
+                {
+                    var phones = strArr[i].Split(':')[1].Trim().Split(',');
+                    Array.ForEach<string>(phones, x => peerAsn.PeerContactInfo.Phone.Add(x));
+                }
+
+                if (subString.Contains(("Max prefixes for IPv4").ToLowerInvariant()))
+                {
+                    bgpSession.MaxPrefixesAdvertisedV4 = int.Parse(subString.Split(':')[1]) > 20000 ? 20000 : int.Parse(subString.Split(':')[1]);
+                }
+
+                if (subString.Contains(("Max prefixes for IPv6").ToLowerInvariant()))
+                {
+                    bgpSession.MaxPrefixesAdvertisedV6 = int.Parse(subString.Split(':')[1]) > 2000 ? 2000 : int.Parse(subString.Split(':')[1]);
+                }
+
+                if (!subString.Contains(("direct pni information"))) continue;
+                for (int j = i; j < strArr.Length; j++)
+                {
+                    connectionStrings.Add(strArr[j]);
+                }
+
+                break;
+            }
+
+            connectionStrings.Reverse();
+            LocationMetadata prevLocation = null;
+            var bandwidth = 10000;
+            foreach (string subStr in connectionStrings)
+            {
+                var s = subStr.ToLowerInvariant();
+                if (s.Contains(("IPv4").ToLowerInvariant()))
+                {
+                    bgpSession.SessionPrefixV6 = s.Split(':')[1].Trim();
+                    continue;
+                }
+
+                if (s.Contains(("BandwidthInMbps").ToLowerInvariant()))
+                {
+                    bandwidth = int.Parse(subStr.Split(':')[1].Trim());
+                    continue;
+                }
+
+                if (s.Contains(("IPv6").ToLowerInvariant()))
+                {
+                    bgpSession.SessionPrefixV6 = s.Substring(5).Trim();
+                    continue;
+                }
+                if (s.Contains(("Device Name").ToLowerInvariant()))
+                {
+                    try
+                    {
+                        var peeringLocation = TeamFoundationBase.ResolveDirectPeeringFacility(s.Split(':')[1].Trim());
+                        if(bgpSession.SessionPrefixV6 == string.Empty && bgpSession.SessionPrefixV6 == string.Empty)
+                        {
+                            bgpSession = null;
+                        }
+                        if (peeringLocation.PeeringLocation.Equals(prevLocation?.PeeringLocation))
+                        {
+                            prevLocation = peeringLocation;
+                            listPeering.Find(x => x.PeeringLocation == peeringLocation.PeeringLocation).Direct.Connections.Add(
+                                new PSDirectConnection
+                                {
+                                    ConnectionIdentifier = Guid.NewGuid().ToString(),
+                                    BgpSession = bgpSession,
+                                    BandwidthInMbps = bandwidth,
+                                    PeeringDBFacilityId = peeringLocation.FacilityId
+                                });
+                            bgpSession = new PSBgpSession
+                            {
+                                MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4 ?? 20000,
+                                MaxPrefixesAdvertisedV6 = bgpSession.MaxPrefixesAdvertisedV6 ?? 2000
+                            };
+                        }
+                        else
+                        {
+                            prevLocation = peeringLocation;
+                            peeringConfiguration.Direct.Connections = new List<PSDirectConnection>();
+                            if (bgpSession == null) {
+                                peeringConfiguration.Direct.Connections.Add(new PSDirectConnection
+                                {
+                                    PeeringDBFacilityId = peeringLocation.FacilityId,
+                                    ConnectionIdentifier = Guid.NewGuid().ToString(),
+                                    BgpSession = bgpSession,
+                                    BandwidthInMbps = bandwidth
+                                });
+                            }
+                            else
+                            {
+                                peeringConfiguration.Direct.Connections.Add(new PSDirectConnection
+                                {
+                                    PeeringDBFacilityId = peeringLocation.FacilityId,
+                                    ConnectionIdentifier = Guid.NewGuid().ToString(),
+                                    BgpSession = new PSBgpSession
+                                    {
+                                        MaxPrefixesAdvertisedV4 = bgpSession.MaxPrefixesAdvertisedV4 ?? 20000,
+                                        MaxPrefixesAdvertisedV6 = bgpSession.MaxPrefixesAdvertisedV6 ?? 2000,
+                                        SessionPrefixV4 = bgpSession.SessionPrefixV4,
+                                        SessionPrefixV6 = bgpSession.SessionPrefixV6,
+                                    },
+                                    BandwidthInMbps = bandwidth
+                                });
+                            }
+                            var xPeering = new PSPeering(new PSPeeringSku(Constants.BasicDirectFree), Constants.Direct, peeringLocation.AzRegion, peeringLocation.PeeringLocationWithOutSpace, direct: new PSPeeringPropertiesDirect
+                            {
+                                PeerAsn = new PSSubResource(peerAsn.Name),
+                                Connections = peeringConfiguration.Direct.Connections
+                            }, peeringLocation: peeringLocation.PeeringLocation);
+                            listPeering.Add(xPeering);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        this.WriteVerbose(ex.Message);
+                        throw new Exception(ex.Message);
+                    }
+                }
+            }
+            return new KeyValuePair<PSPeerAsn, List<PSPeering>>(peerAsn, listPeering);
+        }
+
         public string UpdateQuickNotesForWorkItem(int workItemId, string notes)
         {
             var item = this.workItemTrackingHttpClient.GetWorkItemAsync(ProjectName, workItemId).Result;
-            var s = item.Fields["gnsedge.quick_notes"].ToString();
-            s += notes;
-            var document = new JsonPatchDocument
+            JsonPatchDocument document;
+            try
+            {
+                var s = item.Fields["gnsedge.quick_notes"].ToString();
+                s += notes;
+                document = new JsonPatchDocument
                                {
                                    new JsonPatchOperation
                                        {
@@ -313,6 +518,20 @@ string descriptionFieldContents)
                                            Value = s
                                        }
                                };
+            }
+            catch
+            {
+                this.WriteVerbose($"Quick Notes were null, creating quicknotes from scratch.");
+                document = new JsonPatchDocument
+                               {
+                                   new JsonPatchOperation
+                                       {
+                                           Operation = Microsoft.VisualStudio.Services.WebApi.Patch.Operation.Add,
+                                           Path = "/fields/gnsedge.quick_notes",
+                                           Value = notes
+                                       }
+                               };
+            }
 
             var result = this.workItemTrackingHttpClient.UpdateWorkItemAsync(document, ProjectName, workItemId).Result;
             this.WriteVerbose(string.Format("Updated Ticket {0} {1}", workItemId, notes));

@@ -196,7 +196,7 @@ namespace TeamFoundationServerPowershell
                             v6 = ipAddresses[i];
                         }
                     }
-                    exchanges += $"Exchange Name:{keyValue.Key.FacilityName}<br>IPv4:{v4}<br>IPv6:{v6}<br>MD5:{this.Md5Authenication}<br>";
+                    exchanges += $"Exchange Name:{keyValue.Key.Name}<br>IPv4:{v4}<br>IPv6:{v6}<br>MD5:{this.Md5Authenication}<br>";
                 }
                 if (this.ParameterSetName == Constants.ParameterSetNameDefault)
                 {

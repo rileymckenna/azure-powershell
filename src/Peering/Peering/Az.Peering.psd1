@@ -87,10 +87,12 @@ CmdletsToExport = 'Get-AzPeering',
 			'Get-AzLegacyPeering',
 			'Set-AzPeerAsn',
 			'Remove-AzPeerAsn',
-			'New-TfsClientFromSecondarySubscription',
+			'New-TfsClientExchangeFromSecondarySubscription',
+			'New-TfsClientDirectFromSecondarySubscription',
 			'Get-TfsWorkItem',
 			'Set-TfsWorkItem', 
 			'Set-TfsWorkItemDescription',
+			'Set-TfsWorkItemDirectDescription',
 			'Get-TfsWorkItemDescriptionProperties',
 			'Set-TfsClientWorkItemTags'
 

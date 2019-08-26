@@ -49,7 +49,7 @@ namespace TeamFoundationServerPowershell.Model.Data
                 this.Connections.Add(connection);
                 this.PeeringFacilityId.Add(connection.PeeringDBFacilityId);
                 this.LocationMetadata.Push(TeamFoundationBase.ResolvePeeringFacility(peering.PeeringLocation, connection.BgpSession.PeerSessionIPv4Address, connection.BgpSession.PeerSessionIPv6Address));
-                this.ExchangeName.Add(this.LocationMetadata.Peek().FacilityName);
+                this.ExchangeName.Add(this.LocationMetadata.Peek().Name);
             }
         }
     }

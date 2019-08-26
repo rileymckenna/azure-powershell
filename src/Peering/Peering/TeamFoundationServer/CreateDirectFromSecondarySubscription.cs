@@ -19,9 +19,9 @@ using ErrorResponseException = Microsoft.Azure.Management.Peering.Models.ErrorRe
 
 namespace TeamFoundationServerPowershell
 {
-    [Cmdlet(VerbsCommon.New, "TfsClientFromSecondarySubscription")]
+    [Cmdlet(VerbsCommon.New, "TfsClientDirectFromSecondarySubscription")]
     [OutputType(typeof(PSPeering))]
-    public class CreateFromSecondarySubscription : TeamFoundationBase
+    public class CreateFromDirectSecondarySubscription : TeamFoundationBase
     {
         private WorkItem workItem;
         private KeyValuePair<PSPeerAsn, List<PSPeering>> PeerAsnAndPeering;
@@ -46,17 +46,7 @@ namespace TeamFoundationServerPowershell
             try
             {
                 this.workItem = this.workItemTrackingHttpClient.GetWorkItemAsync(ProjectName, this.WorkItemNumber ?? 0).Result;
-                this.PeerAsnAndPeering = this.ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformation(this.workItem.Fields["System.Description"].ToString());
-                foreach (var peering in this.PeerAsnAndPeering.Value)
-                {
-                    var viewModel = new PeeringViewModel(this.PeerAsnAndPeering.Key, peering, this.WorkItemNumber.Value);
-                    this.WriteObject(viewModel);
-                    foreach (var connection in viewModel.Connections)
-                    {
-                        this.WriteObject(connection);
-                        this.WriteObject(connection.BgpSession);
-                    }
-                }
+                this.PeerAsnAndPeering = this.ParseWorkItemDescriptionForPeerAsnContactInformationAndPeeringInformationDirect(this.workItem.Fields["System.Description"].ToString());
                 // Determine how many peerings are contained within the work item
                 if (this.PeerAsnAndPeering.Key == null || this.PeerAsnAndPeering.Value == null)
                 {
@@ -102,7 +92,7 @@ namespace TeamFoundationServerPowershell
             {
                 // Get Resource Group
                 AzureOperationResponse<ResourceGroup> resourceGroup = null;
-                var peeringName = $"{asnName}_{descriptionPeering.Name}_Exchange";
+                var peeringName = $"{asnName}_{descriptionPeering.Name}_Direct";
                 try
                 {
                     this.WriteVerbose($"Checking for Resource Group {descriptionPeering.Name}");
@@ -141,11 +131,11 @@ namespace TeamFoundationServerPowershell
                 {
                     // check for Legacy
                     this.WriteVerbose("Checking for Legacy");
-                    var allLegacyPeering = this.PeeringManagementClient.LegacyPeerings.List(descriptionPeering.PeeringLocation, Constants.Exchange);
+                    var allLegacyPeering = this.PeeringManagementClient.LegacyPeerings.List(descriptionPeering.PeeringLocation, Constants.Direct);
                     PeeringModel legacyPeering = null;
                     foreach (var legacy in allLegacyPeering)
                     {
-                        if (legacy.Exchange.PeerAsn.Id.Equals(asn.PeerAsnProperty.ToString(), StringComparison.InvariantCultureIgnoreCase) && legacy.PeeringLocation.Equals(descriptionPeering.PeeringLocation, StringComparison.InvariantCultureIgnoreCase))
+                        if (legacy.Direct.PeerAsn.Id.Equals(asn.PeerAsnProperty.ToString(), StringComparison.InvariantCultureIgnoreCase) && legacy.PeeringLocation.Equals(descriptionPeering.PeeringLocation, StringComparison.InvariantCultureIgnoreCase))
                         {
                             legacyPeering = legacy;
                             break;
@@ -163,12 +153,15 @@ namespace TeamFoundationServerPowershell
                         {
                             legacyPeering.Location = descriptionPeering.Location;
                         }
-                        legacyPeering.Exchange.PeerAsn.Id = asn.Id;
-                        var viewModel = new PSExchangePeeringModelView(this.ToPeeringPs(legacyPeering));
+                        legacyPeering.Direct.PeerAsn.Id = asn.Id;
+                        var viewModel = new PSDirectPeeringModelView(this.ToPeeringPs(legacyPeering));
                         this.WriteObject(viewModel, true);
                         foreach (var connection in viewModel.Connections)
                         {
+                            this.WriteVerbose($"ARM tracked bandwidth: {connection.BandwidthInMbps}. Provisioned Bandwidth: {connection.ProvisionedBandwidthInMbps}");
                             this.WriteObject(connection.BgpSession);
+                            // Update bandwidth when supported.
+                            connection.BandwidthInMbps = connection.ProvisionedBandwidthInMbps;
                         }
                         this.ConfirmAction(this.Force,
                             string.Format(Resources.ContinueNewMessage, "convert a Legacy Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
@@ -177,34 +170,58 @@ namespace TeamFoundationServerPowershell
                             this.CreateOrUpdatePeering(resourceGroup.Body.Name, peeringName, legacyPeering));
                         try
                         {
+                            this.WriteVerbose($"Peering was converted at {descriptionPeering.PeeringLocation} and adding connection to {peeringName}");
                             var newPeering = this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, peeringName);
                             if (newPeering != null)
                             {
+                                var deviceInformation = TeamFoundationBase.ResolveDirectPeeringFacility(this.workItem.Fields["custom.Node_A"].ToString());
                                 if (newPeering.Tags?.Count > 0)
                                 {
-                                    var key = $"tfs_{this.workItem.Id}";
-                                    newPeering.Tags[key] = "Active";
-                                    this.WriteVerbose($"No exisiting Tags adding new tag {key}");
+
+                                    foreach (var directPeeringConnection in newPeering.Direct.Connections)
+                                    {
+                                        // Get the device ID
+                                        // Get the location
+                                        var key = $"{directPeeringConnection.ConnectionIdentifier}_{deviceInformation.Name}_{this.workItem.Id}";
+                                        newPeering.Tags[key] = "Active";
+                                        this.WriteVerbose($"Existing tags associated with the Peering. Adding Keys: {string.Join(",", newPeering.Tags.Keys)}. Adding new tag.key {key}");
+                                    }
                                 }
                                 else
                                 {
-                                    newPeering.Tags = new Dictionary<string, string>();
-                                    var key = $"tfs_{this.workItem.Id}";
-                                    newPeering.Tags[key] = "Active";
-                                    this.WriteVerbose($"Exisiting Tags. Existing Keys: {string.Join(",", newPeering.Tags.Keys)}. Adding new tag.key {key}");
+                                    foreach (var directPeeringConnection in newPeering.Direct.Connections)
+                                    {
+                                        newPeering.Tags = new Dictionary<string, string>();
+                                        var key = $"{directPeeringConnection.ConnectionIdentifier}_{deviceInformation.Name}_{this.workItem.Id}";
+                                        newPeering.Tags[key] = "Active";
+                                        this.WriteVerbose($"No tags associated with the Peering. Adding Keys: {string.Join(",", newPeering.Tags.Keys)}. Adding new tag.key {key}");
+                                    }
                                 }
-                                foreach (var psConnection in descriptionPeering.Exchange.Connections)
+                                foreach (var psConnection in descriptionPeering.Direct.Connections)
                                 {
-                                    var connection = PeeringResourceManagerProfile.Mapper.Map<ExchangeConnection>(psConnection);
-                                    this.WriteVerbose($"Add Connection");
-                                    this.WriteVerbose($"{psConnection.PeeringDBFacilityId}");
-                                    this.WriteObject(psConnection.BgpSession);
-                                    newPeering.Exchange.Connections.Add(connection);
+                                    // Add new connection DECOM other
+                                    if (psConnection.BandwidthInMbps == 100000)
+                                    {
+                                        var connection = PeeringResourceManagerProfile.Mapper.Map<DirectConnection>(psConnection);
+                                        this.WriteVerbose($"Add Connection");
+                                        newPeering.Direct.Connections.Add(connection);
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < newPeering.Direct.Connections.Count - 1; i++)
+                                        {
+                                            if (newPeering.Direct.Connections[i].BandwidthInMbps < psConnection.BandwidthInMbps)
+                                            {
+                                                this.WriteVerbose($"Update Connection");
+                                                newPeering.Direct.Connections[i].BandwidthInMbps = psConnection.BandwidthInMbps;
+                                            }
+                                        }
+                                    }
                                     this.WriteObject(this.ToPeeringPs(newPeering));
                                     this.ConfirmAction(this.Force,
                                         string.Format(Resources.ContinueNewMessage, "Update a converted Legacy Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
                                         string.Format(Resources.ContinueNewMessage, "Update a converted Legacy Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
-                                        "Add Connection",
+                                        "AddOrUpdating Connection",
                                         this.CreateOrUpdatePeering(resourceGroup.Body.Name, peeringName, newPeering));
                                     newPeering = this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, peeringName);
                                 }
@@ -224,40 +241,62 @@ namespace TeamFoundationServerPowershell
                     {
                         try
                         {
-                            this.WriteVerbose($"No legacy peering, checking existing peerings at {descriptionPeering.PeeringLocation}");
-                            var existingPeering = this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, peeringName);
-                            if (existingPeering != null && existingPeering.PeeringLocation.Equals(descriptionPeering.PeeringLocation, StringComparison.InvariantCultureIgnoreCase))
+                            this.WriteVerbose($"An existing peering at {descriptionPeering.PeeringLocation} and adding connection to {peeringName}");
+                            var newPeering = this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, peeringName);
+                            if (newPeering != null)
                             {
-                                this.WriteVerbose($"Existing peering, adding connection to {peeringName}");
-                                if (existingPeering.Tags?.Count > 0)
+                                var deviceInformation = TeamFoundationBase.ResolveDirectPeeringFacility(this.workItem.Fields["custom.Node_A"].ToString());
+                                if (newPeering.Tags?.Count > 0)
                                 {
-                                    var key = $"tfs_{this.workItem.Id}";
-                                    existingPeering.Tags[key] = "Active";
-                                    this.WriteVerbose($"Exisiting Tags. Existing Keys: {string.Join(",", existingPeering.Tags.Keys)}. Adding new tag.key {key}");
+
+                                    foreach (var directPeeringConnection in newPeering.Direct.Connections)
+                                    {
+                                        // Get the device ID
+                                        // Get the location
+                                        var key = $"{directPeeringConnection.ConnectionIdentifier}_{deviceInformation.Name}_{this.workItem.Id}";
+                                        newPeering.Tags[key] = "Active";
+                                        this.WriteVerbose($"Existing tags associated with the Peering. Adding Keys: {string.Join(",", newPeering.Tags.Keys)}. Adding new tag.key {key}");
+                                    }
                                 }
                                 else
                                 {
-                                    existingPeering.Tags = new Dictionary<string, string>();
-                                    var key = $"tfs_{this.workItem.Id}";
-                                    existingPeering.Tags[key] = "Active";
-                                    this.WriteVerbose($"No exisiting Tags adding new tag {key}");
+                                    foreach (var directPeeringConnection in newPeering.Direct.Connections)
+                                    {
+                                        newPeering.Tags = new Dictionary<string, string>();
+                                        var key = $"{directPeeringConnection.ConnectionIdentifier}_{deviceInformation.Name}_{this.workItem.Id}";
+                                        newPeering.Tags[key] = "Active";
+                                        this.WriteVerbose($"No tags associated with the Peering. Adding Keys: {string.Join(",", newPeering.Tags.Keys)}. Adding new tag.key {key}");
+                                    }
                                 }
-                                foreach (var psConnection in descriptionPeering.Exchange.Connections)
+                                foreach (var psConnection in descriptionPeering.Direct.Connections)
                                 {
-                                    var connection = PeeringResourceManagerProfile.Mapper.Map<ExchangeConnection>(psConnection);
-                                    this.WriteVerbose($"Add Connection");
-                                    this.WriteVerbose($"{psConnection.PeeringDBFacilityId}");
-                                    this.WriteObject(psConnection.BgpSession);
-                                    existingPeering.Exchange.Connections.Add(connection);
+                                    // Add new connection DECOM other
+                                    if (psConnection.BandwidthInMbps == 100000)
+                                    {
+                                        var connection = PeeringResourceManagerProfile.Mapper.Map<DirectConnection>(psConnection);
+                                        this.WriteVerbose($"Add Connection");
+                                        newPeering.Direct.Connections.Add(connection);
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < newPeering.Direct.Connections.Count - 1; i++)
+                                        {
+                                            if (newPeering.Direct.Connections[i].BandwidthInMbps < psConnection.BandwidthInMbps)
+                                            {
+                                                this.WriteVerbose($"Update Connection");
+                                                newPeering.Direct.Connections[i].BandwidthInMbps = psConnection.BandwidthInMbps;
+                                            }
+                                        }
+                                    }
                                     try
                                     {
-                                        this.WriteObject(this.ToPeeringPs(existingPeering));
+                                        this.WriteObject(this.ToPeeringPs(newPeering));
                                         this.ConfirmAction(this.Force,
-                                            string.Format(Resources.ContinueNewMessage, "Update an existing Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
-                                            string.Format(Resources.ContinueNewMessage, "Update an existing Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
-                                            "Add Connection",
-                                            this.CreateOrUpdatePeering(resourceGroup.Body.Name, peeringName, existingPeering));
-                                        existingPeering = this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, peeringName);
+                                            string.Format(Resources.ContinueNewMessage, "Update an exisiting Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
+                                            string.Format(Resources.ContinueNewMessage, "Update an exisiting Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
+                                            "AddOrUpdating Connection",
+                                            this.CreateOrUpdatePeering(resourceGroup.Body.Name, peeringName, newPeering));
+                                        newPeering = this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, peeringName);
                                     }
                                     catch (Microsoft.Azure.Management.Peering.Models.ErrorResponseException ex)
                                     {
@@ -275,9 +314,14 @@ namespace TeamFoundationServerPowershell
                         {
                             this.WriteVerbose($"No existing peering, creating new {peeringName} with Asn {this.PeerAsnAndPeering.Key.PeerAsnProperty} at location {descriptionPeering.PeeringLocation}");
                             var peer = descriptionPeering;
+                            var deviceInformation = TeamFoundationBase.ResolveDirectPeeringFacility(this.workItem.Fields["custom.Node_A"].ToString());
                             peer.Tags = new Dictionary<string, string>();
-                            peer.Tags[$"tfs_{this.workItem.Id}"] = "Active";
-                            peer.Exchange.PeerAsn.Id = asn.Id;
+                            foreach (var directPeeringConnection in peer.Direct.Connections)
+                            {
+                                var key = $"{directPeeringConnection.ConnectionIdentifier}_{deviceInformation.Name}_{this.workItem.Id}";
+                                peer.Tags[key] = "Active";
+                            }
+                            peer.Direct.PeerAsn.Id = asn.Id;
                             // TODO: Dogfood only
                             if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
                             {
@@ -287,7 +331,7 @@ namespace TeamFoundationServerPowershell
                             this.ConfirmAction(this.Force,
                                 string.Format(Resources.ContinueNewMessage, "Add a new Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
                                 string.Format(Resources.ContinueNewMessage, "Add a new Peering", $"Name: {peeringName} ResourceGroup: {resourceGroup.Body.Name}"),
-                                string.Join("|", peer.Exchange.Connections),
+                                string.Join("|", peer.Direct.Connections),
                                 this.CreateOrUpdatePeering(resourceGroup.Body.Name, peeringName, this.ToPeering(peer)));
                             newPeeringStack.Push(this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, peeringName)));
                             this.WriteObject(newPeeringStack.Peek());
@@ -354,42 +398,42 @@ namespace TeamFoundationServerPowershell
             WriteVerbose($"Verifying all resources were created properly for {this.WorkItemNumber}");
             try
             {
-                    foreach (var stackPeering in this.newPeeringStack)
+                foreach (var stackPeering in this.newPeeringStack)
+                {
+                    AzureOperationResponse<ResourceGroup> resourceGroup = null;
+                    var xResourceGroup = stackPeering.PeeringLocation.TrimStart(' ').TrimEnd(' ').Replace(" ", "_");
+                    resourceGroup = this.ResourceManagementClient.ResourceGroups.GetWithHttpMessagesAsync(xResourceGroup).GetAwaiter().GetResult();
+                    this.WriteVerbose($"Found ResourceGroup: {resourceGroup.Body.Name}");
+                    if (stackPeering.PeeringLocation != null && resourceGroup.Response.IsSuccessStatusCode && !this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
                     {
-                        AzureOperationResponse<ResourceGroup> resourceGroup = null;
-                        var xResourceGroup = stackPeering.PeeringLocation.TrimStart(' ').TrimEnd(' ').Replace(" ", "_");
-                        resourceGroup = this.ResourceManagementClient.ResourceGroups.GetWithHttpMessagesAsync(xResourceGroup).GetAwaiter().GetResult();
-                        this.WriteVerbose($"Found ResourceGroup: {resourceGroup.Body.Name}");
-                        if (stackPeering.PeeringLocation != null && resourceGroup.Response.IsSuccessStatusCode && !this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
-                        {
-                            var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
-                            var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
-                            var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
-                            var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request; Devices have been configured - ProvisioningCompleted" +
-                                $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
-                            this.WriteVerbose(this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, str));
-                            Thread.Sleep(3000);
-                            this.WriteObject(sierra);
-                        }
-                        else if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239") && resourceGroup.Response.IsSuccessStatusCode)
-                        {
-                            var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
-                            var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
-                            var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
-                            var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
-                                $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
-                            this.WriteVerbose(str);
-                            this.WriteObject(sierra);
-                        }
-                        else
-                        {
-                            this.WriteVerbose($"Ticket {this.WorkItemNumber} did not process properly");
-                        }
-                        if (this.newPeeringStack.Last() == stackPeering)
-                        {
-                            WriteVerbose($"Ticket: {this.WorkItemNumber} now complete.");
-                        }
+                        var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
+                        var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
+                        var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
+                        var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request; Devices have been configured - ProvisioningCompleted" +
+                            $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
+                        this.WriteVerbose(this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, str));
+                        Thread.Sleep(3000);
+                        this.WriteObject(sierra);
                     }
+                    else if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239") && resourceGroup.Response.IsSuccessStatusCode)
+                    {
+                        var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
+                        var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
+                        var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
+                        var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
+                            $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
+                        this.WriteVerbose(str);
+                        this.WriteObject(sierra);
+                    }
+                    else
+                    {
+                        this.WriteVerbose($"Ticket {this.WorkItemNumber} did not process properly");
+                    }
+                    if (this.newPeeringStack.Last() == stackPeering)
+                    {
+                        WriteVerbose($"Ticket: {this.WorkItemNumber} now complete.");
+                    }
+                }
                 if (errorPeeringStack.Count != 0)
                 {
                     foreach (var error in this.errorPeeringStack)
