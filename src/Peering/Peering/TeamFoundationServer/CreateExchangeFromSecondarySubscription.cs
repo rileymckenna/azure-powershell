@@ -19,7 +19,7 @@ using ErrorResponseException = Microsoft.Azure.Management.Peering.Models.ErrorRe
 
 namespace TeamFoundationServerPowershell
 {
-    [Cmdlet(VerbsCommon.New, "TfsClientExchangeFromSecondarySubscription")]
+    [Cmdlet(VerbsCommon.New, "TfsClientExchangeFromSecondarySubscription", SupportsShouldProcess = true)]
     [OutputType(typeof(PSPeering))]
     public class CreateFromExchangeSecondarySubscription : TeamFoundationBase
     {
@@ -37,6 +37,12 @@ namespace TeamFoundationServerPowershell
         [Parameter(
         Mandatory = false)]
         public SwitchParameter Force { get; set; }
+
+        /// <summary>
+        ///     The AsJob parameter to run in the background.
+        /// </summary>
+        [Parameter(Mandatory = false, HelpMessage = Constants.AsJobHelp)]
+        public SwitchParameter AsJob { get; set; }
 
         // This method gets called once for each cmdlet in the pipeline when the pipeline starts executing
         protected override void BeginProcessing()

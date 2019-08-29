@@ -201,39 +201,46 @@ string descriptionFieldContents)
                     var asn = int.Parse(strArr[i].Split(':')[1]);
                     peerAsn = new PSPeerAsn(name: $"AS{asn}") { PeerContactInfo = new PSContactInfo { Emails = new List<string>(), Phone = new List<string>() } };
                     peerAsn.PeerAsnProperty = asn;
+                    continue;
                 }
 
-                if (subString.Contains("peer") & subString.Contains("name"))
+                if (subString.Contains("peer") & subString.Contains("name") & !subString.Contains("@"))
                 {
                     peerAsn.PeerName = strArr[i].Split(':')[1].Trim();
+                    continue;
                 }
 
                 if (subString.Contains("email"))
                 {
                     var emails = strArr[i].Split(':')[1].Trim().Split(',');
                     Array.ForEach<string>(emails, x => peerAsn.PeerContactInfo.Emails.Add(x));
+                    continue;
                 }
 
                 if (subString.Contains("phone"))
                 {
                     var phones = strArr[i].Split(':')[1].Trim().Split(',');
                     Array.ForEach<string>(phones, x => peerAsn.PeerContactInfo.Phone.Add(x));
+                    continue;
                 }
 
                 if (subString.Contains(("Max prefixes for IPv4").ToLowerInvariant()))
                 {
                     bgpSession.MaxPrefixesAdvertisedV4 = int.Parse(subString.Split(':')[1]) > 20000 ? 20000 : int.Parse(subString.Split(':')[1]);
+                    continue;
                 }
 
                 if (subString.Contains(("Max prefixes for IPv6").ToLowerInvariant()))
                 {
                     bgpSession.MaxPrefixesAdvertisedV6 = int.Parse(subString.Split(':')[1]) > 2000 ? 2000 : int.Parse(subString.Split(':')[1]);
+                    continue;
                 }
 
                 if (!subString.Contains(("exchange information"))) continue;
                 for (int j = i; j < strArr.Length; j++)
                 {
                     connectionStrings.Add(strArr[j]);
+                    continue;
                 }
 
                 break;
@@ -369,7 +376,7 @@ string descriptionFieldContents)
                     peerAsn.PeerAsnProperty = asn;
                 }
 
-                if (subString.Contains("peer") & subString.Contains("name"))
+                if (subString.Contains("peer") & subString.Contains("name") & !subString.Contains("@"))
                 {
                     peerAsn.PeerName = strArr[i].Split(':')[1].Trim();
                 }
