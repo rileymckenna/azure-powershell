@@ -10,7 +10,7 @@ namespace TeamFoundationServerPowershell.Model
     /// Remote Port Info
     /// </summary>
     public class RemotePortInfo
-    { 
+    {
         /// <summary>
         /// Remote Rack location
         /// </summary>

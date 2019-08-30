@@ -6,6 +6,8 @@
 
 namespace TeamFoundationServerPowershell.Model
 {
+    using System;
+
     /// <summary>
     /// Connection Info
     /// </summary>
@@ -65,15 +67,12 @@ namespace TeamFoundationServerPowershell.Model
         /// <returns>True if both are equal.</returns>
         public override bool Equals(object obj)
         {
-            if (obj is ConnectionInfo connectionInfo)
-            {
-                return connectionInfo.ConnectionIPv4Address.Equals(this.ConnectionIPv4Address)
-                       && connectionInfo.ConnectionIPv6Address.Equals(this.ConnectionIPv6Address)
+            return obj is ConnectionInfo connectionInfo
+                ? connectionInfo.ConnectionIPv4Address.Equals(this.ConnectionIPv4Address)
+                       && connectionInfo.ConnectionIPv6Address.Equals(this.ConnectionIPv6Address, StringComparison.OrdinalIgnoreCase)
                        && connectionInfo.PeeringSkuFamily == this.PeeringSkuFamily
-                       && connectionInfo.ConnectionRemoved == this.ConnectionRemoved;
-            }
-
-            return false;
+                       && connectionInfo.ConnectionRemoved == this.ConnectionRemoved
+                : false;
         }
 
         /// <summary>
@@ -84,7 +83,7 @@ namespace TeamFoundationServerPowershell.Model
         {
             unchecked
             {
-                var hashCode = (this.ConnectionIPv4Address != null ? this.ConnectionIPv4Address.GetHashCode() : 0);
+                var hashCode = this.ConnectionIPv4Address != null ? this.ConnectionIPv4Address.GetHashCode() : 0;
                 hashCode = (hashCode * 397) ^ (this.ConnectionIPv6Address != null
                                                    ? this.ConnectionIPv6Address.GetHashCode()
                                                    : 0);

@@ -9,8 +9,6 @@ namespace TeamFoundationServerPowershell.Model
     using System;
     using System.Collections.Generic;
 
-    using TeamFoundationServerPowershell.Model;
-
     /// <summary>
     /// Port channel class
     /// </summary>

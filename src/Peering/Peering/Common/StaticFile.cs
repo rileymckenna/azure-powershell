@@ -3101,7 +3101,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1',
         'Devices': {
           'ash-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3110,7 +3110,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
     },
           'ash-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3252,7 +3252,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/5',
         'Devices': {
           'ier01.pao': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3261,7 +3261,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.pao': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3270,7 +3270,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'pao-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -3279,7 +3279,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'pao-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -3355,7 +3355,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/6',
         'Devices': {
           'ier01.sjc': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3364,7 +3364,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.sjc': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3373,7 +3373,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'sjc-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -3382,7 +3382,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'sjc-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -3502,7 +3502,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/7',
         'Devices': {
           'chg-96e-1': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3511,7 +3511,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'chg-96e-2': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3711,7 +3711,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/8',
         'Devices': {
           'lax-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3720,7 +3720,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'lax-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3742,7 +3742,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/19',
         'Devices': {
           'lax-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3751,7 +3751,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'lax-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3915,7 +3915,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/11',
         'Devices': {
           'ata-96e-1': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -3924,7 +3924,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ata-96e-2': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4066,7 +4066,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/15',
         'Devices': {
           'mia-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4075,7 +4075,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'mia-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4241,7 +4241,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/40',
         'Devices': {
           'lts-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4250,7 +4250,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'lts-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4272,7 +4272,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/832',
         'Devices': {
           'lon04-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4281,7 +4281,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'lon04-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4547,7 +4547,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/38',
         'Devices': {
           'nyc-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4556,7 +4556,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'nyc-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4764,7 +4764,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/53',
         'Devices': {
           'par02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4773,7 +4773,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'par02-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4795,7 +4795,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/714',
         'Devices': {
           'pra-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4804,7 +4804,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'pra-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4947,7 +4947,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/58',
         'Devices': {
           'fra-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -4956,7 +4956,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'fra-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5200,7 +5200,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/63',
         'Devices': {
           'ams-96c-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5209,7 +5209,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ams-96c-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5231,7 +5231,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/64',
         'Devices': {
           'ams-96c-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5240,7 +5240,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ams-96c-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5262,7 +5262,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1236',
         'Devices': {
           'amb-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5271,7 +5271,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'amb-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5516,7 +5516,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/67',
         'Devices': {
           'vie-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5525,7 +5525,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'vie-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5601,7 +5601,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/68',
         'Devices': {
           'bru30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5610,7 +5610,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'bru30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5686,7 +5686,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/69',
         'Devices': {
           'dal-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5695,7 +5695,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'dal-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5947,7 +5947,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/71',
         'Devices': {
           'wst-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5957,7 +5957,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'wst-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5967,7 +5967,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'wst-96cbe-1c': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5990,7 +5990,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/99999',
         'Devices': {
           'co1-96c-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -5999,7 +5999,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'co1-96c-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6340,7 +6340,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/76',
         'Devices': {
           'man30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6349,7 +6349,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'man30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6491,7 +6491,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/81',
         'Devices': {
           'zrh-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6500,7 +6500,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'zrh-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6620,7 +6620,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/122',
         'Devices': {
           'bcn30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6629,7 +6629,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'bcn30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6727,7 +6727,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/126',
         'Devices': {
           'lis01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6736,7 +6736,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'lis01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6900,7 +6900,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/130',
         'Devices': {
           'mad30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -6909,7 +6909,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'mad30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7073,7 +7073,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/131',
         'Devices': {
           'syd-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7082,7 +7082,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'syd-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7103,20 +7103,38 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1660',
         'Devices': {
-          'syd03-96cbe-1a': {
-            'DeviceType': 'None',
+          'ier01.syd03': {
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.syd03'
+            ]
+          },
+          'ier02.syd03': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.syd03'
+            ]
+          },
+          'syd03-96cbe-1a': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
             'PairDevices': [
               'syd03-96cbe-1b'
             ]
           },
           'syd03-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
-            'IsTakingNewConnection': true,
+            'IsTakingNewConnection': false,
             'PairDevices': [
               'syd03-96cbe-1a'
             ]
@@ -7359,6 +7377,63 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           }
         }
+      },
+      '1660': {
+        'CodeList': [
+          'syd03'
+        ],
+        'Country': 'AU',
+        'Address': '4 Eden Park Drive',
+        'Latitude': -33.785169,
+        'Longitude': 151.131515,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1660',
+        'Devices': {
+          'ter01.syd03': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.syd03',
+              'ter03.syd03',
+              'ter04.syd03'
+            ]
+          },
+          'ter02.syd03': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.syd03',
+              'ter03.syd03',
+              'ter04.syd03'
+            ]
+          },
+          'ter03.syd03': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.syd03',
+              'ter02.syd03',
+              'ter04.syd03'
+            ]
+          },
+          'ter04.syd03': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.syd03',
+              'ter02.syd03',
+              'ter03.syd03'
+            ]
+          }
+        }
       }
     },
     'InternalPeeringFacilityMap': {}
@@ -7379,7 +7454,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/142',
         'Devices': {
           'tya-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7388,7 +7463,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'tya-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7410,7 +7485,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/599',
         'Devices': {
           'tyb-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7419,7 +7494,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'tyb-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7441,7 +7516,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1893',
         'Devices': {
           'ier01.tyo02': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7450,7 +7525,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.tyo02': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7762,7 +7837,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/143',
         'Devices': {
           'sla-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7771,7 +7846,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'sla-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7869,7 +7944,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/148',
         'Devices': {
           'cph30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -7878,7 +7953,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'cph30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8058,7 +8133,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/156',
         'Devices': {
           'sto-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8067,7 +8142,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'sto-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8287,7 +8362,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/164',
         'Devices': {
           'ier01.dba': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8296,7 +8371,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.dba': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8318,7 +8393,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/177',
         'Devices': {
           'db3-96c-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8327,7 +8402,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'db3-96c-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8349,7 +8424,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1065',
         'Devices': {
           'dub30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8358,7 +8433,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'dub30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8581,7 +8656,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/165',
         'Devices': {
           'gru30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8591,7 +8666,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'gru30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8601,7 +8676,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'gru30-96cbe-1c': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8611,7 +8686,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'gru-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8620,7 +8695,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'gru-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8642,7 +8717,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1283',
         'Devices': {
           'sao03-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8651,7 +8726,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'sao03-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8883,7 +8958,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/170',
         'Devices': {
           'hkb-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8892,7 +8967,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'hkb-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8915,7 +8990,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/225',
         'Devices': {
           'hkg-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -8924,7 +8999,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'hkg-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -8933,7 +9008,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier01.hkg30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -8942,7 +9017,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.hkg30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9174,7 +9249,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/214',
         'Devices': {
           'prg01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9183,7 +9258,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'prg01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9315,7 +9390,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1879',
         'Devices': {
           'mrs01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9324,7 +9399,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'mrs01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9503,7 +9578,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/282',
         'Devices': {
           'sge-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9512,7 +9587,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'sge-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9534,7 +9609,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/388',
         'Devices': {
           'ier01.sg1': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9543,7 +9618,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.sg1': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9874,7 +9949,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/301',
         'Devices': {
           'bud01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9883,7 +9958,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'bud01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -9997,7 +10072,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/349',
         'Devices': {
           'msa-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10116,7 +10191,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/389',
         'Devices': {
           'den02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -10125,7 +10200,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'den02-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -10134,7 +10209,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier01.dna': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10143,7 +10218,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.dna': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10243,7 +10318,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/439',
         'Devices': {
           'buh01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10252,7 +10327,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'buh01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10409,7 +10484,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/456',
         'Devices': {
           'tpe31-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10418,7 +10493,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'tpe31-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10516,7 +10591,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/460',
         'Devices': {
           'kul30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10525,7 +10600,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'kul30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10635,7 +10710,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/478',
         'Devices': {
           'ber30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10644,7 +10719,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ber30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10786,7 +10861,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/509',
         'Devices': {
           'waw01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10795,7 +10870,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'waw01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10937,7 +11012,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/552',
         'Devices': {
           'ier01.maa02': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10946,7 +11021,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.maa02': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10955,7 +11030,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'maa02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -10964,7 +11039,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'maa02-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -10986,7 +11061,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2006',
         'Devices': {
           'ier01.maa30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -10995,7 +11070,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.maa30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11004,7 +11079,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'maa30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -11013,7 +11088,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'maa30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -11089,7 +11164,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/554',
         'Devices': {
           'bom02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -11098,7 +11173,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'bom02-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -11107,7 +11182,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier01.bom02': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11116,7 +11191,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.bom02': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11138,7 +11213,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2046',
         'Devices': {
           'bom30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -11147,7 +11222,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'bom30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -11156,7 +11231,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier01.bom30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11165,7 +11240,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.bom30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11329,7 +11404,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/568',
         'Devices': {
           'ier01.per01': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11338,7 +11413,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.per01': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11347,7 +11422,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'per01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
@@ -11367,7 +11442,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1940',
         'Devices': {
           'ier01.per30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11376,7 +11451,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.per30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11497,7 +11572,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/584',
         'Devices': {
           'bos01-96e-1': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11615,7 +11690,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/663',
         'Devices': {
           'sof01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11624,7 +11699,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'sof01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11825,7 +11900,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/770',
         'Devices': {
           'las01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11834,7 +11909,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'las01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11910,7 +11985,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/775',
         'Devices': {
           'yto01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -11919,7 +11994,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'yto01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12061,7 +12136,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/850',
         'Devices': {
           'jnb02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12070,7 +12145,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'jnb02-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12168,7 +12243,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1157',
         'Devices': {
           'osa02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12177,7 +12252,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'osa02-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12199,7 +12274,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2072',
         'Devices': {
           'osa30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12208,7 +12283,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'osa30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12396,7 +12471,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1225',
         'Devices': {
           'cpt02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12405,7 +12480,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'cpt02-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12503,7 +12578,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1330',
         'Devices': {
           'yvr01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12512,7 +12587,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'yvr01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12534,7 +12609,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1881',
         'Devices': {
           'yvr01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12543,7 +12618,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'yvr01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12618,7 +12693,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1339',
         'Devices': {
           'mel01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12627,7 +12702,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'mel01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12832,7 +12907,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1340',
         'Devices': {
           'bne01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -12841,7 +12916,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'bne01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13003,14 +13078,14 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1353',
         'Devices': {
           'akl01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': false,
             'PairDevices': []
           },
           'ier01.akl30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13019,7 +13094,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.akl30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13226,7 +13301,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1368',
         'Devices': {
           'zag30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13235,7 +13310,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'zag30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13311,7 +13386,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1374',
         'Devices': {
           'rio03-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13331,7 +13406,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1899',
         'Devices': {
           'rio02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13444,7 +13519,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1457',
         'Devices': {
           'hel02-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13464,7 +13539,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1459',
         'Devices': {
           'hel03-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13626,7 +13701,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1476',
         'Devices': {
           'hou01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13635,7 +13710,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'hou01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13754,7 +13829,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1488',
         'Devices': {
           'phx01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13763,7 +13838,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'phx01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13895,7 +13970,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1778',
         'Devices': {
           'mex30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13904,7 +13979,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'mex30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13935,7 +14010,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2093',
         'Devices': {
           'scl30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -13944,7 +14019,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'scl30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14042,7 +14117,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1944',
         'Devices': {
           'ymq01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14051,7 +14126,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ymq01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14127,7 +14202,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1949',
         'Devices': {
           'ath01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14136,7 +14211,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ath01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14234,7 +14309,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1974',
         'Devices': {
           'mil30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14243,7 +14318,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'mil30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14383,7 +14458,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1982',
         'Devices': {
           'del01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14392,7 +14467,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'del01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14468,7 +14543,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2526',
         'Devices': {
           'hnl01-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14477,7 +14552,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'hnl01-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14552,7 +14627,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/4810',
         'Devices': {
           'mnl30-96cbe-1a': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14561,7 +14636,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'mnl30-96cbe-1b': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14592,7 +14667,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/5236',
         'Devices': {
           'ier01.hyd30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -14601,7 +14676,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.hyd30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15030,7 +15105,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/9',
         'Devices': {
           'ier01.ewr30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15039,7 +15114,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.ewr30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15070,7 +15145,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/668',
         'Devices': {
           'ier01.bl31': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15079,7 +15154,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.bl31': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15168,7 +15243,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/3344',
         'Devices': {
           'ier01.by30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15177,7 +15252,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.by30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15266,7 +15341,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1922',
         'Devices': {
           'ier01.pdx31': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15275,7 +15350,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.pdx31': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15570,7 +15645,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/1354',
         'Devices': {
           'ier01.bog30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
@@ -15579,12 +15654,127 @@ namespace Microsoft.Azure.Commands.Peering.Common
             ]
           },
           'ier02.bog30': {
-            'DeviceType': 'None',
+            'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
             'PairDevices': [
               'ier01.bog30'
+            ]
+          }
+        }
+      }
+    },
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Lagos',
+    'AzureRegion': 'France Central',
+    'PrivatePeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {
+      '488': {
+        'CodeList': [
+          'los30'
+        ],
+        'Country': 'NG',
+        'Name': 'IXPN Lagos',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/488',
+        'Ipv4PrefixList': [
+          '196.216.148.0/24'
+        ],
+        'Ipv6PrefixList': [
+          '2001:43f8:bb1::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '196.216.148.85',
+          '196.216.148.86'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:43f8:bb1::85',
+          '2001:43f8:bb1::86'
+        ],
+        'Bandwidth': 20000,
+        'Devices': {
+          'ier01.los30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel60': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '196.216.148.85/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:bb1::85/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier02.los30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel60': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '196.216.148.86/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:bb1::86/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
+      }
+    },
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Jakarta',
+    'AzureRegion': 'Southeast Asia',
+    'PrivatePeeringFacilityMap': {
+      '2368': {
+        'CodeList': [
+          'jkt30'
+        ],
+        'Country': 'ID',
+        'Address': 'Cyber Building, 1st floor. Jl. Kuningan Barat no. 8',
+        'Latitude': -6.238649,
+        'Longitude': 106.824078,
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/2368',
+        'Devices': {
+          'ier01.jkt30': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.jkt30'
+            ]
+          },
+          'ier02.jkt30': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.jkt30'
             ]
           }
         }

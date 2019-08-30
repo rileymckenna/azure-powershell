@@ -17,8 +17,8 @@ namespace TeamFoundationServerPowershell.Model
     {
         None = 0,
         Free = 1,
-        Direct = 2, 
-        Exchange = 3, 
+        Direct = 2,
+        Exchange = 3,
         Datacenter = 4
     }
 }

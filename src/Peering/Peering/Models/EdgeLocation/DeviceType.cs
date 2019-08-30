@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <copyright file="DeviceType.cs" company="Microsoft">
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
@@ -10,15 +10,26 @@ namespace TeamFoundationServerPowershell.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Peer Type
+    /// Device Type
     /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum DeviceType
     {
-        // ReSharper disable InconsistentNaming
         None = 0,
-        IER = 1,
-        TER = 2,
-        // ReSharper enable InconsistentNaming
+
+        /// <summary>
+        /// IERs and 96cbe
+        /// </summary>
+        InternetEdgeRouter = 1,
+
+        /// <summary>
+        /// TER devices
+        /// </summary>
+        TransitEdgeRouter = 2,
+
+        /// <summary>
+        /// CAR devices
+        /// </summary>
+        CorpAggRouter = 3,
     }
 }

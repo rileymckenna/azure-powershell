@@ -40,12 +40,23 @@ namespace TeamFoundationServerPowershell.Model
         public Dictionary<string, DevicePort> Ports { get; set; }
 
         /// <summary>
+        /// If device can Take Connections
+        /// </summary>
+        public bool IsTakingNewConnection { get; set; }
+
+        /// <summary>
+        /// Device Id of the paired device at the edge location
+        /// </summary>
+        public List<string> PairDevices { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="EdgeDevice"/> class.
         /// </summary>
         public EdgeDevice()
         {
             this.PortChannels = new Dictionary<string, PortChannel>(StringComparer.InvariantCultureIgnoreCase);
             this.Ports = new Dictionary<string, DevicePort>(StringComparer.InvariantCultureIgnoreCase);
+            this.PairDevices = new List<string>();
         }
 
         /// <summary>
@@ -59,6 +70,7 @@ namespace TeamFoundationServerPowershell.Model
                 DeviceType = this.DeviceType,
                 ColoId = this.ColoId,
                 RackLocation = this.RackLocation,
+                IsTakingNewConnection = this.IsTakingNewConnection
             };
 
             foreach (var portChannel in this.PortChannels)
@@ -71,6 +83,10 @@ namespace TeamFoundationServerPowershell.Model
                 edgeDevice.Ports[port.Key] = port.Value.Clone();
             }
 
+            foreach (var pair in this.PairDevices)
+            {
+                edgeDevice.PairDevices.Add(pair);
+            }
             return edgeDevice;
         }
     }

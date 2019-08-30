@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <copyright file="PeerSessionInfo.cs" company="Microsoft">
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
@@ -16,7 +16,7 @@ namespace TeamFoundationServerPowershell.Model
     /// Peer Session Info class
     /// </summary>
     public class PeerSessionInfo : IEquatable<PeerSessionInfo>
-    { 
+    {
         /// <summary>
         /// Peer V4 State
         /// </summary>
@@ -25,15 +25,11 @@ namespace TeamFoundationServerPowershell.Model
         /// <summary>
         /// Peer Session V4 Address
         /// </summary>
-
-
         public IPAddress PeerSessionV4Address { get; set; }
 
         /// <summary>
         /// Microsoft Session V6 Address
         /// </summary>
-
-
         public IPAddress MicrosoftSessionV4Address { get; set; }
 
         /// <summary>
@@ -44,15 +40,11 @@ namespace TeamFoundationServerPowershell.Model
         /// <summary>
         /// Peer Session V6 Address
         /// </summary>
-
-
         public IPAddress PeerSessionV6Address { get; set; }
 
         /// <summary>
         /// Microsoft Session V6 Address
         /// </summary>
-
-
         public IPAddress MicrosoftSessionV6Address { get; set; }
 
         /// <summary>
@@ -74,12 +66,9 @@ namespace TeamFoundationServerPowershell.Model
         /// <returns></returns>
         public bool Equals(PeerSessionInfo other)
         {
-            if (other == null)
-            {
-                return false;
-            }
-
-            return (((this.MicrosoftSessionV4Address != null &&
+            return other == null
+                ? false
+                : ((this.MicrosoftSessionV4Address != null &&
                       this.MicrosoftSessionV4Address.Equals(other.MicrosoftSessionV4Address))
                      || (this.MicrosoftSessionV4Address == null && other.MicrosoftSessionV4Address == null)) &&
 
@@ -91,7 +80,7 @@ namespace TeamFoundationServerPowershell.Model
                      || (this.MicrosoftSessionV6Address == null && other.MicrosoftSessionV6Address == null)) &&
 
                     ((this.PeerSessionV6Address != null && this.PeerSessionV6Address.Equals(other.PeerSessionV6Address))
-                     || (this.PeerSessionV6Address == null && other.PeerSessionV6Address == null)));
+                     || (this.PeerSessionV6Address == null && other.PeerSessionV6Address == null));
         }
 
         /// <summary>
@@ -128,8 +117,8 @@ namespace TeamFoundationServerPowershell.Model
                    + $"PeerSessionV4Address={this.PeerSessionV4Address}|"
                    + $"MicrosoftSessionV6Address={this.MicrosoftSessionV6Address}|"
                    + $"PeerSessionV6Address={this.PeerSessionV6Address}|"
-                   + $"PeerV4State={this.PeerV4State.ToString()}|" 
-                   + $"PeerV6State={this.PeerV6State.ToString()}|" 
+                   + $"PeerV4State={this.PeerV4State.ToString()}|"
+                   + $"PeerV6State={this.PeerV6State.ToString()}|"
                    + $"LastUpdatedTime={this.LastUpdatedTime:o}|"
                    + $"ConnectionIdentifier={this.ConnectionIdentifier}";
         }
@@ -160,19 +149,16 @@ namespace TeamFoundationServerPowershell.Model
         /// <returns></returns>
         public bool AnySessionEqual(PeerSessionInfo other)
         {
-            if (other == null)
-            {
-                return false;
-            }
-
-            return (((this.MicrosoftSessionV4Address != null &&
-                      this.MicrosoftSessionV4Address.Equals(other.MicrosoftSessionV4Address)) &&
-                     (this.PeerSessionV4Address != null &&
-                      this.PeerSessionV4Address.Equals(other.PeerSessionV4Address))) ||
-                    ((this.MicrosoftSessionV6Address != null &&
-                      this.MicrosoftSessionV6Address.Equals(other.MicrosoftSessionV6Address)) &&
-                     (this.PeerSessionV6Address != null &&
-                      this.PeerSessionV6Address.Equals(other.PeerSessionV6Address))));
+            return other == null
+                ? false
+                : (this.MicrosoftSessionV4Address != null &&
+                      this.MicrosoftSessionV4Address.Equals(other.MicrosoftSessionV4Address) &&
+                     this.PeerSessionV4Address != null &&
+                      this.PeerSessionV4Address.Equals(other.PeerSessionV4Address)) ||
+                    (this.MicrosoftSessionV6Address != null &&
+                      this.MicrosoftSessionV6Address.Equals(other.MicrosoftSessionV6Address) &&
+                     this.PeerSessionV6Address != null &&
+                      this.PeerSessionV6Address.Equals(other.PeerSessionV6Address));
         }
 
         #endregion

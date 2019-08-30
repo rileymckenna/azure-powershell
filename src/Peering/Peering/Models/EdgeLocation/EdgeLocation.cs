@@ -39,12 +39,24 @@ namespace TeamFoundationServerPowershell.Model
         public Dictionary<uint, PublicPeeringFacility> PublicPeeringFacilityMap { get; set; }
 
         /// <summary>
+        /// Gets or sets the value for TransitPeeringFacilityMap, used for direct peering
+        /// </summary>
+        public Dictionary<uint, PrivatePeeringFacility> TransitPeeringFacilityMap { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value for InternalPeeringFacilityMap, used for direct peering
+        /// </summary>
+        public Dictionary<uint, PrivatePeeringFacility> InternalPeeringFacilityMap { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="EdgeLocation"/> class. 
         /// </summary>
         public EdgeLocation()
         {
             this.PrivatePeeringFacilityMap = new Dictionary<uint, PrivatePeeringFacility>();
             this.PublicPeeringFacilityMap = new Dictionary<uint, PublicPeeringFacility>();
+            this.TransitPeeringFacilityMap = new Dictionary<uint, PrivatePeeringFacility>();
+            this.InternalPeeringFacilityMap = new Dictionary<uint, PrivatePeeringFacility>();
         }
 
         /// <summary>
@@ -70,6 +82,18 @@ namespace TeamFoundationServerPowershell.Model
             {
                 edgeLocation.PublicPeeringFacilityMap[publicPeeringFacility.Key] =
                     publicPeeringFacility.Value.Clone();
+            }
+
+            foreach (var transitPeeringFacility in this.TransitPeeringFacilityMap)
+            {
+                edgeLocation.TransitPeeringFacilityMap[transitPeeringFacility.Key] =
+                    transitPeeringFacility.Value.Clone();
+            }
+
+            foreach (var internalPeeringFacility in this.InternalPeeringFacilityMap)
+            {
+                edgeLocation.InternalPeeringFacilityMap[internalPeeringFacility.Key] =
+                    internalPeeringFacility.Value.Clone();
             }
 
             return edgeLocation;
