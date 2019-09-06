@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '0.1.11'
+ModuleVersion = '1.20.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
@@ -85,8 +85,9 @@ CmdletsToExport = 'Get-AzPeering',
 			'New-AzPeeringDirectConnectionObject',
 			'Get-AzPeeringLocation',
 			'Get-AzLegacyPeering',
-			'Set-AzPeerAsn',
-			'Remove-AzPeerAsn',
+			'Set-AzPeerAsn', 'Remove-AzPeerAsn', 'Remove-AzPeeringServicePrefix', 
+			   'New-AzPeeringServicePrefix', 'Get-AzPeeringServicePrefix', 'Get-AzPeeringServiceLocation', 
+			   'Get-AzPeeringServiceProvider', 'Get-AzPeeringService', 'New-AzPeeringService',
 			'New-TfsClientExchangeFromSecondarySubscription',
 			'New-TfsClientDirectFromSecondarySubscription',
 			'Get-TfsWorkItem',

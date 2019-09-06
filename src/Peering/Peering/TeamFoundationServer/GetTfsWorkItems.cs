@@ -78,7 +78,7 @@ namespace TeamFoundationServerPowershell
 
                 if (this.UntouchedTickets && !this.FailedTickets && !this.CreatedUsingPeeringAutomation)
                 {
-                    queryString = @"AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation:Failed' AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation:InProgress'";
+                    queryString = @"AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation:Failed' AND [gnsedge.quick_notes] NOT CONTAINS WORDS 'PeeringAutomation:InProgress' AND [System.Title] NOT CONTAINS 'Remove'";
                 }
                 if (this.FailedTickets && !this.UntouchedTickets && !this.CreatedUsingPeeringAutomation)
                 {
