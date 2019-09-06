@@ -17,10 +17,15 @@ Gets the Peering Resources for a subscription
 Get-AzPeering [-Kind <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### PeeringByResourceAndName
+### ByResourceGroupAndName
 ```
 Get-AzPeering [-ResourceGroupName] <String> [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
+```
+
+### ByResourceId
+```
+Get-AzPeering [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,11 +41,11 @@ Name              : myExchangePeering1
 Sku.Name          : Basic_Exchange_Free
 Kind              : Exchange
 Connections       : {99999}
-PeerAsn.Id        : /subscriptions//providers/Microsoft.Peering/peerAsns/Contoso
+PeerAsn.Id        : /subscriptions/providers/Microsoft.Peering/peerAsns/Contoso
 PeeringLocation   : Seattle
 ProvisioningState : Succeeded
 Location          : centralus
-Id                : /subscriptions//resourceGroups/test/providers/Microsoft.Peering/peerings/myExchangePeering1
+Id                : /subscriptions/resourceGroups/test/providers/Microsoft.Peering/peerings/myExchangePeering1
 Type              : Microsoft.Peering/peerings
 Tags              : {}
 
@@ -53,7 +58,7 @@ PeerAsn              : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSSubRe
 PeeringLocation      : Seattle
 ProvisioningState    : Succeeded
 Location             : centralus
-Id                   : /subscriptions//resourceGroups/testCarrier/providers/Microsoft.Peering/peerings/ContosoSeattlePeering
+Id                   : /subscriptions/resourceGroups/testCarrier/providers/Microsoft.Peering/peerings/ContosoSeattlePeering
 Type                 : Microsoft.Peering/peerings
 Tags                 : {}
 ```
@@ -68,16 +73,35 @@ Name              : myExchangePeering1
 Sku.Name          : Basic_Exchange_Free
 Kind              : Exchange
 Connections       : {99999}
-PeerAsn.Id        : /subscriptions//providers/Microsoft.Peering/peerAsns/Contoso
+PeerAsn.Id        : /subscriptions/providers/Microsoft.Peering/peerAsns/Contoso
 PeeringLocation   : Seattle
 ProvisioningState : Succeeded
 Location          : centralus
-Id                : /subscriptions//resourceGroups/test/providers/Microsoft.Peering/peerings/myExchangePeering1
+Id                : /subscriptions/resourceGroups/test/providers/Microsoft.Peering/peerings/myExchangePeering1
 Type              : Microsoft.Peering/peerings
 Tags              : {}
 ```
 
 Gets the Exchange peering named `myExchangePeering1`
+
+### Example 2
+```powershell
+PS C:> Get-AzPeering -ResourceId $resourceId
+
+Name              : myExchangePeering1
+Sku.Name          : Basic_Exchange_Free
+Kind              : Exchange
+Connections       : {99999}
+PeerAsn.Id        : /subscriptions/providers/Microsoft.Peering/peerAsns/Contoso
+PeeringLocation   : Seattle
+ProvisioningState : Succeeded
+Location          : centralus
+Id                : /subscriptions/resourceGroups/test/providers/Microsoft.Peering/peerings/myExchangePeering1
+Type              : Microsoft.Peering/peerings
+Tags              : {}
+```
+
+Gets the Exchange peering named `myExchangePeering1` based on the resource id.
 
 ## PARAMETERS
 
@@ -85,7 +109,7 @@ Gets the Exchange peering named `myExchangePeering1`
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -100,7 +124,7 @@ Accept wildcard characters: False
 Shows all Peering resource by Kind.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: BySubscription
 Aliases:
 
@@ -115,8 +139,8 @@ Accept wildcard characters: False
 The unique name of the PSPeering.
 
 ```yaml
-Type: System.String
-Parameter Sets: PeeringByResourceAndName
+Type: String
+Parameter Sets: ByResourceGroupAndName
 Aliases:
 
 Required: False
@@ -130,8 +154,8 @@ Accept wildcard characters: False
 The resource group name.
 
 ```yaml
-Type: System.String
-Parameter Sets: PeeringByResourceAndName
+Type: String
+Parameter Sets: ByResourceGroupAndName
 Aliases:
 
 Required: True
@@ -141,12 +165,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResourceId
+The resource id string name.
+
+```yaml
+Type: String
+Parameter Sets: ByResourceId
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### None
+### System.String
 
 ## OUTPUTS
 

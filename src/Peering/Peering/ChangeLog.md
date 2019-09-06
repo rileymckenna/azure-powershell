@@ -18,11 +18,13 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Added Peering Service Operations
+* Updated Documentation
+
+## Version 0.1.3
 * Bug fix in set connection for exchange that caused CDIR notation
 * Allowed adding connections during legacy convert
 * Added tests for set Exchange operations
-
-## version 0.2.0
 * Bug fix in set connection
 * Added Connection Identifier to Connection object.
 * Updated to SDK 0.10.0-review
