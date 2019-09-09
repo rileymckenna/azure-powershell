@@ -1,40 +1,33 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Peering.dll-Help.xml
 Module Name: Az.Peering
-online version: https://docs.microsoft.com/en-us/powershell/module/az.peering/remove-azpeerasn
+online version:
 schema: 2.0.0
 ---
 
-# Remove-AzPeerAsn
+# New-TfsClientDirectFromSecondarySubscription
 
 ## SYNOPSIS
-Remove Peer Asn
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
-### Default (Default)
 ```
-Remove-AzPeerAsn [-InputObject] <PSPeerAsn> [-Force] [-PassThru] [-AsJob]
+New-TfsClientDirectFromSecondarySubscription [-WorkItemNumber] <Int32> [-Force] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ByName
-```
-Remove-AzPeerAsn [-Name] <String> [-Force] [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Remove a PeerAsn from the subscription.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:> Remove-AzPeerAsn -PeerName Contoso -Force
+PS C:\> {{ Add example code here }}
 ```
 
-Removes the Peer Asn
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -42,7 +35,7 @@ Removes the Peer Asn
 Run in the background.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -57,7 +50,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -72,7 +65,7 @@ Accept wildcard characters: False
 {{ Fill Force Description }}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -83,12 +76,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-The PeerAsn object.
+### -WorkItemNumber
+{{ Fill WorkItemNumber Description }}
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeerAsn
-Parameter Sets: Default
+Type: Int32
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -98,41 +91,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name
-The unique name of the PSPeering.
-
-```yaml
-Type: System.String
-Parameter Sets: ByName
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Return true if complete
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -144,10 +107,11 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -163,11 +127,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeerAsn
+### System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

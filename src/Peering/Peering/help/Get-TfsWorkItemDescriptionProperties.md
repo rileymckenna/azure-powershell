@@ -1,40 +1,33 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Peering.dll-Help.xml
 Module Name: Az.Peering
-online version: https://docs.microsoft.com/en-us/powershell/module/az.peering/get-azpeerasn
+online version:
 schema: 2.0.0
 ---
 
-# Get-AzPeerAsn
+# Get-TfsWorkItemDescriptionProperties
 
 ## SYNOPSIS
-Gets PeerAsn object from ARM.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
 ```
-Get-AzPeerAsn [-Name <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-TfsWorkItemDescriptionProperties -WorkItemId <Int32> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the PeerAsn for a subscription.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:> Get-AzPeerAsn -PeerName Contoso
-
-PeerContactInfo : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSContactInfo
-PeerName        : Contoso
-ValidationState : None
-PeerAsnProperty : 65050
-Name            : Contoso
-Id              : /subscriptions//providers/Microsoft.Peering/peerAsns/Contoso
-Type            : Microsoft.Peering/peerAsns
+PS C:\> {{ Add example code here }}
 ```
 
-Gets the PeerAsn
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -42,7 +35,7 @@ Gets the PeerAsn
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -53,18 +46,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-The unique name of the PSPeering.
+### -WorkItemId
+{{ Fill WorkItemId Description }}
 
 ```yaml
-Type: System.String
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -73,11 +66,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeerAsn
+### System.Collections.Generic.KeyValuePair`2[[Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeerAsn, Microsoft.Azure.PowerShell.Cmdlets.Peering, Version=0.1.3.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering, Microsoft.Azure.PowerShell.Cmdlets.Peering, Version=0.1.3.0, Culture=neutral, PublicKeyToken=null]]
 
 ## NOTES
 
