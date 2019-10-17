@@ -1,6 +1,5 @@
 ﻿using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
-using Microsoft.Azure.Management.ResourceManager;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi;
@@ -12,11 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using TeamFoundationServerPowershell.Model;
-using Microsoft.VisualStudio.Services.WebApi.Patch;
-using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 using Microsoft.Azure.Commands.Peering.Common;
-using Microsoft.Azure.Management.Peering.Models;
 using Operation = Microsoft.VisualStudio.Services.WebApi.Patch.Operation;
+using Microsoft.Azure.Management.Internal.Resources;
 
 namespace TeamFoundationServerPowershell
 {

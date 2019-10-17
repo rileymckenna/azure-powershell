@@ -1,8 +1,7 @@
 ﻿using Microsoft.Azure.Commands.Peering.Properties;
-using Microsoft.Azure.Management.Internal.Network.Version2017_03_01.Models;
+using Microsoft.Azure.Management.Internal.Resources.Models;
 using Microsoft.Azure.Management.Peering;
 using Microsoft.Azure.Management.Peering.Models;
-using Microsoft.Azure.Management.ResourceManager.Models;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 using Microsoft.Rest.Azure;
@@ -360,42 +359,42 @@ namespace TeamFoundationServerPowershell
             WriteVerbose($"Verifying all resources were created properly for {this.WorkItemNumber}");
             try
             {
-                    foreach (var stackPeering in this.newPeeringStack)
+                foreach (var stackPeering in this.newPeeringStack)
+                {
+                    AzureOperationResponse<ResourceGroup> resourceGroup = null;
+                    var xResourceGroup = stackPeering.PeeringLocation.TrimStart(' ').TrimEnd(' ').Replace(" ", "_");
+                    resourceGroup = this.ResourceManagementClient.ResourceGroups.GetWithHttpMessagesAsync(xResourceGroup).GetAwaiter().GetResult();
+                    this.WriteVerbose($"Found ResourceGroup: {resourceGroup.Body.Name}");
+                    if (stackPeering.PeeringLocation != null && resourceGroup.Response.IsSuccessStatusCode && !this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
                     {
-                        AzureOperationResponse<ResourceGroup> resourceGroup = null;
-                        var xResourceGroup = stackPeering.PeeringLocation.TrimStart(' ').TrimEnd(' ').Replace(" ", "_");
-                        resourceGroup = this.ResourceManagementClient.ResourceGroups.GetWithHttpMessagesAsync(xResourceGroup).GetAwaiter().GetResult();
-                        this.WriteVerbose($"Found ResourceGroup: {resourceGroup.Body.Name}");
-                        if (stackPeering.PeeringLocation != null && resourceGroup.Response.IsSuccessStatusCode && !this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239"))
-                        {
-                            var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
-                            var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
-                            var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
-                            var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request; Devices have been configured - ProvisioningCompleted" +
-                                $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
-                            this.WriteVerbose(this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, str));
-                            Thread.Sleep(3000);
-                            this.WriteObject(sierra);
-                        }
-                        else if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239") && resourceGroup.Response.IsSuccessStatusCode)
-                        {
-                            var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
-                            var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
-                            var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
-                            var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
-                                $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
-                            this.WriteVerbose(str);
-                            this.WriteObject(sierra);
-                        }
-                        else
-                        {
-                            this.WriteVerbose($"Ticket {this.WorkItemNumber} did not process properly");
-                        }
-                        if (this.newPeeringStack.Last() == stackPeering)
-                        {
-                            WriteVerbose($"Ticket: {this.WorkItemNumber} now complete.");
-                        }
+                        var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
+                        var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
+                        var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
+                        var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request; Devices have been configured - ProvisioningCompleted" +
+                            $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
+                        this.WriteVerbose(this.UpdateQuickNotesForWorkItem((int)this.workItem.Id, str));
+                        Thread.Sleep(3000);
+                        this.WriteObject(sierra);
                     }
+                    else if (this.ResourceManagementClient.SubscriptionId.Equals("3e919f9a-4e26-4736-aa8d-d596d9a49239") && resourceGroup.Response.IsSuccessStatusCode)
+                    {
+                        var peering = this.ToPeeringPs(this.PeeringManagementClient.Peerings.Get(resourceGroup.Body.Name, stackPeering.Name));
+                        var peerAsn = (PSPeerAsn)this.ToPeeringAsnPs(this.PeeringManagementClient.PeerAsns.Get(this.PeerAsnAndPeering.Key.Name));
+                        var sierra = new PeeringViewModel(peerAsn, peering, this.WorkItemNumber.Value);
+                        var str = $"\n{DateTime.Now} -> PeeringAutomation:InProgress -> completed request" +
+                            $"\n{DateTime.Now} -> PeeringAutomation:ViewResource -> $peering = Get-AzPeering -ResourceGroupName {resourceGroup.Body.Name} -Name {stackPeering.Name}";
+                        this.WriteVerbose(str);
+                        this.WriteObject(sierra);
+                    }
+                    else
+                    {
+                        this.WriteVerbose($"Ticket {this.WorkItemNumber} did not process properly");
+                    }
+                    if (this.newPeeringStack.Last() == stackPeering)
+                    {
+                        WriteVerbose($"Ticket: {this.WorkItemNumber} now complete.");
+                    }
+                }
                 if (errorPeeringStack.Count != 0)
                 {
                     foreach (var error in this.errorPeeringStack)

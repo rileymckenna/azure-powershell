@@ -1,19 +1,16 @@
 ﻿using Microsoft.Azure.Commands.Peering.Properties;
-using Microsoft.Azure.Management.Internal.Network.Version2017_03_01.Models;
+using Microsoft.Azure.Management.Internal.Resources.Models;
 using Microsoft.Azure.Management.Peering;
 using Microsoft.Azure.Management.Peering.Models;
-using Microsoft.Azure.Management.ResourceManager.Models;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
 using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 using Microsoft.Rest.Azure;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
 using System.Threading;
-using TeamFoundationServerPowershell.Model;
 using TeamFoundationServerPowershell.Model.Data;
 using ErrorResponseException = Microsoft.Azure.Management.Peering.Models.ErrorResponseException;
 
