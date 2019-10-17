@@ -18,6 +18,9 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Added SoftDelete feature for VM and added tests for softdelete
+
+## Version 1.4.5
 * Update AzureVMpolicy Object with ProtectedItemsCount Attribute
 * Added Tests for VM policy and Original Storage Account Restore
 
