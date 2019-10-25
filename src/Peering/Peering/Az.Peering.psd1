@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '0.1.5'
+ModuleVersion = '0.2.5'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
@@ -35,7 +35,7 @@ Description = 'Microsoft Azure PowerShell - Microsoft Peering Service cmdlets fo
 For more information on Microsoft Peering, please visit the following:  https://docs.microsoft.com/en-us/powershell/module/az.peering'
 
 # Minimum version of the PowerShell engine required by this module
-PowerShellVersion = '5.1'
+PowerShellVersion = '6.2'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''
