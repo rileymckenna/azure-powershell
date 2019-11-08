@@ -157,7 +157,7 @@ namespace TeamFoundationServerPowershell
             }
             catch (Exception ex)
             {
-                throw new Exception($"Peer ASN {asnName} does not exist and requires creation");
+                throw new Exception($"Peer ASN {asnName} does not exist and requires creation. {ex}");
             }
         }
 

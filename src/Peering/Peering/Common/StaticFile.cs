@@ -3088,6 +3088,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Ashburn',
     'AzureRegion': 'East US',
+    'LocationIndex': 1,
     'PrivatePeeringFacilityMap': {
                 '1': {
                     'CodeList': [
@@ -3145,6 +3146,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:0:2::8075:2'
         ],
         'Bandwidth': 100000,
+        'Latitude': 39.0164,
+        'Longitude': -77.459165,
         'Devices': {
           'ash-96cbe-1a': {
             'DeviceType': 'None',
@@ -3209,6 +3212,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2606:a980:0:3::c'
         ],
         'Bandwidth': 20000,
+        'Latitude': 39.0164,
+        'Longitude': -77.459165,
         'Devices': {
           'ash-96cbe-1b': {
             'DeviceType': 'None',
@@ -3239,6 +3244,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Palo Alto',
     'AzureRegion': 'West US',
+    'LocationIndex': 2,
     'PrivatePeeringFacilityMap': {
       '5': {
         'CodeList': [
@@ -3312,6 +3318,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:d::98'
         ],
         'Bandwidth': 10000,
+        'Latitude': 37.445947,
+        'Longitude': -122.161204,
         'Devices': {
           'pao-96cbe-1b': {
             'DeviceType': 'None',
@@ -3342,6 +3350,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'San Jose',
     'AzureRegion': 'West US',
+    'LocationIndex': 3,
     'PrivatePeeringFacilityMap': {
       '6': {
         'CodeList': [
@@ -3415,6 +3424,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:0:1::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 37.241595,
+        'Longitude': -121.783222,
         'Devices': {
           'sjc-96cbe-1a': {
             'DeviceType': 'None',
@@ -3459,6 +3470,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:3d:1:0:a500:8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 37.241595,
+        'Longitude': -121.783222,
         'Devices': {
           'sjc-96cbe-1b': {
             'DeviceType': 'None',
@@ -3489,6 +3502,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Chicago',
     'AzureRegion': 'North Central US',
+    'LocationIndex': 4,
     'PrivatePeeringFacilityMap': {
       '7': {
         'CodeList': [
@@ -3546,6 +3560,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:0:4::8075:2'
         ],
         'Bandwidth': 100000,
+        'Latitude': 41.853579,
+        'Longitude': -87.618342,
         'Devices': {
           'chg-96e-1': {
             'DeviceType': 'None',
@@ -3610,6 +3626,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:38:1:0:a500:8075:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': 41.853579,
+        'Longitude': -87.618342,
         'Devices': {
           'chg-96e-2': {
             'DeviceType': 'None',
@@ -3650,7 +3668,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'DeviceType': 'TransitEdgeRouter',
             'PortChannels': {},
             'Ports': {},
-            'IsTakingNewConnection': false,
+            'IsTakingNewConnection': true,
             'PairDevices': [
               'ter02.chg',
               'ter03.chg',
@@ -3661,7 +3679,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'DeviceType': 'TransitEdgeRouter',
             'PortChannels': {},
             'Ports': {},
-            'IsTakingNewConnection': false,
+            'IsTakingNewConnection': true,
             'PairDevices': [
               'ter01.chg',
               'ter03.chg',
@@ -3672,7 +3690,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'DeviceType': 'TransitEdgeRouter',
             'PortChannels': {},
             'Ports': {},
-            'IsTakingNewConnection': false,
+            'IsTakingNewConnection': true,
             'PairDevices': [
               'ter01.chg',
               'ter02.chg',
@@ -3683,7 +3701,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'DeviceType': 'TransitEdgeRouter',
             'PortChannels': {},
             'Ports': {},
-            'IsTakingNewConnection': false,
+            'IsTakingNewConnection': true,
             'PairDevices': [
               'ter01.chg',
               'ter02.chg',
@@ -3698,6 +3716,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Los Angeles',
     'AzureRegion': 'West US',
+    'LocationIndex': 5,
     'PrivatePeeringFacilityMap': {
       '8': {
         'CodeList': [
@@ -3784,6 +3803,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:0:3::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 34.048037,
+        'Longitude': -118.255522,
         'Devices': {
           'lax-96cbe-1a': {
             'DeviceType': 'None',
@@ -3828,6 +3849,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2606:a980:0:5::c'
         ],
         'Bandwidth': 10000,
+        'Latitude': 34.048037,
+        'Longitude': -118.255522,
         'Devices': {
           'lax-96cbe-1b': {
             'DeviceType': 'None',
@@ -3872,6 +3895,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:13::210:143'
         ],
         'Bandwidth': 10000,
+        'Latitude': 34.048037,
+        'Longitude': -118.255522,
         'Devices': {
           'lax-96cbe-1b': {
             'DeviceType': 'None',
@@ -3902,6 +3927,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Atlanta',
     'AzureRegion': 'East US 2',
+    'LocationIndex': 6,
     'PrivatePeeringFacilityMap': {
       '11': {
         'CodeList': [
@@ -3959,6 +3985,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:10::8075:2'
         ],
         'Bandwidth': 20000,
+        'Latitude': 33.755455,
+        'Longitude': -84.39156,
         'Devices': {
           'ata-96e-1': {
             'DeviceType': 'None',
@@ -4023,6 +4051,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:478:132::117'
         ],
         'Bandwidth': 10000,
+        'Latitude': 33.755455,
+        'Longitude': -84.39156,
         'Devices': {
           'ata-96e-1': {
             'DeviceType': 'None',
@@ -4053,6 +4083,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Miami',
     'AzureRegion': 'East US 2',
+    'LocationIndex': 7,
     'PrivatePeeringFacilityMap': {
       '15': {
         'CodeList': [
@@ -4110,6 +4141,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:478:124::189'
         ],
         'Bandwidth': 100000,
+        'Latitude': 25.782423,
+        'Longitude': -80.193146,
         'Devices': {
           'mia-96cbe-1a': {
             'DeviceType': 'None',
@@ -4174,6 +4207,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:40:108::1:25'
         ],
         'Bandwidth': 100000,
+        'Latitude': 25.782423,
+        'Longitude': -80.193146,
         'Devices': {
           'mia-96cbe-1b': {
             'DeviceType': 'None',
@@ -4204,6 +4239,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'London',
     'AzureRegion': 'UK South',
+    'LocationIndex': 8,
     'PrivatePeeringFacilityMap': {
       '34': {
         'CodeList': [
@@ -4314,6 +4350,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:4::1f8b:1'
         ],
         'Bandwidth': 300000,
+        'Latitude': 51.499805,
+        'Longitude': -0.011182,
         'Devices': {
           'lts-96cbe-1b': {
             'DeviceType': 'None',
@@ -4358,6 +4396,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:4:1::1f8b:1'
         ],
         'Bandwidth': 200000,
+        'Latitude': 51.522206,
+        'Longitude': -0.629129,
         'Devices': {
           'lon04-96cbe-1b': {
             'DeviceType': 'None',
@@ -4402,6 +4442,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:17::1f8b:1'
         ],
         'Bandwidth': 100000,
+        'Latitude': 51.522206,
+        'Longitude': -0.629129,
         'Devices': {
           'lon04-96cbe-1b': {
             'DeviceType': 'None',
@@ -4446,6 +4488,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:be::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 51.522206,
+        'Longitude': -0.629129,
         'Devices': {
           'lon04-96cbe-1a': {
             'DeviceType': 'None',
@@ -4534,6 +4578,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'New York',
     'AzureRegion': 'East US',
+    'LocationIndex': 9,
     'PrivatePeeringFacilityMap': {
       '38': {
         'CodeList': [
@@ -4589,6 +4634,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:f::12'
         ],
         'Bandwidth': 10000,
+        'Latitude': 40.742412,
+        'Longitude': -74.002082,
         'Devices': {
           'nyc-96cbe-1a': {
             'DeviceType': 'None',
@@ -4633,6 +4680,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:1::a500:8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 40.742412,
+        'Longitude': -74.002082,
         'Devices': {
           'nyc-96cbe-1a': {
             'DeviceType': 'None',
@@ -4677,6 +4726,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:36::1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 40.742412,
+        'Longitude': -74.002082,
         'Devices': {
           'nyc-96cbe-1b': {
             'DeviceType': 'None',
@@ -4721,6 +4772,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:17:115::23'
         ],
         'Bandwidth': 10000,
+        'Latitude': 40.742412,
+        'Longitude': -74.002082,
         'Devices': {
           'nyc-96cbe-1b': {
             'DeviceType': 'None',
@@ -4751,6 +4804,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Paris',
     'AzureRegion': 'France Central',
+    'LocationIndex': 10,
     'PrivatePeeringFacilityMap': {
       '53': {
         'CodeList': [
@@ -4840,6 +4894,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:54::1:119'
         ],
         'Bandwidth': 100000,
+        'Latitude': 48.855174,
+        'Longitude': 2.384307,
         'Devices': {
           'par02-96cbe-1b': {
             'DeviceType': 'None',
@@ -4904,6 +4960,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:43::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 48.855174,
+        'Longitude': 2.384307,
         'Devices': {
           'par02-96cbe-1a': {
             'DeviceType': 'None',
@@ -4934,6 +4992,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Frankfurt',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 11,
     'PrivatePeeringFacilityMap': {
       '58': {
         'CodeList': [
@@ -4991,6 +5050,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8::1f8b:0:2'
         ],
         'Bandwidth': 100000,
+        'Latitude': 50.120564,
+        'Longitude': 8.736888,
         'Devices': {
           'fra-96cbe-1a': {
             'DeviceType': 'None',
@@ -5055,6 +5116,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:8:20:0:1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 50.120564,
+        'Longitude': 8.736888,
         'Devices': {
           'fra-96cbe-1b': {
             'DeviceType': 'None',
@@ -5099,6 +5162,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:13::a500:8075:2'
         ],
         'Bandwidth': 10000,
+        'Latitude': 50.120564,
+        'Longitude': 8.736888,
         'Devices': {
           'fra-96cbe-1a': {
             'DeviceType': 'None',
@@ -5187,6 +5252,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Amsterdam',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 12,
     'PrivatePeeringFacilityMap': {
       '63': {
         'CodeList': [
@@ -5285,7 +5351,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
     'PublicPeeringFacilityMap': {
       '64': {
         'CodeList': [
-          'amb'
+          'amb',
+          'ams31'
         ],
         'Country': 'NL',
         'Name': 'NL-ix',
@@ -5304,6 +5371,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:13::a500:8075:1'
         ],
         'Bandwidth': 100000,
+        'Latitude': 52.293904,
+        'Longitude': 4.945222,
         'Devices': {
           'amb-96cbe-1a': {
             'DeviceType': 'None',
@@ -5316,6 +5385,26 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 ],
                 'SessionIpv6PrefixList': [
                   '2001:7f8:13::a500:8075:1/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier01.ams31': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel61.7': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '193.239.118.173/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:13::a500:8075:5/128'
                 ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -5351,6 +5440,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:1::a500:8075:1'
         ],
         'Bandwidth': 300000,
+        'Latitude': 52.293904,
+        'Longitude': 4.945222,
         'Devices': {
           'amb-96cbe-1b': {
             'DeviceType': 'None',
@@ -5415,6 +5506,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:83::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 52.293904,
+        'Longitude': 4.945222,
         'Devices': {
           'amb-96cbe-1a': {
             'DeviceType': 'None',
@@ -5427,6 +5520,52 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 ],
                 'SessionIpv6PrefixList': [
                   '2001:7f8:83::8075:1/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
+      },
+      '1812': {
+        'CodeList': [
+          'ams31'
+        ],
+        'Country': 'NL',
+        'Name': 'Asteroid Amsterdam',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/1812',
+        'Ipv4PrefixList': [
+          '185.1.94.0/24'
+        ],
+        'Ipv6PrefixList': [
+          '2001:7f8:b6::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '185.1.94.41'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:7f8:b6::1f84:1'
+        ],
+        'Bandwidth': 10000,
+        'Latitude': 52.356866,
+        'Longitude': 4.952901,
+        'Devices': {
+          'ier01.ams31': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel63': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '185.1.94.41/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:b6::1f84:1/128'
                 ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -5503,6 +5642,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Vienna',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 13,
     'PrivatePeeringFacilityMap': {
       '67': {
         'CodeList': [
@@ -5558,6 +5698,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:30:0:2:1:0:8075'
         ],
         'Bandwidth': 100000,
+        'Latitude': 48.269248,
+        'Longitude': 16.409937,
         'Devices': {
           'vie-96cbe-1b': {
             'DeviceType': 'None',
@@ -5588,6 +5730,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Brussels',
     'AzureRegion': 'France Central',
+    'LocationIndex': 14,
     'PrivatePeeringFacilityMap': {
       '68': {
         'CodeList': [
@@ -5643,6 +5786,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:26::a500:8075:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': 50.87059,
+        'Longitude': 4.47615,
         'Devices': {
           'bru30-96cbe-1a': {
             'DeviceType': 'None',
@@ -5673,6 +5818,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Dallas',
     'AzureRegion': 'South Central US',
+    'LocationIndex': 15,
     'PrivatePeeringFacilityMap': {
       '69': {
         'CodeList': [
@@ -5730,6 +5876,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:0:5::8075:2'
         ],
         'Bandwidth': 100000,
+        'Latitude': 32.800571,
+        'Longitude': -96.819927,
         'Devices': {
           'dal-96cbe-1a': {
             'DeviceType': 'None',
@@ -5794,6 +5942,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2606:a980:0:7::c'
         ],
         'Bandwidth': 10000,
+        'Latitude': 32.800571,
+        'Longitude': -96.819927,
         'Devices': {
           'dal-96cbe-1b': {
             'DeviceType': 'None',
@@ -5840,6 +5990,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:478:130::40'
         ],
         'Bandwidth': 10000,
+        'Latitude': 32.800571,
+        'Longitude': -96.819927,
         'Devices': {
           'dal-96cbe-1a': {
             'DeviceType': 'None',
@@ -5904,6 +6056,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:61::1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 32.800571,
+        'Longitude': -96.819927,
         'Devices': {
           'dal-96cbe-1b': {
             'DeviceType': 'None',
@@ -5934,6 +6088,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Seattle',
     'AzureRegion': 'West US 2',
+    'LocationIndex': 16,
     'PrivatePeeringFacilityMap': {
       '71': {
         'CodeList': [
@@ -6028,6 +6183,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
         ],
         'MicrosoftSessionIpv6AddressList': [],
         'Bandwidth': 10000,
+        'Latitude': 47.240208208081782,
+        'Longitude': -119.86435380571493,
         'Devices': {
           'co1-96c-1a': {
             'DeviceType': 'None',
@@ -6069,6 +6226,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:12::15'
         ],
         'Bandwidth': 10000,
+        'Latitude': 47.61359,
+        'Longitude': -122.337967,
         'Devices': {
           'wst-96cbe-1a': {
             'DeviceType': 'None',
@@ -6115,6 +6274,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:16::68:0:1f8b'
         ],
         'Bandwidth': 10000,
+        'Latitude': 47.61359,
+        'Longitude': -122.337967,
         'Devices': {
           'wst-96cbe-1a': {
             'DeviceType': 'None',
@@ -6179,6 +6340,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2606:a980:0:4::d'
         ],
         'Bandwidth': 10000,
+        'Latitude': 47.61359,
+        'Longitude': -122.337967,
         'Devices': {
           'wst-96cbe-1b': {
             'DeviceType': 'None',
@@ -6243,6 +6406,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:b:89::7'
         ],
         'Bandwidth': 100000,
+        'Latitude': 47.61359,
+        'Longitude': -122.337967,
         'Devices': {
           'wst-96cbe-1b': {
             'DeviceType': 'None',
@@ -6321,12 +6486,71 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'TransitPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '99999': {
+        'CodeList': [
+          'co1'
+        ],
+        'Country': 'US',
+        'Address': 'One Microsoft Way, Redmond',
+        'Latitude': 47.614347,
+        'Longitude': -122.338883,
+        'LocationType': 'Test',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/99999',
+        'Devices': {
+          'ter01.co1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ter02.co1',
+              'ter03.co1',
+              'ter04.co1'
+            ]
+          },
+          'ter02.co1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ter01.co1',
+              'ter03.co1',
+              'ter04.co1'
+            ]
+          },
+          'ter03.co1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ter01.co1',
+              'ter02.co1',
+              'ter04.co1'
+            ]
+          },
+          'ter04.co1': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ter01.co1',
+              'ter02.co1',
+              'ter03.co1'
+            ]
+          }
+        }
+      }
+    },
     'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Manchester',
     'AzureRegion': 'UK West',
+    'LocationIndex': 17,
     'PrivatePeeringFacilityMap': {
       '76': {
         'CodeList': [
@@ -6384,6 +6608,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:4:2::1f8b:2'
         ],
         'Bandwidth': 30000,
+        'Latitude': 53.463112,
+        'Longitude': -2.235776,
         'Devices': {
           'man30-96cbe-1a': {
             'DeviceType': 'None',
@@ -6448,6 +6674,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:bc::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 53.463112,
+        'Longitude': -2.235776,
         'Devices': {
           'man30-96cbe-1b': {
             'DeviceType': 'None',
@@ -6478,6 +6706,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Zurich',
     'AzureRegion': 'France Central',
+    'LocationIndex': 18,
     'PrivatePeeringFacilityMap': {
       '81': {
         'CodeList': [
@@ -6533,6 +6762,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:c:8235:194:42:48:50'
         ],
         'Bandwidth': 10000,
+        'Latitude': 47.378701,
+        'Longitude': 8.500333,
         'Devices': {
           'zrh-96cbe-1a': {
             'DeviceType': 'None',
@@ -6577,6 +6808,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:24::98'
         ],
         'Bandwidth': 100000,
+        'Latitude': 47.378701,
+        'Longitude': 8.500333,
         'Devices': {
           'zrh-96cbe-1a': {
             'DeviceType': 'None',
@@ -6607,6 +6840,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Barcelona',
     'AzureRegion': 'France Central',
+    'LocationIndex': 19,
     'PrivatePeeringFacilityMap': {
       '122': {
         'CodeList': [
@@ -6664,6 +6898,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:2a:0:2:2:0:8075'
         ],
         'Bandwidth': 20000,
+        'Latitude': 41.35,
+        'Longitude': 2.09,
         'Devices': {
           'bcn30-96cbe-1a': {
             'DeviceType': 'None',
@@ -6714,6 +6950,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Lisbon',
     'AzureRegion': 'France Central',
+    'LocationIndex': 20,
     'PrivatePeeringFacilityMap': {
       '126': {
         'CodeList': [
@@ -6769,6 +7006,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:a:1::6'
         ],
         'Bandwidth': 10000,
+        'Latitude': 38.787047,
+        'Longitude': -9.123751,
         'Devices': {
           'lis01-96cbe-1a': {
             'DeviceType': 'None',
@@ -6813,6 +7052,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:d5::1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 38.787047,
+        'Longitude': -9.123751,
         'Devices': {
           'lis01-96cbe-1a': {
             'DeviceType': 'None',
@@ -6857,6 +7098,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:c7::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 38.787047,
+        'Longitude': -9.123751,
         'Devices': {
           'lis01-96cbe-1b': {
             'DeviceType': 'None',
@@ -6887,6 +7130,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Madrid',
     'AzureRegion': 'France Central',
+    'LocationIndex': 21,
     'PrivatePeeringFacilityMap': {
       '130': {
         'CodeList': [
@@ -6942,6 +7186,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:f::70'
         ],
         'Bandwidth': 100000,
+        'Latitude': 40.439121,
+        'Longitude': -3.62147,
         'Devices': {
           'mad30-96cbe-1a': {
             'DeviceType': 'None',
@@ -6986,6 +7232,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:f:1::70'
         ],
         'Bandwidth': 100000,
+        'Latitude': 40.439121,
+        'Longitude': -3.62147,
         'Devices': {
           'mad30-96cbe-1b': {
             'DeviceType': 'None',
@@ -7030,6 +7278,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:a0::1f8b:0:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': 40.439121,
+        'Longitude': -3.62147,
         'Devices': {
           'mad30-96cbe-1b': {
             'DeviceType': 'None',
@@ -7060,6 +7310,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Sydney',
     'AzureRegion': 'Australia East',
+    'LocationIndex': 22,
     'PrivatePeeringFacilityMap': {
       '131': {
         'CodeList': [
@@ -7164,6 +7415,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:6::1:2076:1'
         ],
         'Bandwidth': 100000,
+        'Latitude': -33.921549,
+        'Longitude': 151.188196,
         'Devices': {
           'syd-96cbe-1a': {
             'DeviceType': 'None',
@@ -7208,6 +7461,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:dea:0:10::7'
         ],
         'Bandwidth': 10000,
+        'Latitude': -33.921549,
+        'Longitude': 151.188196,
         'Devices': {
           'syd-96cbe-1b': {
             'DeviceType': 'None',
@@ -7252,6 +7507,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:11:4:0:2f2c:0:1'
         ],
         'Bandwidth': 30000,
+        'Latitude': -33.921549,
+        'Longitude': 151.188196,
         'Devices': {
           'syd-96cbe-1b': {
             'DeviceType': 'None',
@@ -7296,6 +7553,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:b::162'
         ],
         'Bandwidth': 10000,
+        'Latitude': -33.921549,
+        'Longitude': 151.188196,
         'Devices': {
           'syd-96cbe-1a': {
             'DeviceType': 'None',
@@ -7441,6 +7700,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Tokyo',
     'AzureRegion': 'Japan East',
+    'LocationIndex': 23,
     'PrivatePeeringFacilityMap': {
       '142': {
         'CodeList': [
@@ -7558,6 +7818,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:5::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 35.687495,
+        'Longitude': 139.779537,
         'Devices': {
           'tyb-96cbe-1b': {
             'DeviceType': 'None',
@@ -7605,6 +7867,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:8::8075:1'
         ],
         'Bandwidth': 100000,
+        'Latitude': 35.687856,
+        'Longitude': 139.764432,
         'Devices': {
           'tya-96cbe-1a': {
             'DeviceType': 'None',
@@ -7672,6 +7936,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:c::8075:2'
         ],
         'Bandwidth': 100000,
+        'Latitude': 35.688316,
+        'Longitude': 139.76593,
         'Devices': {
           'ier02.tyo02': {
             'DeviceType': 'None',
@@ -7736,6 +8002,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:7:1::8075:1'
         ],
         'Bandwidth': 100000,
+        'Latitude': 35.687495,
+        'Longitude': 139.779537,
         'Devices': {
           'tyb-96cbe-1a': {
             'DeviceType': 'None',
@@ -7824,6 +8092,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Seoul',
     'AzureRegion': 'Korea Central',
+    'LocationIndex': 24,
     'PrivatePeeringFacilityMap': {
       '143': {
         'CodeList': [
@@ -7881,6 +8150,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:8::14'
         ],
         'Bandwidth': 30000,
+        'Latitude': 37.482197,
+        'Longitude': 126.87988,
         'Devices': {
           'sla-96cbe-1a': {
             'DeviceType': 'None',
@@ -7931,6 +8202,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Copenhagen',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 25,
     'PrivatePeeringFacilityMap': {
       '148': {
         'CodeList': [
@@ -7986,6 +8258,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:1f::8075:76:0'
         ],
         'Bandwidth': 10000,
+        'Latitude': 56.101760864257813,
+        'Longitude': 9.5559072494506836,
         'Devices': {
           'cph30-96cbe-1a': {
             'DeviceType': 'None',
@@ -8034,6 +8308,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:d:203::181'
         ],
         'Bandwidth': 40000,
+        'Latitude': 56.101760864257813,
+        'Longitude': 9.5559072494506836,
         'Devices': {
           'cph30-96cbe-1b': {
             'DeviceType': 'None',
@@ -8090,6 +8366,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:13::a500:8075:4'
         ],
         'Bandwidth': 10000,
+        'Latitude': 56.101760864257813,
+        'Longitude': 9.5559072494506836,
         'Devices': {
           'cph30-96cbe-1a': {
             'DeviceType': 'None',
@@ -8120,6 +8398,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Stockholm',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 26,
     'PrivatePeeringFacilityMap': {
       '156': {
         'CodeList': [
@@ -8132,11 +8411,29 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/156',
         'Devices': {
-          'sto-96cbe-1a': {
+          'ier01.sto': {
             'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
             'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.sto'
+            ]
+          },
+          'ier02.sto': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.sto'
+            ]
+          },
+          'sto-96cbe-1a': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
             'PairDevices': [
               'sto-96cbe-1b'
             ]
@@ -8145,7 +8442,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'DeviceType': 'InternetEdgeRouter',
             'PortChannels': {},
             'Ports': {},
-            'IsTakingNewConnection': true,
+            'IsTakingNewConnection': false,
             'PairDevices': [
               'sto-96cbe-1a'
             ]
@@ -8187,6 +8484,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:d:ff::181'
         ],
         'Bandwidth': 100000,
+        'Latitude': 59.422018,
+        'Longitude': 17.91647,
         'Devices': {
           'sto-96cbe-1a': {
             'DeviceType': 'None',
@@ -8275,6 +8574,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:3e:0:a500:0:8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 59.422018,
+        'Longitude': 17.91647,
         'Devices': {
           'sto-96cbe-1a': {
             'DeviceType': 'None',
@@ -8319,6 +8620,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:c1::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 59.422018,
+        'Longitude': 17.91647,
         'Devices': {
           'sto-96cbe-1b': {
             'DeviceType': 'None',
@@ -8343,12 +8646,45 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'TransitPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {
+      '156': {
+        'CodeList': [
+          'sto'
+        ],
+        'Country': 'SE',
+        'Address': 'Mariehällsvägen 36',
+        'Latitude': 59.362574,
+        'Longitude': 17.955657,
+        'LocationType': 'Transit',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/156',
+        'Devices': {
+          'ter01.sto': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter02.sto'
+            ]
+          },
+          'ter02.sto': {
+            'DeviceType': 'TransitEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'ter01.sto'
+            ]
+          }
+        }
+      }
+    },
     'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Dublin',
     'AzureRegion': 'North Europe',
+    'LocationIndex': 27,
     'PrivatePeeringFacilityMap': {
       '164': {
         'CodeList': [
@@ -8466,6 +8802,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:18::28'
         ],
         'Bandwidth': 100000,
+        'Latitude': 53.412108,
+        'Longitude': -6.347099,
         'Devices': {
           'dub30-96cbe-1a': {
             'DeviceType': 'None',
@@ -8510,6 +8848,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:c3::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 53.412108,
+        'Longitude': -6.347099,
         'Devices': {
           'dub30-96cbe-1b': {
             'DeviceType': 'None',
@@ -8554,6 +8894,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:18:12::77'
         ],
         'Bandwidth': 100000,
+        'Latitude': 53.292053,
+        'Longitude': -6.421723,
         'Devices': {
           'ier01.dba': {
             'DeviceType': 'None',
@@ -8642,6 +8984,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Sao Paulo',
     'AzureRegion': 'Brazil South',
+    'LocationIndex': 28,
     'PrivatePeeringFacilityMap': {
       '165': {
         'CodeList': [
@@ -8759,24 +9102,18 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:12f8:0:11::42'
         ],
         'Bandwidth': 60000,
+        'Latitude': -22.848119,
+        'Longitude': -47.153221,
         'Devices': {
           'cpq01-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel8.10': {
+              'PortChannel8': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
                   '200.192.108.42/32'
                 ],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
-              'PortChannel8.20': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
                 'SessionIpv6PrefixList': [
                   '2001:12f8:0:11::42/128'
                 ],
@@ -8799,20 +9136,28 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'LocationType': 'Production',
         'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/119',
         'Ipv4PrefixList': [
-          '198.32.122.0/24'
+          '198.32.122.0/24',
+          '64.191.232.0/22'
         ],
         'Ipv6PrefixList': [
-          '2001:478:122::/64'
+          '2001:478:122::/64',
+          '2001:504:0:7::/64'
         ],
         'MicrosoftSessionIpv4AddressList': [
           '198.32.122.57',
-          '198.32.122.60'
+          '198.32.122.60',
+          '64.191.232.60',
+          '64.191.232.57'
         ],
         'MicrosoftSessionIpv6AddressList': [
           '2001:478:122::3c',
-          '2001:478:122::39'
+          '2001:478:122::39',
+          '2001:504:0:7::3c',
+          '2001:504:0:7::39'
         ],
         'Bandwidth': 10000,
+        'Latitude': -23.595404,
+        'Longitude': -46.685157,
         'Devices': {
           'gru-96cbe-1a': {
             'DeviceType': 'None',
@@ -8821,10 +9166,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
-                  '198.32.122.60/32'
+                  '198.32.122.60/32',
+                  '64.191.232.60/32'
                 ],
                 'SessionIpv6PrefixList': [
-                  '2001:478:122::3c/128'
+                  '2001:478:122::3c/128',
+                  '2001:504:0:7::3c/128'
                 ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -8841,10 +9188,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
-                  '198.32.122.57/32'
+                  '198.32.122.57/32',
+                  '64.191.232.57/32'
                 ],
                 'SessionIpv6PrefixList': [
-                  '2001:478:122::39/128'
+                  '2001:478:122::39/128',
+                  '2001:504:0:7::39/128'
                 ],
                 'PeerInfoMap': {},
                 'PortChannelPorts': {}
@@ -8879,24 +9228,18 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:12f8::218:144'
         ],
         'Bandwidth': 200000,
+        'Latitude': -23.570104,
+        'Longitude': -46.705585,
         'Devices': {
           'sao03-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel1.3543': {
+              'PortChannel1': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
                   '187.16.218.139/32'
                 ],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
-              'PortChannel1.3544': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
                 'SessionIpv6PrefixList': [
                   '2001:12f8::218:139/128'
                 ],
@@ -8911,20 +9254,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'sao03-96cbe-1b': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel13.3564': {
+              'PortChannel13': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
                   '187.16.218.144/32'
                 ],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
-              'PortChannel13.3565': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
                 'SessionIpv6PrefixList': [
                   '2001:12f8::218:144/128'
                 ],
@@ -8945,6 +9280,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Hong Kong',
     'AzureRegion': 'East Asia',
+    'LocationIndex': 29,
     'PrivatePeeringFacilityMap': {
       '170': {
         'CodeList': [
@@ -9052,6 +9388,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:7::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 22.367775,
+        'Longitude': 114.11849,
         'Devices': {
           'hkb-96cbe-1a': {
             'DeviceType': 'None',
@@ -9077,7 +9415,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
       },
       '577': {
         'CodeList': [
-          'hkg'
+          'hkg30'
         ],
         'Country': 'HK',
         'Name': 'AMS-IX Hong Kong',
@@ -9096,11 +9434,13 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:df0:296::a500:8075:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': 22.266798,
+        'Longitude': 114.24644,
         'Devices': {
-          'hkg-96cbe-1a': {
+          'ier01.hkg30': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel60': {
+              'PortChannel75': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
@@ -9142,6 +9482,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:0:1::ca28:a0de'
         ],
         'Bandwidth': 100000,
+        'Latitude': 22.367775,
+        'Longitude': 114.11849,
         'Devices': {
           'hkb-96cbe-1a': {
             'DeviceType': 'None',
@@ -9206,6 +9548,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2403:c780:b800:bb00::8075:2'
         ],
         'Bandwidth': 30000,
+        'Latitude': 22.266798,
+        'Longitude': 114.24644,
         'Devices': {
           'ier02.hkg30': {
             'DeviceType': 'None',
@@ -9236,6 +9580,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Prague',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 30,
     'PrivatePeeringFacilityMap': {
       '214': {
         'CodeList': [
@@ -9291,6 +9636,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:14::6b:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 50.060341,
+        'Longitude': 14.482689,
         'Devices': {
           'prg01-96cbe-1a': {
             'DeviceType': 'None',
@@ -9334,6 +9681,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:7f::214'
         ],
         'Bandwidth': 10000,
+        'Latitude': 50.060341,
+        'Longitude': 14.482689,
         'Devices': {
           'prg01-96cbe-1b': {
             'DeviceType': 'None',
@@ -9364,6 +9713,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Marseille',
     'AzureRegion': 'France Central',
+    'LocationIndex': 31,
     'PrivatePeeringFacilityMap': {
       '226': {
         'CodeList': [
@@ -9432,6 +9782,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:54:5::14'
         ],
         'Bandwidth': 10000,
+        'Latitude': 43.361624,
+        'Longitude': 5.33792,
         'Devices': {
           'mrs01-96cbe-1a': {
             'DeviceType': 'None',
@@ -9476,6 +9828,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:36::1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 43.361624,
+        'Longitude': 5.33792,
         'Devices': {
           'mrs01-96cbe-1b': {
             'DeviceType': 'None',
@@ -9564,6 +9918,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Singapore',
     'AzureRegion': 'Southeast Asia',
+    'LocationIndex': 32,
     'PrivatePeeringFacilityMap': {
       '282': {
         'CodeList': [
@@ -9651,6 +10006,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:d::8069:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 1.307981,
+        'Longitude': 103.781919,
         'Devices': {
           'ier02.sg1': {
             'DeviceType': 'None',
@@ -9694,6 +10051,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:12:100::23'
         ],
         'Bandwidth': 30000,
+        'Latitude': 1.307981,
+        'Longitude': 103.781919,
         'Devices': {
           'ier01.sg1': {
             'DeviceType': 'None',
@@ -9740,6 +10099,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:4::8075:2'
         ],
         'Bandwidth': 100000,
+        'Latitude': 1.273912,
+        'Longitude': 103.835708,
         'Devices': {
           'sge-96cbe-1a': {
             'DeviceType': 'None',
@@ -9804,6 +10165,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:ded::17'
         ],
         'Bandwidth': 10000,
+        'Latitude': 1.273912,
+        'Longitude': 103.835708,
         'Devices': {
           'sge-96cbe-1b': {
             'DeviceType': 'None',
@@ -9848,6 +10211,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:df5:b800:bb00::8075:1'
         ],
         'Bandwidth': 30000,
+        'Latitude': 1.273912,
+        'Longitude': 103.835708,
         'Devices': {
           'sge-96cbe-1a': {
             'DeviceType': 'None',
@@ -9936,6 +10301,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Budapest',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 33,
     'PrivatePeeringFacilityMap': {
       '301': {
         'CodeList': [
@@ -9993,24 +10359,18 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:35::8075:2'
         ],
         'Bandwidth': 20000,
+        'Latitude': 47.494732,
+        'Longitude': 19.101299,
         'Devices': {
           'bud01-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel62.10': {
+              'PortChannel62': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
                   '193.188.137.21/32'
                 ],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
-              'PortChannel62.11': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
                 'SessionIpv6PrefixList': [
                   '2001:7f8:35::8075:1/128'
                 ],
@@ -10059,6 +10419,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Moscow',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 34,
     'PrivatePeeringFacilityMap': {
       '349': {
         'CodeList': [
@@ -10103,6 +10464,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:20:101::208:137'
         ],
         'Bandwidth': 200000,
+        'Latitude': 55.652752,
+        'Longitude': 37.528578,
         'Devices': {
           'msa-96cbe-1a': {
             'DeviceType': 'None',
@@ -10147,6 +10510,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2a03:5f80:4::225:38'
         ],
         'Bandwidth': 20000,
+        'Latitude': 55.652752,
+        'Longitude': 37.528578,
         'Devices': {
           'msa-96cbe-1a': {
             'DeviceType': 'None',
@@ -10177,6 +10542,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Denver',
     'AzureRegion': 'West Central US',
+    'LocationIndex': 35,
     'PrivatePeeringFacilityMap': {
       '389': {
         'CodeList': [
@@ -10255,6 +10621,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2605:6c00:303:303::100'
         ],
         'Bandwidth': 20000,
+        'Latitude': 39.74556,
+        'Longitude': -104.995682,
         'Devices': {
           'den02-96cbe-1a': {
             'DeviceType': 'None',
@@ -10305,6 +10673,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Bucharest',
     'AzureRegion': 'France Central',
+    'LocationIndex': 36,
     'PrivatePeeringFacilityMap': {
       '439': {
         'CodeList': [
@@ -10366,6 +10735,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:64:225::8075:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': 44.48183,
+        'Longitude': 26.120674,
         'Devices': {
           'buh01-96cbe-1a': {
             'DeviceType': 'None',
@@ -10442,6 +10813,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:49::88'
         ],
         'Bandwidth': 10000,
+        'Latitude': 44.48183,
+        'Longitude': 26.120674,
         'Devices': {
           'buh01-96cbe-1b': {
             'DeviceType': 'None',
@@ -10471,6 +10844,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Taipei',
     'AzureRegion': 'East Asia',
+    'LocationIndex': 37,
     'PrivatePeeringFacilityMap': {
       '456': {
         'CodeList': [
@@ -10528,6 +10902,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2406:d400:1:133:203:163:222:85'
         ],
         'Bandwidth': 10000,
+        'Latitude': 25.037389755249023,
+        'Longitude': 121.56353759765625,
         'Devices': {
           'tpe31-96cbe-1a': {
             'DeviceType': 'None',
@@ -10578,6 +10954,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Kuala Lumpur',
     'AzureRegion': 'Southeast Asia',
+    'LocationIndex': 38,
     'PrivatePeeringFacilityMap': {
       '460': {
         'CodeList': [
@@ -10647,6 +11024,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:10::a9'
         ],
         'Bandwidth': 20000,
+        'Latitude': 3.14916,
+        'Longitude': 101.706177,
         'Devices': {
           'kul30-96cbe-1a': {
             'DeviceType': 'None',
@@ -10697,6 +11076,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Berlin',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 39,
     'PrivatePeeringFacilityMap': {
       '478': {
         'CodeList': [
@@ -10754,6 +11134,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:19:1::1f8b:2'
         ],
         'Bandwidth': 50000,
+        'Latitude': 52.538509,
+        'Longitude': 13.238309,
         'Devices': {
           'ber30-96cbe-1a': {
             'DeviceType': 'None',
@@ -10818,6 +11200,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:8:5:0:1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 52.538509,
+        'Longitude': 13.238309,
         'Devices': {
           'ber30-96cbe-1b': {
             'DeviceType': 'None',
@@ -10848,6 +11232,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Warsaw',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 40,
     'PrivatePeeringFacilityMap': {
       '509': {
         'CodeList': [
@@ -10905,6 +11290,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:42::a500:8075:2'
         ],
         'Bandwidth': 30000,
+        'Latitude': 52.22832,
+        'Longitude': 21.004985,
         'Devices': {
           'waw01-96cbe-1a': {
             'DeviceType': 'None',
@@ -10969,6 +11356,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:27::8075:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': 52.22832,
+        'Longitude': 21.004985,
         'Devices': {
           'waw01-96cbe-1a': {
             'DeviceType': 'None',
@@ -10999,6 +11388,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Chennai',
     'AzureRegion': 'South India',
+    'LocationIndex': 41,
     'PrivatePeeringFacilityMap': {
       '552': {
         'CodeList': [
@@ -11121,6 +11511,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:df2:1900:3::137'
         ],
         'Bandwidth': 10000,
+        'Latitude': 13.0839,
+        'Longitude': 80.27,
         'Devices': {
           'maa02-96cbe-1b': {
             'DeviceType': 'None',
@@ -11151,6 +11543,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Mumbai',
     'AzureRegion': 'West India',
+    'LocationIndex': 42,
     'PrivatePeeringFacilityMap': {
       '554': {
         'CodeList': [
@@ -11273,6 +11666,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:e48:44:100b:0:a500:8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 19.025903,
+        'Longitude': 72.829981,
         'Devices': {
           'bom02-96cbe-1a': {
             'DeviceType': 'None',
@@ -11317,6 +11712,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:df2:1900:2::128'
         ],
         'Bandwidth': 20000,
+        'Latitude': 19.025903,
+        'Longitude': 72.829981,
         'Devices': {
           'bom02-96cbe-1b': {
             'DeviceType': 'None',
@@ -11361,6 +11758,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2401:7500:fff6::5'
         ],
         'Bandwidth': 10000,
+        'Latitude': 19.025903,
+        'Longitude': 72.829981,
         'Devices': {
           'ier01.bom02': {
             'DeviceType': 'None',
@@ -11391,6 +11790,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Perth',
     'AzureRegion': 'Australia Central',
+    'LocationIndex': 43,
     'PrivatePeeringFacilityMap': {
       '568': {
         'CodeList': [
@@ -11484,6 +11884,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:dea:0:50::b'
         ],
         'Bandwidth': 10000,
+        'Latitude': -31.955629,
+        'Longitude': 115.85553,
         'Devices': {
           'per01-96cbe-1a': {
             'DeviceType': 'None',
@@ -11528,6 +11930,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:11::2f2c:0:1'
         ],
         'Bandwidth': 30000,
+        'Latitude': -31.955629,
+        'Longitude': 115.85553,
         'Devices': {
           'per01-96cbe-1a': {
             'DeviceType': 'None',
@@ -11558,6 +11962,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Boston',
     'AzureRegion': 'East US',
+    'LocationIndex': 44,
     'PrivatePeeringFacilityMap': {
       '584': {
         'CodeList': [
@@ -11603,6 +12008,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:24:1::1f8b:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 42.377083,
+        'Longitude': -71.080846,
         'Devices': {
           'bos01-96e-1': {
             'DeviceType': 'None',
@@ -11647,6 +12054,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:47::1f8b:0:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': 42.377083,
+        'Longitude': -71.080846,
         'Devices': {
           'bos01-96e-1': {
             'DeviceType': 'None',
@@ -11677,6 +12086,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Sofia',
     'AzureRegion': 'France Central',
+    'LocationIndex': 45,
     'PrivatePeeringFacilityMap': {
       '663': {
         'CodeList': [
@@ -11728,6 +12138,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
         ],
         'MicrosoftSessionIpv6AddressList': [],
         'Bandwidth': 10000,
+        'Latitude': 42.68882,
+        'Longitude': 23.32976,
         'Devices': {
           'sof01-96cbe-1b': {
             'DeviceType': 'None',
@@ -11769,6 +12181,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:58::1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 42.68882,
+        'Longitude': 23.32976,
         'Devices': {
           'sof01-96cbe-1a': {
             'DeviceType': 'None',
@@ -11813,6 +12227,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:67c:29f0::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 42.68882,
+        'Longitude': 23.32976,
         'Devices': {
           'sof01-96cbe-1b': {
             'DeviceType': 'None',
@@ -11857,6 +12273,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:9f::6'
         ],
         'Bandwidth': 10000,
+        'Latitude': 42.68882,
+        'Longitude': 23.32976,
         'Devices': {
           'sof01-96cbe-1a': {
             'DeviceType': 'None',
@@ -11887,6 +12305,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Las Vegas',
     'AzureRegion': 'West US',
+    'LocationIndex': 46,
     'PrivatePeeringFacilityMap': {
       '770': {
         'CodeList': [
@@ -11942,6 +12361,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2606:a980:0:9::6'
         ],
         'Bandwidth': 10000,
+        'Latitude': 36.063671,
+        'Longitude': -115.210904,
         'Devices': {
           'las01-96cbe-1a': {
             'DeviceType': 'None',
@@ -11972,6 +12393,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Toronto',
     'AzureRegion': 'Canada Central',
+    'LocationIndex': 47,
     'PrivatePeeringFacilityMap': {
       '775': {
         'CodeList': [
@@ -12029,6 +12451,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:1a::34:160'
         ],
         'Bandwidth': 100000,
+        'Latitude': 43.644967,
+        'Longitude': -79.383809,
         'Devices': {
           'yto01-96cbe-1a': {
             'DeviceType': 'None',
@@ -12093,6 +12517,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2606:a980:0:8::7'
         ],
         'Bandwidth': 10000,
+        'Latitude': 43.644967,
+        'Longitude': -79.383809,
         'Devices': {
           'yto01-96cbe-1b': {
             'DeviceType': 'None',
@@ -12123,6 +12549,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Johannesburg',
     'AzureRegion': 'South Africa North',
+    'LocationIndex': 48,
     'PrivatePeeringFacilityMap': {
       '850': {
         'CodeList': [
@@ -12180,6 +12607,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:43f8:6d0::9:133'
         ],
         'Bandwidth': 100000,
+        'Latitude': -26.137793,
+        'Longitude': 28.197564,
         'Devices': {
           'jnb02-96cbe-1a': {
             'DeviceType': 'None',
@@ -12230,6 +12659,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Osaka',
     'AzureRegion': 'Japan East',
+    'LocationIndex': 49,
     'PrivatePeeringFacilityMap': {
       '1157': {
         'CodeList': [
@@ -12316,6 +12746,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:8:6::8075:1'
         ],
         'Bandwidth': 100000,
+        'Latitude': 34.695781,
+        'Longitude': 135.491091,
         'Devices': {
           'osa02-96cbe-1a': {
             'DeviceType': 'None',
@@ -12362,6 +12794,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:7:2::8075:2'
         ],
         'Bandwidth': 100000,
+        'Latitude': 34.677851,
+        'Longitude': 135.523562,
         'Devices': {
           'osa30-96cbe-1a': {
             'DeviceType': 'None',
@@ -12428,6 +12862,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:c:2::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 34.677851,
+        'Longitude': 135.523562,
         'Devices': {
           'osa30-96cbe-1a': {
             'DeviceType': 'None',
@@ -12458,6 +12894,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Cape Town',
     'AzureRegion': 'South Africa North',
+    'LocationIndex': 50,
     'PrivatePeeringFacilityMap': {
       '1225': {
         'CodeList': [
@@ -12515,6 +12952,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:43f8:6d1::147'
         ],
         'Bandwidth': 100000,
+        'Latitude': -33.970344,
+        'Longitude': 18.464315,
         'Devices': {
           'cpt02-96cbe-1a': {
             'DeviceType': 'None',
@@ -12565,6 +13004,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Vancouver',
     'AzureRegion': 'West US 2',
+    'LocationIndex': 51,
     'PrivatePeeringFacilityMap': {
       '1330': {
         'CodeList': [
@@ -12651,6 +13091,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:39::41'
         ],
         'Bandwidth': 10000,
+        'Latitude': 49.287202,
+        'Longitude': -123.119338,
         'Devices': {
           'yvr01-96cbe-1a': {
             'DeviceType': 'None',
@@ -12680,6 +13122,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Melbourne',
     'AzureRegion': 'Australia Southeast',
+    'LocationIndex': 52,
     'PrivatePeeringFacilityMap': {
       '1339': {
         'CodeList': [
@@ -12733,6 +13176,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:e::13'
         ],
         'Bandwidth': 10000,
+        'Latitude': -37.821991,
+        'Longitude': 144.932473,
         'Devices': {
           'mel01-96cbe-1a': {
             'DeviceType': 'None',
@@ -12776,6 +13221,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:dea:0:30::23'
         ],
         'Bandwidth': 10000,
+        'Latitude': -37.821991,
+        'Longitude': 144.932473,
         'Devices': {
           'mel01-96cbe-1b': {
             'DeviceType': 'None',
@@ -12820,6 +13267,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:de8:6:1::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': -37.821991,
+        'Longitude': 144.932473,
         'Devices': {
           'mel01-96cbe-1a': {
             'DeviceType': 'None',
@@ -12864,6 +13313,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:11:1:0:2f2c:0:1'
         ],
         'Bandwidth': 40000,
+        'Latitude': -37.821991,
+        'Longitude': 144.932473,
         'Devices': {
           'mel01-96cbe-1b': {
             'DeviceType': 'None',
@@ -12894,6 +13345,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Brisbane',
     'AzureRegion': 'Australia East',
+    'LocationIndex': 53,
     'PrivatePeeringFacilityMap': {
       '1340': {
         'CodeList': [
@@ -12947,6 +13399,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:9::a'
         ],
         'Bandwidth': 10000,
+        'Latitude': -27.46528,
+        'Longitude': 153.029625,
         'Devices': {
           'bne01-96cbe-1a': {
             'DeviceType': 'None',
@@ -12990,6 +13444,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:dea:0:20::14'
         ],
         'Bandwidth': 20000,
+        'Latitude': -27.46528,
+        'Longitude': 153.029625,
         'Devices': {
           'bne01-96cbe-1a': {
             'DeviceType': 'None',
@@ -13034,6 +13490,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:11:2:0:2f2c:0:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': -27.46528,
+        'Longitude': 153.029625,
         'Devices': {
           'bne01-96cbe-1b': {
             'DeviceType': 'None',
@@ -13064,6 +13522,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Auckland',
     'AzureRegion': 'Australia East',
+    'LocationIndex': 54,
     'PrivatePeeringFacilityMap': {
       '1353': {
         'CodeList': [
@@ -13127,6 +13586,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:4:c0cb::9aa2'
         ],
         'Bandwidth': 20000,
+        'Latitude': -36.75016,
+        'Longitude': 174.696564,
         'Devices': {
           'akl01-96cbe-1a': {
             'DeviceType': 'None',
@@ -13171,6 +13632,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:11:6:0:1f8b:0:1'
         ],
         'Bandwidth': 20000,
+        'Latitude': -36.75016,
+        'Longitude': 174.696564,
         'Devices': {
           'akl01-96cbe-1a': {
             'DeviceType': 'None',
@@ -13196,7 +13659,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
       },
       '984': {
         'CodeList': [
-          'akl01'
+          'akl30'
         ],
         'Country': 'NZ',
         'Name': 'MegaIX Auckland',
@@ -13215,11 +13678,13 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:dea:0:40::26'
         ],
         'Bandwidth': 10000,
+        'Latitude': -36.75017,
+        'Longitude': 174.696558,
         'Devices': {
-          'akl01-96cbe-1a': {
+          'ier01.akl30': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel1': {
+              'PortChannel62': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
@@ -13240,7 +13705,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
       },
       '348': {
         'CodeList': [
-          'akl01'
+          'akl30'
         ],
         'Country': 'NZ',
         'Name': 'WIX-NZ',
@@ -13259,12 +13724,14 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7fa:3:ca07::dc'
         ],
         'Bandwidth': 10000,
+        'Latitude': -36.75017,
+        'Longitude': 174.696558,
         'Devices': {
-          'akl01-96cbe-1a': {
+          'ier02.akl30': {
             'DeviceType': 'None',
             'PortChannels': {},
             'Ports': {
-              'xe-0/1/0': {
+              'et-0/0/70:0': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
@@ -13288,6 +13755,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Zagreb',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 55,
     'PrivatePeeringFacilityMap': {
       '1368': {
         'CodeList': [
@@ -13343,6 +13811,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:28::25:0'
         ],
         'Bandwidth': 20000,
+        'Latitude': 45.8033,
+        'Longitude': 15.9439,
         'Devices': {
           'zag30-96cbe-1a': {
             'DeviceType': 'None',
@@ -13373,6 +13843,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Rio de Janeiro',
     'AzureRegion': 'Brazil South',
+    'LocationIndex': 56,
     'PrivatePeeringFacilityMap': {
       '1374': {
         'CodeList': [
@@ -13440,24 +13911,18 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:12f8:0:2::72'
         ],
         'Bandwidth': 60000,
+        'Latitude': -22.870963,
+        'Longitude': -43.272935,
         'Devices': {
           'rio02-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel5.10': {
+              'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
                   '45.6.52.73/32'
                 ],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
-              'PortChannel5.20': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
                 'SessionIpv6PrefixList': [
                   '2001:12f8:0:2::73/128'
                 ],
@@ -13472,20 +13937,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
           'rio03-96cbe-1a': {
             'DeviceType': 'None',
             'PortChannels': {
-              'PortChannel5.10': {
+              'PortChannel5': {
                 'PortBandwidth': 0,
                 'PortAllocationType': 'None',
                 'SessionIpv4PrefixList': [
                   '45.6.52.72/32'
                 ],
-                'SessionIpv6PrefixList': [],
-                'PeerInfoMap': {},
-                'PortChannelPorts': {}
-              },
-              'PortChannel5.20': {
-                'PortBandwidth': 0,
-                'PortAllocationType': 'None',
-                'SessionIpv4PrefixList': [],
                 'SessionIpv6PrefixList': [
                   '2001:12f8:0:2::72/128'
                 ],
@@ -13506,6 +13963,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Helsinki',
     'AzureRegion': 'West Europe',
+    'LocationIndex': 57,
     'PrivatePeeringFacilityMap': {
       '1457': {
         'CodeList': [
@@ -13570,6 +14028,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:7:b::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 60.220515,
+        'Longitude': 24.984239,
         'Devices': {
           'hel03-96cbe-1a': {
             'DeviceType': 'None',
@@ -13614,6 +14074,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:7:a::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 60.185101,
+        'Longitude': 24.970011,
         'Devices': {
           'hel02-96cbe-1a': {
             'DeviceType': 'None',
@@ -13658,6 +14120,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:af::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 60.185101,
+        'Longitude': 24.970011,
         'Devices': {
           'hel02-96cbe-1a': {
             'DeviceType': 'None',
@@ -13688,6 +14152,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Houston',
     'AzureRegion': 'South Central US',
+    'LocationIndex': 58,
     'PrivatePeeringFacilityMap': {
       '1476': {
         'CodeList': [
@@ -13745,6 +14210,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:478:96::36'
         ],
         'Bandwidth': 10000,
+        'Latitude': 29.844153,
+        'Longitude': -95.555121,
         'Devices': {
           'hou01-96cbe-1a': {
             'DeviceType': 'None',
@@ -13795,6 +14262,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'San Antonio',
     'AzureRegion': 'South Central US',
+    'LocationIndex': 59,
     'PrivatePeeringFacilityMap': {
       '1484': {
         'CodeList': [
@@ -13816,6 +14284,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Phoenix',
     'AzureRegion': 'West US',
+    'LocationIndex': 60,
     'PrivatePeeringFacilityMap': {
       '1488': {
         'CodeList': [
@@ -13868,6 +14337,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
         ],
         'MicrosoftSessionIpv6AddressList': [],
         'Bandwidth': 10000,
+        'Latitude': 33.274984,
+        'Longitude': -111.886928,
         'Devices': {
           'phx01-96cbe-1a': {
             'DeviceType': 'None',
@@ -13928,6 +14399,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:3b::44'
         ],
         'Bandwidth': 10000,
+        'Latitude': 33.274984,
+        'Longitude': -111.886928,
         'Devices': {
           'phx01-96cbe-1a': {
             'DeviceType': 'None',
@@ -13957,6 +14430,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Mexico',
     'AzureRegion': 'South Central US',
+    'LocationIndex': 61,
     'PrivatePeeringFacilityMap': {
       '1778': {
         'CodeList': [
@@ -13997,6 +14471,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Santiago',
     'AzureRegion': 'Brazil South',
+    'LocationIndex': 62,
     'PrivatePeeringFacilityMap': {
       '2093': {
         'CodeList': [
@@ -14054,6 +14529,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2801:14:9000::8075:2'
         ],
         'Bandwidth': 20000,
+        'Latitude': -33.35869,
+        'Longitude': -70.67602,
         'Devices': {
           'scl30-96cbe-1a': {
             'DeviceType': 'None',
@@ -14104,6 +14581,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Montreal',
     'AzureRegion': 'Canada East',
+    'LocationIndex': 63,
     'PrivatePeeringFacilityMap': {
       '1944': {
         'CodeList': [
@@ -14159,6 +14637,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:504:2d::18:16'
         ],
         'Bandwidth': 20000,
+        'Latitude': 45.49759,
+        'Longitude': -73.571152,
         'Devices': {
           'ymq01-96cbe-1a': {
             'DeviceType': 'None',
@@ -14189,6 +14669,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Athens',
     'AzureRegion': 'France Central',
+    'LocationIndex': 64,
     'PrivatePeeringFacilityMap': {
       '1949': {
         'CodeList': [
@@ -14246,6 +14727,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:6e::28'
         ],
         'Bandwidth': 40000,
+        'Latitude': 37.871009,
+        'Longitude': 23.870586,
         'Devices': {
           'ath01-96cbe-1a': {
             'DeviceType': 'None',
@@ -14296,6 +14779,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Milan',
     'AzureRegion': 'France Central',
+    'LocationIndex': 65,
     'PrivatePeeringFacilityMap': {
       '1974': {
         'CodeList': [
@@ -14353,6 +14837,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:b:100:1d1:a5d0:8075:212'
         ],
         'Bandwidth': 10000,
+        'Latitude': 45.478039,
+        'Longitude': 9.101691,
         'Devices': {
           'mil30-96cbe-1a': {
             'DeviceType': 'None',
@@ -14414,7 +14900,9 @@ namespace Microsoft.Azure.Commands.Peering.Common
         'MicrosoftSessionIpv6AddressList': [
           '2001:7f8:23:ffff::88'
         ],
-        'Bandwidth': 10000,
+        'Bandwidth': 40000,
+        'Latitude': 45.478039,
+        'Longitude': 9.101691,
         'Devices': {
           'mil30-96cbe-1b': {
             'DeviceType': 'None',
@@ -14445,6 +14933,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'New Delhi',
     'AzureRegion': 'West India',
+    'LocationIndex': 66,
     'PrivatePeeringFacilityMap': {
       '1982': {
         'CodeList': [
@@ -14500,6 +14989,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:df2:1900:1::13'
         ],
         'Bandwidth': 20000,
+        'Latitude': 28.550072,
+        'Longitude': 77.235537,
         'Devices': {
           'del01-96cbe-1b': {
             'DeviceType': 'None',
@@ -14530,6 +15021,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Honolulu',
     'AzureRegion': 'West US',
+    'LocationIndex': 67,
     'PrivatePeeringFacilityMap': {
       '2526': {
         'CodeList': [
@@ -14585,6 +15077,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2606:7c80:3375:50::37'
         ],
         'Bandwidth': 10000,
+        'Latitude': 21.336363,
+        'Longitude': -157.91733,
         'Devices': {
           'hnl01-96cbe-1a': {
             'DeviceType': 'None',
@@ -14614,6 +15108,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Manila',
     'AzureRegion': 'East Asia',
+    'LocationIndex': 68,
     'PrivatePeeringFacilityMap': {
       '4810': {
         'CodeList': [
@@ -14654,6 +15149,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Hyderabad',
     'AzureRegion': 'South India',
+    'LocationIndex': 69,
     'PrivatePeeringFacilityMap': {
       '5236': {
         'CodeList': [
@@ -14709,6 +15205,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:df2:1900:4::10'
         ],
         'Bandwidth': 10000,
+        'Latitude': 17.436275,
+        'Longitude': 78.382347,
         'Devices': {
           'ier01.hyd30': {
             'DeviceType': 'None',
@@ -14739,6 +15237,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Fujairah',
     'AzureRegion': 'UK West',
+    'LocationIndex': 70,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {
       '866': {
@@ -14762,6 +15261,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:7a::8075:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 24.919236,
+        'Longitude': 55.061313,
         'Devices': {
           'ier02.dxb20': {
             'DeviceType': 'None',
@@ -14792,6 +15293,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Dubai',
     'AzureRegion': 'UK West',
+    'LocationIndex': 71,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {
       '587': {
@@ -14817,6 +15319,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:73::1f8b:0:2'
         ],
         'Bandwidth': 20000,
+        'Latitude': 24.91676983,
+        'Longitude': 55.06704787,
         'Devices': {
           'ier01.dxb30': {
             'DeviceType': 'None',
@@ -14867,10 +15371,12 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Dusseldorf',
     'AzureRegion': 'UK West',
+    'LocationIndex': 72,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {
       '1214': {
         'CodeList': [
+          'dus30',
           'fra'
         ],
         'Country': 'DE',
@@ -14885,13 +15391,17 @@ namespace Microsoft.Azure.Commands.Peering.Common
         ],
         'MicrosoftSessionIpv4AddressList': [
           '185.1.58.123',
-          '185.1.58.94'
+          '185.1.58.94',
+          '185.1.58.161'
         ],
         'MicrosoftSessionIpv6AddressList': [
           '2001:7f8:9e::1f8b:0:2',
-          '2001:7f8:9e::1f8b:0:1'
+          '2001:7f8:9e::1f8b:0:1',
+          '2001:7f8:9e::1f8b:0:3'
         ],
-        'Bandwidth': 10000,
+        'Bandwidth': 20000,
+        'Latitude': 50.120564,
+        'Longitude': 8.736888,
         'Devices': {
           'fra-96cbe-1a': {
             'DeviceType': 'None',
@@ -14932,6 +15442,94 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'Ports': {},
             'IsTakingNewConnection': false,
             'PairDevices': []
+          },
+          'ier01.dus30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel62': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '185.1.58.161/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:9e::1f8b:0:3/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
+      },
+      '91': {
+        'CodeList': [
+          'dus30'
+        ],
+        'Country': 'DE',
+        'Name': 'ECIX-DUS',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/91',
+        'Ipv4PrefixList': [
+          '194.146.118.0/24'
+        ],
+        'Ipv6PrefixList': [
+          '2001:7f8:8::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '194.146.118.17',
+          '194.146.118.18'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:7f8:8::1f8b:0:1',
+          '2001:7f8:8::1f8b:0:2'
+        ],
+        'Bandwidth': 100000,
+        'Latitude': 51.188,
+        'Longitude': 6.866,
+        'Devices': {
+          'ier01.dus30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel63': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '194.146.118.17/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:8::1f8b:0:1/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier02.dus30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel62': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '194.146.118.18/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:7f8:8::1f8b:0:2/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
           }
         }
       }
@@ -14942,6 +15540,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Munich',
     'AzureRegion': 'UK West',
+    'LocationIndex': 73,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {
       '248': {
@@ -14967,6 +15566,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:44::1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 50.120564,
+        'Longitude': 8.736888,
         'Devices': {
           'fra-96cbe-1a': {
             'DeviceType': 'None',
@@ -15017,6 +15618,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Hamburg',
     'AzureRegion': 'UK West',
+    'LocationIndex': 74,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {
       '74': {
@@ -15042,6 +15644,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:7f8:3d::1f8b:0:1'
         ],
         'Bandwidth': 10000,
+        'Latitude': 50.120564,
+        'Longitude': 8.736888,
         'Devices': {
           'fra-96cbe-1a': {
             'DeviceType': 'None',
@@ -15091,7 +15695,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
   },
   {
     'LocationName': 'Newark',
-    'AzureRegion': 'US East',
+    'AzureRegion': 'East US',
+    'LocationIndex': 75,
     'PrivatePeeringFacilityMap': {
       '9': {
         'CodeList': [
@@ -15131,7 +15736,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
   },
   {
     'LocationName': 'Reston',
-    'AzureRegion': 'US East',
+    'AzureRegion': 'East US',
+    'LocationIndex': 76,
     'PrivatePeeringFacilityMap': {
       '668': {
         'CodeList': [
@@ -15165,7 +15771,76 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {
+      '777': {
+        'CodeList': [
+          'bl31'
+        ],
+        'Country': 'US',
+        'Name': 'LINX NoVA',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/777',
+        'Ipv4PrefixList': [
+          '206.55.196.0/23'
+        ],
+        'Ipv6PrefixList': [
+          '2001:504:31::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '206.55.196.62',
+          '206.55.196.63'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:504:31::1f8b:1',
+          '2001:504:31::1f8b:2'
+        ],
+        'Bandwidth': 10000,
+        'Latitude': 38.95066,
+        'Longitude': -77.36452,
+        'Devices': {
+          'ier01.bl31': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel62': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '206.55.196.62/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:31::1f8b:1/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier02.bl31': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel62': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '206.55.196.63/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:31::1f8b:2/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
+      }
+    },
     'TransitPeeringFacilityMap': {
       '668': {
         'CodeList': [
@@ -15230,6 +15905,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Santa Clara',
     'AzureRegion': 'West US',
+    'LocationIndex': 77,
     'PrivatePeeringFacilityMap': {
       '3344': {
         'CodeList': [
@@ -15328,6 +16004,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Hillsboro',
     'AzureRegion': 'West US 2',
+    'LocationIndex': 78,
     'PrivatePeeringFacilityMap': {
       '1922': {
         'CodeList': [
@@ -15368,6 +16045,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Geneva',
     'AzureRegion': 'France Central',
+    'LocationIndex': 79,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {},
     'TransitPeeringFacilityMap': {
@@ -15434,6 +16112,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Ikeja',
     'AzureRegion': 'France Central',
+    'LocationIndex': 80,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {},
     'TransitPeeringFacilityMap': {
@@ -15500,8 +16179,78 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Nairobi',
     'AzureRegion': 'France Central',
+    'LocationIndex': 81,
     'PrivatePeeringFacilityMap': {},
-    'PublicPeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {
+      '236': {
+        'CodeList': [
+          'nbo30'
+        ],
+        'Country': 'KE',
+        'Name': 'KIXP - Nairobi',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/236',
+        'Ipv4PrefixList': [
+          '196.223.21.0/24'
+        ],
+        'Ipv6PrefixList': [
+          '2001:43f8:60:1::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '196.223.21.101',
+          '196.223.21.102'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:43f8:60:1::101',
+          '2001:43f8:60:1::102'
+        ],
+        'Bandwidth': 10000,
+        'Latitude': -1.29,
+        'Longitude': 36.82,
+        'Devices': {
+          'ier01.nbo30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel60': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '196.223.21.101/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:60:1::101/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier02.nbo30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel60': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '196.223.21.102/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:43f8:60:1::102/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
+      }
+    },
     'TransitPeeringFacilityMap': {
       '1964': {
         'CodeList': [
@@ -15566,6 +16315,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Oslo',
     'AzureRegion': 'UK West',
+    'LocationIndex': 82,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {},
     'TransitPeeringFacilityMap': {
@@ -15632,6 +16382,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Bogota',
     'AzureRegion': 'East US',
+    'LocationIndex': 83,
     'PrivatePeeringFacilityMap': {
       '1354': {
         'CodeList': [
@@ -15665,13 +16416,83 @@ namespace Microsoft.Azure.Commands.Peering.Common
         }
       }
     },
-    'PublicPeeringFacilityMap': {},
+    'PublicPeeringFacilityMap': {
+      '2289': {
+        'CodeList': [
+          'bog30'
+        ],
+        'Country': 'CO',
+        'Name': 'Equinix Bogota',
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/ix/2289',
+        'Ipv4PrefixList': [
+          '208.115.128.0/24'
+        ],
+        'Ipv6PrefixList': [
+          '2001:504:0:10::/64'
+        ],
+        'MicrosoftSessionIpv4AddressList': [
+          '208.115.128.24',
+          '208.115.128.25'
+        ],
+        'MicrosoftSessionIpv6AddressList': [
+          '2001:504:0:10::8075:1',
+          '2001:504:0:10::8075:2'
+        ],
+        'Bandwidth': 10000,
+        'Latitude': 4.671405181,
+        'Longitude': -74.16190823,
+        'Devices': {
+          'ier01.bog30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel63.99': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '208.115.128.25/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:10::8075:2/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          },
+          'ier02.bog30': {
+            'DeviceType': 'None',
+            'PortChannels': {
+              'PortChannel63.99': {
+                'PortBandwidth': 0,
+                'PortAllocationType': 'None',
+                'SessionIpv4PrefixList': [
+                  '208.115.128.24/32'
+                ],
+                'SessionIpv6PrefixList': [
+                  '2001:504:0:10::8075:1/128'
+                ],
+                'PeerInfoMap': {},
+                'PortChannelPorts': {}
+              }
+            },
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': []
+          }
+        }
+      }
+    },
     'TransitPeeringFacilityMap': {},
     'InternalPeeringFacilityMap': {}
   },
   {
     'LocationName': 'Lagos',
     'AzureRegion': 'France Central',
+    'LocationIndex': 84,
     'PrivatePeeringFacilityMap': {},
     'PublicPeeringFacilityMap': {
       '488': {
@@ -15697,6 +16518,8 @@ namespace Microsoft.Azure.Commands.Peering.Common
           '2001:43f8:bb1::86'
         ],
         'Bandwidth': 20000,
+        'Latitude': 6.52,
+        'Longitude': 3.38,
         'Devices': {
           'ier01.los30': {
             'DeviceType': 'None',
@@ -15747,6 +16570,7 @@ namespace Microsoft.Azure.Commands.Peering.Common
   {
     'LocationName': 'Jakarta',
     'AzureRegion': 'Southeast Asia',
+    'LocationIndex': 85,
     'PrivatePeeringFacilityMap': {
       '2368': {
         'CodeList': [
@@ -15775,6 +16599,106 @@ namespace Microsoft.Azure.Commands.Peering.Common
             'IsTakingNewConnection': true,
             'PairDevices': [
               'ier01.jkt30'
+            ]
+          }
+        }
+      }
+    },
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Rennesoy',
+    'AzureRegion': 'UK West',
+    'LocationIndex': 86,
+    'PrivatePeeringFacilityMap': {
+      '5343': {
+        'CodeList': [
+          'svg20'
+        ],
+        'Country': 'NO',
+        'Address': 'Hodneveien 240',
+        'Latitude': 59.072683,
+        'Longitude': 5.763059,
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/5343',
+        'Devices': {
+          'ier01.svg20': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.svg20'
+            ]
+          },
+          'ier02.svg20': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.svg20'
+            ]
+          }
+        }
+      }
+    },
+    'PublicPeeringFacilityMap': {},
+    'TransitPeeringFacilityMap': {},
+    'InternalPeeringFacilityMap': {}
+  },
+  {
+    'LocationName': 'Pathum Thani',
+    'AzureRegion': 'Southeast Asia',
+    'LocationIndex': 87,
+    'PrivatePeeringFacilityMap': {
+      '6741': {
+        'CodeList': [
+          'bkk30'
+        ],
+        'Country': 'TH',
+        'Address': '91 Moo12, Phahonyothin Road',
+        'Latitude': 14.0653,
+        'Longitude': 100.60376,
+        'LocationType': 'Production',
+        'PeeringDBFacilityLink': 'https://www.peeringdb.com/fac/6741',
+        'Devices': {
+          'bkk30-96cbe-1a': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'bkk30-96cbe-1b'
+            ]
+          },
+          'bkk30-96cbe-1b': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': false,
+            'PairDevices': [
+              'bkk30-96cbe-1a'
+            ]
+          },
+          'ier01.bkk30': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier02.bkk30'
+            ]
+          },
+          'ier02.bkk30': {
+            'DeviceType': 'InternetEdgeRouter',
+            'PortChannels': {},
+            'Ports': {},
+            'IsTakingNewConnection': true,
+            'PairDevices': [
+              'ier01.bkk30'
             ]
           }
         }
